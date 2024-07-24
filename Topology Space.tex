@@ -1,0 +1,333 @@
+\section{Tác động nhóm. Nhóm topo}
+% \begin{defn}[Không gian topo]
+%     Cho $X$ là một tập bất kỳ và $\tau$ là một họ các tập con của $X$. Khi đó $\tau$ được gọi là \textit{một topo trên $X$} nếu
+%     \begin{enumerate}
+%         \item $X, \emptyset \in \tau$.
+%         \item $\forall U, V \in \tau$ thì $U \cap V \in \tau$.
+%         \item $\forall \{U_i\}_{i \in I} \subset \tau$ thì $\bigcup_{i \in I}{U_i} \in \tau.$
+%     \end{enumerate}
+%     Khi đó cặp $(X,\tau)$ được gọi là một \textit{không gian topo}. 
+    
+%     Mỗi phần tử của $\tau$ được gọi là một \textit{tập mở}. 
+%     Tập $A\subset X$ được gọi là \textit{đóng} trong $X$ nếu $X\setminus A$ là mở.
+% \end{defn}
+% \begin{defn}[Ánh xạ liên tục]
+%     Cho $(X,\tau_X)$ và $(Y,\tau_Y)$ là các không gian topo. Khi đó ánh xạ $f: (X,\tau_X) \to (Y,\tau_Y)$ được gọi là \textit{liên tục} nếu với mọi $ V \in \tau_Y$ thì $f^{-1}(V) \in \tau_X$. 
+% \end{defn}
+% \begin{defn}[Không gian topo con và topo cảm sinh]
+%     Cho $(X,\tau)$ là một không gian topo và $A$ là một tập con của $X$. Khi đó tập $\tau_A = \{A \cap U~|~U \in \tau\}$
+%     được gọi là \textit{topo cảm sinh}  bởi topo $\tau$. 
+%     Còn $(A,\tau_A)$ được gọi là một \textit{không gian topo con} của không gian topo $(X,\tau)$.
+% \end{defn}
+% \begin{defn}[Topo thương]
+%     Cho $(X,\tau)$ là một không gian topo và ánh xạ $f:X \to Y$, với $Y$ là một tập hợp. Khi đó tập $\tau_Y \defeq \{A \subset Y~|~f^{-1}(A) \in \tau\}$ được gọi là một \textit{topo thương}.
+% \end{defn}
+% % \begin{defn}[Không gian topo thương]
+% %     Cho $(X,\tau)$ là một không gian topo, và $\sim$ là một quan hệ tương đương trên $X$. Kí hiệu $[x] = \{y \in X~|~y\sim x\}$ là lớp tương đương của phần tử $x\in X$. Khi đó tập 
+% %     \[Y \defeq X/\sim = \{[x]~|~x\in X\}\]
+% %     được gọi là \textit{không gian thương}.\\
+% %     Từ phép chiếu $p: X \to X/\sim,\quad x\mapsto [x]$, ta định nghĩa một topo cảm sinh từ topo trên $X$, tập $V \subset X/\sim$ nếu $p^{-1}(V)$ là mở trong $X$.    
+% % \end{defn}
+% % \begin{comment*}
+% %     Định nghĩa topo cảm sinh trên $Y$ ở trên là một định nghĩa tốt, vì 
+% %     \begin{enumerate}
+% %         \item $p^{-1}(\emptyset) = \emptyset \in \tau$ và $p^{-1}(X/\sim) = X \in \tau$, nên $\emptyset, Y = X/\sim$ là mở trong $Y$.
+% %         \item Nếu $V_1,V_2$ mở trong $Y$ thì $p^{-1}(V_1)$ và $p^{-1}(V_2)$ là mở trong $X$. Suy ra $p^{-1}(V_1 \cap V_2) = p^{-1}(V_1) \cap p^{-1}(V_2)$ là mở trong $X$, dẫn đến $V_1 \cap V_2$ mở trong $Y$.
+% %         \item Nếu $\{V_i\}_{i\in I}$ là một họ tuỳ ý các tập mở trong $Y$, thì $p^{-1}(V_i), i \in I$ mở trong $X$, dẫn đến $p^{-1}(\bigcup_{i \in I}{V_i}) = \bigcup_{i\in I}{p^{-1}(V_i)}$ là mở trong $X$. Vì vậy, $\bigcup_{i \in I}{V_i}$ là mở trong $Y$.   
+% %     \end{enumerate}
+% % \end{comment*}
+% % \subsubsection{Không gian topo rời rạc và tập con rời rạc}
+% % \begin{defn}[Không gian topo Hausdorff]
+% %     Không gian topo $(X,\tau)$ được gọi là Hausdorff nếu với mọi $x,y\in X, x \neq y$, tồn tại các lân cận mở $U_x$ chứa $x$ và $U_y$ chứa $y$ sao cho $U_x \cap U_y = \emptyset$.
+% % \end{defn}
+% % \begin{defn}[Không gian topo rời rạc và tập con rời rạc]
+% %     Cho $(X,\tau)$ là một không gian topo. Khi đó,
+% %     \begin{enumerate}
+% %         \item $X$ được gọi là \textit{không gian topo rời rạc} nếu với mỗi $x\in X$ thì tập $\{x\}$ là mở. Điều này tương đương với mọi tập con của $X$ là mở.
+% %         \item Tập con $A$ của $X$ được gọi là \textit{rời rạc} nếu $A$ cùng với topo cảm sinh lập thành một không gian topo rời rạc. Nghĩa là , với mọi $a\in A,$ tồn tại $U_a \in \tau$ sao cho $A \cap U_a = \{a\}$.
+% %     \end{enumerate}
+% % \end{defn}
+% \begin{defn}[Không gian compact và tập con compact]
+%     Không gian topo $(X,\tau)$ được gọi là \textit{compact} nếu với mỗi phủ mở $X = \bigcup_{i\in I}{U_i}$, với $U_i \in \tau$, tồn tại một phủ con hữu hạn. Tức là tồn tại $I_0 \subset I$ hữu hạn sao cho $X =  \bigcup_{i\in I_0}{U_i}$.
+
+%     Tập con $A$ của $X$ được gọi là một \textit{tập con compact} nếu $A$ cùng với topo cảm sinh $\tau_A$ tạo thành một không gian compact.
+% \end{defn}
+% \begin{lem}
+%     Mọi tập con đóng và rời rạc của không gian topo compact đều là hữu hạn.
+% \end{lem}
+% \begin{proof}
+%     Giả sử $A$ là một tập con đóng và rời rạc của không gian topo compact $(X,\tau)$. Khi đó với mọi $a \in A$, tồn tại lân cận $U_a \in \tau$ sao cho $U_a \cap A =\{a\}$. Khi đó 
+%     \[X = (X\setminus A) \cup \bigcup_{a\in A}{U_a} \]
+%     là một phủ mở của $X$. Mà $X$ compact, nên nó tồn tại một phủ con hữu hạn. Tức là tồn tại tập con hữu hạn $B \subseteq A$ sao cho
+%     \[X = (X\setminus A) \cup \bigcup_{a\in B}{U_a}. \]
+%     Vì vậy $A = (\bigcup_{a\in B}{U_a})\cap A = \bigcup_{a\in B}(U_a \cap A) = \bigcup_{a\in B}\{a\} = B$, là một tập hữu hạn.
+% \end{proof}
+
+% \begin{defn}[Tác động nhóm lên không gian topo]
+% Cho $G$ là một nhóm tác động lên không gian topo $X$ bởi
+% \[\cdot: G \times X \to X,~e_G \cdot x = x,~(gh)\cdot x = g\cdot (h\cdot x)\]
+% với mọi $x \in X, g,h\in G$.
+
+% Ta định nghĩa một quan hệ tương đương $\sim_G$ trên $X$ là $x \sim_G y$ khi và chỉ khi tồn tại $g\in G$ sao cho $g\cdot x = y$.
+
+% Khi đó không gian thương 
+% \[X/G \defeq X/\sim_G = \{[x] = \{y \in X~|~\exists g \in G: g\cdot x = y\}\} = Gx\] 
+% trở thành một không gian topo.
+% \end{defn}
+% \begin{lem}
+%     Cho $G$ là một nhóm \textit{tác động một cách liên tục} trên không gian topo $X$. Khi đó ánh xạ chiếu $p: X \to X/G$ là mở.
+% \end{lem}
+% \begin{proof}
+%     Để chứng minh $p$ là ánh xạ mở ta cần chỉ ra $p(U)$ là mở trong $X/G$ với mọi $U$ mở trong $X$. Tức cần chỉ ra $p^{-1}(p(U))$ là mở trong $X$. Vì ánh xạ $g^{-1}: X\to X,~x\mapsto g^{-1}x$ là liên tục, nên $gU$ là mở với mọi $g\in G$. Do đó $p^{-1}(p(U)) = \bigcup_{g \in G}{gU}$ là mở, do nó là hợp của các tập mở.
+% \end{proof}
+\subsection{Tác động nhóm}
+\begin{defn}[Tác động nhóm]\label{defn 1.1.1}
+    Cho $G$ là một nhóm và $X$ là một tập hợp. Một \textbf{tác động} của $G$ trên $X$ là một ánh xạ
+    \[\rho: G \times X \to X,\quad \rho(g,x) = \rho_g(x) = gx \]
+    thoả mãn hai điều kiện sau
+    \begin{enumerate}
+        \item Với mọi $g,h \in G$ và $x\in X$, ta có $g(hx) = (gh)x$.
+        \item Với mọi $x\in X$, ta có $1x=x$, trong đó $1$ là phần tử đơn vị của $G$.
+    \end{enumerate}
+\end{defn}
+
+Hai điều kiện trong định nghĩa có thể viết lại dưới dạng 
+\[\rho_g \circ \rho_h = \rho_{gh},\quad \rho_1 = \Id_X\]
+với mọi $g,h \in G$. Do đó các ánh xạ $\rho_g: X \to X$ đều là song ánh, và $(rho_g)^{-1} = \rho_{g^{-1}}$. Quy tắc cho tương ứng mỗi phần tử $g \in G$ với song ánh $\rho_g: X\to X$ là một đồng cấu nhóm từ nhóm $G$ vào nhóm $S_X$ các phép thế trên $X$.
+
+\begin{exam*}
+    Cho $G$ là một nhóm. Các ánh xạ sau đây là các tác động của nhóm $G$ trên tập hợp nền của chính nhóm này:
+    \begin{align*}
+        G \times G &\to G,\quad (g,x)\mapsto gx,\\
+        G \times G &\to G,\quad (g,x)\mapsto xg^{-1},\\
+        G \times G &\to G,\quad (g,x)\mapsto gxg^{-1}.
+    \end{align*}
+\end{exam*}
+\begin{proof}
+    Với mọi $g,h,x\in G$ các ánh xạ trên thoả mãn là các tác động của nhóm $G$ lên chính nó
+    \begin{enumerate}
+        \item $\rho: G \times G \to G,\quad (g,x)\mapsto gx$.
+        
+        $\rho_g\rho_h(x) = \rho_g(hx) = g(hx)=(gh)x = \rho_{gh}(x)$ và $\rho_1(x) = 1x=x = \Id_G(x)$.
+
+        \item $\rho: G \times G \to G,\quad (g,x)\mapsto xg^{-1}$.
+        
+        $\rho_g\rho_h(x) = \rho_g(xh^{-1}) = xh^{-1}g^{-1}= x(gh)^{-1} = \rho_{gh}(x)$ và $\rho_1(x) = x1^{-1}=x = \Id_G(x)$.
+
+        \item $\rho: G \times G \to G,\quad (g,x)\mapsto gxg^{-1}$.
+
+        $\rho_g\rho_h(x) = \rho_g(hxh^{-1}) = g(hxh^{-1})g^{-1}= (gh)x(gh)^{-1} = \rho_{gh}(x)$ và $\rho_1(x) = 1x1^{-1}=x = \Id_G(x)$.
+    \end{enumerate}
+\end{proof}
+\begin{prop}\label{prop 1.1.3}
+    Cho một tác động của nhóm $G$ lên tập hợp $X$. Khi đó quan hệ hai ngôi trên $X$ định nghĩa bởi 
+    \[x\sim y \text{ nếu tồn tại } g\in G \text{ sao cho } gx =y\]
+    là một quan hệ tương đương. Lớp tương đương của phần tử $x \in X$ là 
+    \[[x]  = \{gx\in X~|~g\in G\}=Gx.\]
+\end{prop}
+\begin{proof}
+    Quan hệ hai ngôi trên thoả mãn 3 tính chất của quan hệ tương đương. Thật vậy, với mọi $x,y,z \in G$ thì
+    \begin{enumerate}
+        \item (Phản xạ) $x\sim x$ vì tồn tại $1\in G$ sao cho $x1=x$.
+        \item (Đối xứng) Nếu $x\sim y$ thì $g \in G$ sao cho $y = gx$. Điều này tương đương tồn tại $g^{-1} \in G$ sao cho $g^{-1}y = g^{-1}(gx) = x$, tức $y \sim x$.
+        \item (Bắc cầu) Nếu $x \sim y$ và $y\sim z$ thì tồn tại $g,h \in G$ sao cho $y = gx,~z=hy$. Nên tồn tại $hg \in G$ sao cho $z = hgx$, tức là $x \sim z$.
+        \end{enumerate}
+\end{proof}
+Mỗi lớp tương đương $Gx$ được gọi là một \textbf{quỹ đạo} của $X$ dưới tác động của nhóm $G$. Tập hợp các quỹ đạo được ký hiệu $X/G$. Ta có ánh xạ chiếu chính tắc 
+\[\pi: X \to X/G,\quad x\mapsto Gx.\]
+
+\begin{prop}\label{prop 1.1.4}
+    Cho một tác động của nhóm $G$ trên tập hợp $X$. Cho $x\in X$.
+    \begin{enumerate}
+        \item Tập con $G_x = \{g \in G~|~gx=x \}$ của nhóm $G$ là một nhóm con.
+        \item Với mọi $h\in G$, hai nhóm $G_x$ và $G_{hx}$ liên hợp với nhau, cụ thể hơn, $G_{hx} = hG_xh^{-1}$.
+        \item Với mọi $g,h \in G,~gx=hx$ khi và chỉ khi hai lớp kề trái $gG_x$ và $hG_x$ trùng nhau. Do đó, ta có song ánh giữa các tập hợp các lớp kề trái $G/G_x$ và quỹ đạo $Gx$:
+        \[G/G_x \to Gx,\quad gG_x \mapsto gx.\]
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \begin{enumerate}
+        \item Ta có $G_x \neq \emptyset$ vì tồn tại $1 \in G$ sao cho $1x=x$ nên $1\in G_x$. Với mọi $g,h\in G_x$ thì $hx=x=gx$. Suy ra $g^{-1}hx=x$, tức là $g^{-1}h \in G_x$. Vậy $G_x$ là một nhóm con của $G$.
+        \item Ta có $g\in G_{hx} \Leftrightarrow g(hx) = hx \Leftrightarrow x = h^{-1}ghx \Leftrightarrow h^{-1}gh \in G_x \Leftrightarrow g = h(h^{-1}gh)h^{-1} \in hG_xh^{-1}$. Chứng tỏ $hG_xh^{-1} = G_x$.
+
+        \item Ta có $gx=hx \Leftrightarrow h^{-1}gx=x \Leftrightarrow h^{-1}g \in G_x \Leftrightarrow hG_x = gG_x$. Và do đó ta có một song ánh giữa tập các lớp kề trái $G/G_x$ và quỹ đạo $Gx$ là $G/G_x \to Gx,\quad gG_x \mapsto gx.$
+    \end{enumerate}
+\end{proof}
+
+Nhóm $G_x$ được gọi là \textbf{nhóm con dừng} hoặc \textbf{nhóm con ổn định hoá} của phần tử $x$.
+\begin{defn}\label{defn 1.1.5}
+    Cho $G$ là một nhóm và $X$ là một không gian topo. Một \textbf{tác động liên tục} của $G$ trên $X$ là một tác động $\rho$ của $G$ trên tập hợp nền của $X$ sao cho với mọi $g\in G$, song ánh $\rho_g: X\to X$ là một đồng phôi.
+\end{defn}
+Trong định nghĩa trên, điều kiện các song ánh $\rho_g$ là các đồng phôi tương đương với điều kiện các song ánh $\rho_g$ là các ánh xạ liên tục. Lý do cho việc này là nghịch đảo của song ánh $\rho_g$ chính là $\rho_{g^{-1}}$.
+
+\begin{prop}\label{prop 1.1.6}
+    Cho một tác động liên tục của nhóm $G$ trên không gian topo $X$. Topo của $X$ cảm sinh topo thương trên tập các quỹ đạo $X/G$. Khi đó, ánh xạ chiếu $\pi: X\to X/G$ là một ánh xạ mở. 
+\end{prop}
+\begin{proof}
+    Lấy $U$ là một tập mở bất kỳ trong $X$. Khi đó để chứng minh $\pi$ là một ánh xạ mở, ta sẽ chứng minh $\pi(U) = \{Gx~|~x\in U\}$ là mở trong $X/G$. Điều này xảy ra khi $\pi^{-1}(\pi(U))$ là mở trong $X$.
+
+    Thật vậy, với mọi $x \in \pi^{-1}(\pi(U))\Leftrightarrow Gx = \pi(x) \in \pi(U) = \{Gu~|~u\in U\}\Leftrightarrow \exists u \in U: Gx = Gu\Leftrightarrow \exists u \in U,~\exists g \in G: x = gu \in gU\Leftrightarrow x\in \bigcup_{g\in G}{gU}$. Như vậy $\pi^{-1}(\pi(U)) = \bigcup_{g\in G}{gU}$. Mà mỗi ánh xạ $\rho_g:X\to X,~x\mapsto gx$ là một đồng phôi, nên với $U$ mở trên $X$ thì $\rho_g(U) = gU$ là mở trên $X$. Do đó $\pi^{-1}(\pi(U))$ là hợp của các tập mở trên $X$, vì thế nó cũng mở trên $X$.
+\end{proof}
+
+\subsection{Nhóm topo}
+\begin{defn}[Nhóm topo]\label{defn 1.1.7}
+    Một nhóm topo là một nhóm $G$ đồng thời là một không gian topo thoả mãn hai điều kiện sau
+    \begin{enumerate}
+        \item Phép toán hai ngôi $G\times G \to G,~(g,h)\mapsto gh$ là liên tục.
+        \item Phép nghịch đảo $G\to G,~g \mapsto g^{-1}$ là liên tục.
+    \end{enumerate}
+\end{defn}
+\begin{exam*}
+    Cho $G$ là một nhóm. Các ánh xạ sau đây là các tác động của nhóm $G$ lên chính nó
+    \begin{align*}
+        G \times G &\to G,\quad (g,x)\mapsto gx,\\
+        G \times G &\to G,\quad (g,x)\mapsto xg^{-1},\\
+        G \times G &\to G,\quad (g,x)\mapsto gxg^{-1}.
+    \end{align*}
+    đều là các tác động liên tục.
+\end{exam*}
+Không gian vector thực $\Mat(2,\R)$ là không gian vector định chuẩn, với chuẩn của ma trận $A = \matt$ là 
+\[\norm{A} = \sqrt{a^2+b^2+c^2+d^2}.\]
+Chuẩn trên $\Mat(2,\R)$ sinh ra metric, và do đó, sinh ra một topo trên $\Mat(2,\R)$. Các tập con $\GL(2,\R)$ và $\SL(2,\R)$ của $\Mat(2,\R)$ được trang bị topo hạn chế từ $\Mat(2,\R)$.
+\begin{prop}\label{prop 1.1.9}
+    Trang bị topo hạn chế từ $\Mat(2,\R)$, các nhóm con $\GL(2,\R)$ và $\SL(2,\R)$ trở thành các nhóm topo.
+\end{prop}
+\begin{proof}
+    Đầu tiên ta sẽ chỉ ra nhóm $\GL(2,\R)$ là một nhóm topo. 
+    
+    Vì hàm $\det:\Mat(2,\R) \mapsto \R, \matt \mapsto ad-bc$ là một hàm đa thức 4 biến $a,b,c,d \in \R$, nên nó liên tục. Nên $\GL(2,\R) = \det^{-1}(\R \setminus\{0\})$ là một tập mở trong $\Mat(2,\R)$, vì tập $\R\setminus\{0\}$ là mở trong $\R$ với topo thông thường. Do đó một tập mở trong $\GL(2,\R)$ cũng là mở trong $\Mat(2,\R)$.
+    \begin{enumerate}
+        \item Phép toán hai ngôi $p: \GL(2,\R) \times \GL(2,\R) \to \GL(2,\R), (A,B)\mapsto AB$ là liên tục.
+
+        Thật vậy, lấy bất kỳ $A, B \in \GL(2,\R)$. 
+        
+        Khi đó với mọi $X,Y  \in \GL(2,\R)$ mà $X \to A, Y \to B$ ta sẽ chỉ ra $p(X,Y) \to p(A,B)$. Ta có
+        \begin{align*}
+            \norm{p(X,Y)-p(A,B)} &= \norm{XY - AB} \\
+            &= \norm{X(Y-B) + B(X-A)} \\
+            &\leq \norm{X(Y-B)} + \norm{B(X-A)} \\
+            &\leq \norm{X}\norm{Y-B} + \norm{B}\norm{X-A}
+         \end{align*}
+         Khi đó $\forall \varepsilon >0,~\exists\delta = \min\left\{\dfrac{\varepsilon}{\norm{A}}, \dfrac{\varepsilon}{\norm{B}}\right\}$ sao cho $\forall~X,Y \in \GL(2,\R): \norm{X-A},\norm{Y-B} \leq \delta$ thì 
+         \begin{align*}
+             \norm{p(X,Y)-p(A,B)} &\leq (\norm{A}+\delta)\dfrac{\varepsilon}{\norm{A}} + \norm{B}\dfrac{\varepsilon}{\norm{B}} \\
+             &\leq \left(\norm{A}+\dfrac{\varepsilon}{\norm{A}}\right)\dfrac{\varepsilon}{\norm{A}} + \norm{B}\dfrac{\varepsilon}{\norm{B}} \\
+             &= 2\varepsilon + \dfrac{\varepsilon^2}{\norm{A}^2} \longrightarrow 0 \quad \text{ khi } \varepsilon \to 0
+         \end{align*}
+         Chứng tỏ $p$ là liên tục.
+
+         \item Phép lấy nghịch đảo $\imath : \GL(2,\R) \to \GL(2,\R),A \mapsto A^{-1}$.
+
+         % Lấy bất kỳ $A \in \GL(2,\R)$. Khi đó với mọi $X \in \GL(2,\R),~X \to A$, ta sẽ chỉ ra $\imath(X) \to \imath(A)$. Ta có
+         % \begin{align*}
+         %     \norm{\imath(X) - \imath(A)} &= \norm{X^{-1}-A^{-1}}\\
+         %     &= 
+         % \end{align*}
+         
+    Mỗi yếu tố của ma trận $AB$ là một hàm đa thức với các biến là các yếu tố của $A$ và $B$, nên các hàm này là liên tục. Vì vậy phép nhân ma trận là liên tục. 
+    
+    Với mỗi $A \in \GL(2,\R)$ thì các yếu tố của $A^{-1}$ là các hàm phân thức với các biến là các yếu tố của $A$ nên các hàm này là liên tục. Do đó phép lấy ma trận nghịch đảo cũng là liên tục.
+    \end{enumerate}
+    % Vì $\Mat(2,\R) \cong \R^4$ và chuẩn của mỗi ma trận $A = \matt \in \Mat(2,\R)$ cũng bằng chuẩn của vector $(a,b,c,d) \in \R^4$ tương ứng. Nên ánh xạ $p: \Mat(2,\R) \times \Mat(2,\R) \to \Mat(2,\R), (A,B) \mapsto AB$. 
+    
+    % Hạn chế $p$ xuống cho các nhóm con $\GL(2,\R)$ và $\SL(2,\R)$ thì $p$ cũng liên tục.
+
+    % Tiếp theo ta chỉ ra phép lấy ma trận nghịch đảo cũng là liên tục. 
+    % Thật vậy, 
+
+    Vì vậy, $\GL(2,\R)$ và $\SL(2,\R)$ là các nhóm topo.
+    
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+    % Với mọi $g\in G$ thì ánh xạ $G \to G,~x\mapsto gx$ cùng với ánh xạ nghịch đảo $G \mapsto G,~y \mapsto g^{-1}y$ là liên tục, nên nó là một đồng phôi trên $G$.
+    % Tương tự thì ánh xạ $G\to G, x\mapsto xg$ cũng là một đồng phôi trên $G$.
+% \begin{prop}
+%     Cho $G$ là một nhóm topo và $e$ là phần tử đơn vị của $G$. Khi đó với mọi tập mở $U\subset G$ ta có
+%     \begin{enumerate}
+%         \item Với mọi $g\in G$ thì $gU$ và $Ug$ là các tập mở trong $G$.
+%         \item $U$ chứa một lân cận mở của $e$ sao cho $VV \subset U$.
+%         \item $U$ chứa một lân cận mở của $e$ sao cho $V = V^{-1}$.
+%         \item Tồn tại một lân cận $V$ của $e$ trong $G$ sao cho $VV^{-1} \subset U$.
+%         \item Cho $H$ là một nhóm con, và mở trong $G$ thì $H$ cũng là một tập đóng.
+%         % \item Cho $H, K$ là hai tập con compact trong $G$. Khi đó $HK$ cũng là compact.
+%     \end{enumerate}
+% \end{prop}
+% \begin{proof}
+%     \begin{enumerate}
+%         \item Vì ánh xạ $G \to G,~x\mapsto gx$ là một đồng phôi trên không gian topo $G$, nên nó biến tập mở $U \subset G$ thành tập mở $gU \subset G$. Tương tự, $Ug$ cũng mở trong $G$.
+        
+%         \item Vì ánh xạ $\phi: G \times G \to G,~(g,h) \mapsto gh$ là liên tục, nên với $U$ là một lân cận mở của $e = e\cdot e$ thì $\phi^{-1}(U)$ là một lân cận mở trong $G\times G$ chứa $(e,e)$. Do đó tồn tại các lân cận $V_1,V_2$ của $e$ trong $G$ thoả mãn $V_1\times V_2 \subseteq \phi^{-1}(U)$, tức là với mọi $g_1\in V_1, g_2\in V_2$ thì $\phi(g_1,g_2) = g_1g_2 \in U$. Đặt $V = V_1 \cap V_2$, thì $V$ cũng là một lân cận mở của $e$. Khi đó với mọi $g_1,g_2 \in V$ thì $g_1g_2 \in U$. Điều này chứng tỏ $VV \subset U$.
+
+%         \item Vì phép nghịch đảo $\imath: G \to G,~g \mapsto g^{-1}$ là một đồng phôi, nên với $U$ là lân cận mở chứa $e$ trong $G$ thì $\imath(U) = U^{-1}$ cũng là mở trong $G$ và cũng chứa $e^{-1}=e$. Do đó $V = U \cap \imath (U) = U \cap U^{-1}$ là mở chứa $e$, hơn nữa $V = V^{-1}$.
+
+%         \item Kết hợp hai ý $2$ và $3$ ta có được điều phải chứng minh.
+
+%         \item Nếu $H$ là một nhóm con mở trong $G$ thì $G\setminus H$ là một tập con đóng của $G$. Mặt khác $G\setminus H= \bigcup_{g\in G}{gH}$ với $gH$ là các lớp kề của $H$ trong $G$. Mà $H$ mở nên $gH$ cũng mở. Do đó $H\setminus G$ mở, vì nó là hợp của các tập mở. Dẫn đến $H $ là đóng. 
+
+%         % \item Ta có $H, K$ là compact trong $G$ nên $$
+%     \end{enumerate}
+% \end{proof}
+\begin{defn}
+    Một nhóm con $H$ của nhóm topo $G$ được gọi là \textit{rời rạc} trong $G$ nếu $H$ là một tập con rời rạc của không gian topo $G$.
+\end{defn}
+\begin{thm}\label{thm 1.1.11}
+    Mọi nhóm con rời rạc $H$ của nhóm topo Hausdorff $G$ là đóng.
+\end{thm}
+\begin{proof}
+    Để chứng minh $H$ đóng trong $G$, ta sẽ chỉ ra $G\setminus H$ là mở trong $G$. Tức là cần chỉ ra với mọi $x \in G\setminus H$, tồn tại một lân cận mở của $x$ sao cho nó giao với $H$ bằng rỗng.
+    
+    Vì $H$ là một nhóm con rời rạc trong nhóm topo $G$ nên tồn tại lân cận $U$ của $e$ sao cho $U \cap H = \{e\}$. Khi đó tồn tại lân cận mở $U$ của $e$ sao cho $VV^{-1}. \subset U$. 
+    
+    Xét $Vx$ là một lân cận mở chứa $x$ (do $V$ chứa $e$ nên $Vx$ chứa $x$, hơn nữa $Vx$ mở do $V$ mở), ta sẽ chỉ ra chứng minh $Vx\cap H = \emptyset$. Giả sử phản chứng tồn tại $h \in H\cap Vx$. Do đó tồn tại $a \in V$ sao cho $h = ax \in H$.
+    
+    Vì $G$ là Hausdorff nên tồn tại lân cận mở $W \subset Vx$ của $x$ mà $W$ không chứa $h$. Ta sẽ chỉ ra $W \cap H = \emptyset$.  
+    Thật vậy, giả sử tồn tại $g \in W \cap H,~g\neq h$. Khi đó $g \in H$ và $g \in W\subset Vx$ nên tồn tại $b \in V$ sao cho $g = bx \in H$.
+    Với $h =ax,~g = bx,~a\in V, b\in V$, ta được
+    \[U \supset VV^{-1} \ni ab^{-1} = (hx^{-1})(gx^{-1})^{-1} = hg^{-1} \in H.\]
+    Suy ra $hg^{-1} \in H \cap U = \{e\}$. Tức là $h = g$, điều này mâu thuẫn với $g \neq h$.
+\end{proof}
+\begin{comment*}
+    Định lý trên không còn đúng khi ta xét $H$ như là một không gian topo con của không gian topo $X$ Hausdorff. Ví dụ, tập con $[0,1]$ cùng với topo cảm sinh từ topo tầm thường trên $\R$, là không gian topo con compact, cũng như Hausdorff.  Nhưng tồn tại tập con $\{1/n\}_{n\geq 1} \subset [0,1]$ là rời rạc nhưng không đóng.
+\end{comment*}
+\begin{cor}\label{cor 1.1.12}
+    Mọi nhóm con rời rạc của một nhóm topo compact và Hausdorff thì đều hữu hạn.
+\end{cor}
+\begin{proof}
+    Giả sử $H$ là một nhóm con rời rạc của một nhóm topo compact và Hausdorff $G$. Khi đó, $H$ là đóng. Mặt khác ta đã chứng minh mọi tập con đóng và rời rạc của không gian topo compact thì hữu hạn. Do đó $H$ là hữu hạn.
+\end{proof}
+\begin{thm}\label{thm 1.1.13}
+    Nhóm thương của một nhóm topo cũng là một nhóm topo. 
+\end{thm}
+\begin{proof}
+    Giả sử $G$ là một nhóm topo và $H$ là một nhóm con chuẩn tắc của $G$. Khi đó ta sẽ chỉ ra nhóm thương $G/H$ cũng là một nhóm topo với topo thương cảm sinh bởi phép chiếu $\pi: G \to G/H, x\mapsto xH$.
+    
+    Gọi $\imath_G: G \to G, g\mapsto g^{-1}$ là phép lấy phần tử nghịch đảo trên nhóm $G$ và $p_G: G\times G \to G, (g,h)\mapsto gh$ là phép toán trên $G$.
+    
+    Ta sẽ chỉ ra các ánh xạ 
+    \[\imath: G/H \to G/H,~xH \mapsto (xH)^{-1} = x^{-1}H\] và \[p: G/H \times G/H \to G/H,~(xH,yH)\mapsto (xH)(yH) = (xy)H\] là các ánh xạ liên tục với mọi $xH, yH \in G/H$.
+
+    
+    Ta có $\imath \circ \pi = \pi \circ \imath_G$. Vì cả phép chiếu $\pi$ và phép lấy nghịch đảo $\imath_G$ là liên tục. Nên $\imath \circ \pi$ cũng là liên tục. Do đó $\imath$ là liên tục.
+
+    Tiếp theo ta chỉ ra ánh xạ $p$ là liên tục.
+    
+    Với mọi tập $U \subset G/H$ mở, ta sẽ chỉ ra $p^{-1}(U)$ là mở trong $G/H \times G/H$. 
+    
+    Thật vậy, lấy bất kỳ $(xH,yH) \in p^{-1}(U)$ thì $\pi^{-1}(U)$ là mở chứa $xy$, do $\pi$ liên tục và \[\pi(xy) = xyH = (xH)(yH) = p(xH,yH) \in U.\] 
+    Vì $p_G$ là liên tục nên tồn tại các tập mở $V $ chứa $x$ và $W$ chứa $y$ trong $G$ sao cho $p_G(V \times W) \subset \pi^{-1}(U)$.
+
+    Do đó $\pi(V) \times \pi(W)$ là một lân cận mở của $(xH,yH)$. 
+    Khi đó với mọi $(aH,bH) \in \pi(V) \times \pi(W),~a\in V,~b\in W$ ta được
+    \[p(aH,bH) = abH = \pi(ab) \in \pi(p_G(V\times W))\subset \pi(\pi^{-1}(U)) = U\]
+    Do đó $(aH,bH) \in p^{-1}(U)$. Tức $\pi(V) \times \pi(W) \in p^{-1}(U)$, do đó $p^{-1}(U)$ là mở. Điều phải chứng minh.
+\end{proof}

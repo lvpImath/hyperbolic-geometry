@@ -1,0 +1,580 @@
+\section{Nhóm $\PSL(2,\R)$}
+\subsubsection{Tác động của $\PSL(2,\R)$ lên $\hh$ và $P^1(\C)$}
+Nhắc lại rằng  $\PSL(2,\R) = \SL(2,\R)/\{\pm I_2\} \cong \Isom^+(\hh)$ là nhóm các phép đẳng cự bảo toàn hướng của mặt phẳng hyperbolic $\hh$.
+
+Với mỗi $A = \matt \in \SL(2,\R)$, đẳng cự tương ứng trên $\hh$ là 
+\[T_A: \hh \to \hh,\quad z\mapsto \dfrac{az+b}{cz+d}\cdot\]
+
+\textit{Vết của đẳng cự $T_A$} được định nghĩa bởi $\Tr(T_A) = |a+d|$.
+
+Lưu ý rằng $\hh \subset \C \hookrightarrow$ trong đó, ta đồng nhất mỗi số phức $z\in \C$ với điểm xạ ảnh $[z:1] \in P^1(\C)$. Ta có $P^1(\C) = \C \cup \{\infty\}$. Tập con $\R \cup \{\infty\}$ của $P^1(\C)$ chính là $P^1(\R)$.
+
+Khi đó biên của $\hh$ như một không gian topo con của $P^1(\C)$ là $\R \cup \{\infty\} = P^1(\R)$.
+
+Ma trận $A = \matt \in \SL(2,\R) \subset \GL(2,\C)$ sinh ra phép biến đổi bởi ma trận
+\[T_A: \C^2 \to \C^2,\quad
+      \begin{bmatrix}
+        z_1 \\ z_2    
+      \end{bmatrix} \mapsto \matt \begin{bmatrix}
+          z_1 \\ z_2
+      \end{bmatrix} = \begin{bmatrix}
+        az_1 + bz_2 \\ cz_1+dz_2    
+      \end{bmatrix}.\]
+Ánh xạ tuyến tính này cảm sinh một phép biến đổi xạ ảnh
+\[\widehat{T_A}: P^1(\C) \to P^1(\C), \quad [z_1:z_2] \mapsto [az_1+bz_2:cz_1+dz_2].\]
+
+Như vậy, mỗi ma trận $A \in \SL(2,\R)$ vừa sinh ra một phép biến đổi trên $\hh$ vừa sinh ra một phép biến đổi của $P^1(\C)$. Hai phép biến đổi này tương thích với phép nhúng $\hh \hookrightarrow P^1(\C),~z\mapsto [z:1]$, tức là ta có biểu đồ giao hoán 
+\[\begin{tikzcd}
+	\hh && {P^1(\C)} \\
+	& {} \\
+	\hh && {P^1(\C).}
+	\arrow["", hook, from=1-1, to=1-3]
+	\arrow["{T_A}", from=1-1, to=3-1]
+	\arrow["{\widehat{T_A}}", from=1-3, to=3-3]
+	\arrow["", hook, from=3-1, to=3-3]
+\end{tikzcd}\]
+
+% Ta sẽ phân loại các đẳng cự trong $\PSL(2,\R)$. Đầu tiên ta tìm những điểm bất động của các đẳng cự.
+
+\subsubsection{Các kiểu đẳng cự trên $\hh$}
+% Ta sẽ phân loại các kiểu đẳng cự trong $\hh$ tương ứng với ma trận biểu diễn của chúng.
+% Với mỗi $A = \matt \in \SL(2,\R)$, ta có đẳng cự tương ứng trên $\hh$ là 
+%         \[T_A: \hh \to \hh,\quad z\mapsto \dfrac{az+b}{cz+d}\cdot\]
+\begin{defn}
+    Một đẳng cự $T(z) = \dfrac{az+b}{cz+d}$ của mặt phẳng hyperbolic $\hh$ với $A = \matt \in \SL(2,\R)$ được gọi là 
+    % \textit{Vết của đẳng cự $T_A$} được định nghĩa bởi
+    % \[\Tr(T_A) = |a+d|.\]
+    \begin{enumerate}
+        \item \textit{elliptic} nếu $\Tr(T) < 2$,
+        \item \textit{parabolic} nếu $\Tr(T) = 2$,
+        \item \textit{hyperbolic} nếu $\Tr(T) > 2$.
+    \end{enumerate}
+\end{defn}
+
+\begin{exam*}[Đẳng cự hyperbolic]
+    Với $a >0, a\neq 1$, phép biến đổi $T(z) = az $ của $\hh$ có ma trận tương ứng là $H = \begin{bmatrix}
+        \sqrt{a} & 0\\
+        0 & \sqrt{1/a}
+    \end{bmatrix} \in \SL(2,\R)$. Kết hợp với $\Tr(T) = \sqrt{a} + 1/\sqrt{a}> 2$, suy ra $T$ là một đẳng cự hyperbolic.
+
+    Phép biến đổi trên $\R^2$ bởi ma trận $H$ là 
+    $\begin{bmatrix}
+        x \\ y
+    \end{bmatrix}
+    \mapsto 
+    H \begin{bmatrix}
+        x \\ y
+    \end{bmatrix} = \begin{bmatrix}
+        \sqrt{a}x\\ y/\sqrt{a} 
+    \end{bmatrix}.$
+    
+    Phép biến đổi này giữ ổn định các hyperbol $xy = c$. Vì mỗi điểm $(x, c/x)$ trên hyperbol $xy =c$, qua phép biến đổi trên thành $\left(\sqrt{a}x,\dfrac{c}{\sqrt{a}x}\right)$, cũng là một điểm trên hyperbol $xy = c$.
+    
+    Ta tìm các điểm bất động của đẳng cự $T$ trên $\hh \cup \R \cup \{\infty\} \subset P^1(\C)$ bằng cách tìm điểm bất động của phép biến đổi xạ ảnh $\widehat{T_H}: P^1(\C) \to P^1(\C),~ [z_1:z_2] \mapsto [\sqrt{a}z_1:z_2/\sqrt{a}].$
+    
+    Mỗi điểm bất động trên $P^1(\C)$ của $\widehat{T_H}$ thoả mãn $[z_1:z_2] = [\sqrt{a}z_1:z_2/\sqrt{a}]$. 
+    
+    Khi đó tồn tại vô hướng $\lambda \neq 0$ sao cho $\sqrt{a}z_1 = \lambda z_1,~\dfrac{1}{\sqrt{a}}z_2 =\lambda z_2.$
+    
+    Tức là $\begin{bmatrix}
+        \sqrt{a} & 0\\
+        0 & \sqrt{1/a}
+        \end{bmatrix}\begin{bmatrix}
+            z_1\\z_2 
+        \end{bmatrix}= \lambda \begin{bmatrix}
+            z_1\\z_2
+        \end{bmatrix}$. Kết hợp với $\begin{bmatrix}
+        z_1\\z_2
+    \end{bmatrix} \neq 0$, suy ra $\begin{bmatrix}
+            z_1\\z_2
+        \end{bmatrix}$ là một vector riêng của phép biến đổi bởi ma trận $H$ là $T_H:\C^2 \to \C^2$. 
+
+    Ta có $T_H$ có hai trị riêng là $\sqrt{a}$ và $1/\sqrt{a}$ với các vector riêng tương ứng lần lượt là $(1,0)$ và $(0,1)$. Vì vậy, $\widehat{T_H}$ có hai điểm bất động trên $P^1(\C)$ là $[1:0]$ và $[0:1]$. Điều này tương ứng với $T$ không có điểm bất động trên $\hh$ và có hai điểm bất động là $0$ và $\infty$ trên $\R \cup \{\infty\}$.
+\end{exam*}
+\begin{exam*}[Đẳng cự elliptic]
+Phép biến đổi $T(z) = -\dfrac{1}{z}$ có ma trận tương ứng là $E = \begin{bmatrix}
+    0 & -1\\
+    1 & 0
+\end{bmatrix} \in \SL(2,\R)$.
+Kết hợp với $\Tr(T) < 2$, suy ra $T$ là một đẳng cự elliptic.
+
+Phép biến đổi trên của $\R^2$ bởi ma trận $E$ là 
+$\begin{bmatrix}
+        x \\ y
+    \end{bmatrix}
+    \mapsto 
+    E \begin{bmatrix}
+        x \\ y
+    \end{bmatrix} = \begin{bmatrix}
+        -y\\ x 
+    \end{bmatrix}$
+ giữ ổn định các ellipse $x^2+y^2 = c$ vì với mỗi $(x_0,y_0)$ trên ellipse $x^2+y^2 = c$, qua tác động của phép biến đổi bởi ma trận $E$ thành $(-y_0,x_0)$, điểm này thuộc ellipse nói trên vì $(-y_0)^2+(x_0)^2 = x_0^2+y_0^2 = c$.
+ 
+Lập luận hoàn toàn tương tự ví dụ $4$ để tìm các điểm bất động của đẳng cự $T$. 
+
+Ta có phép biến đổi bởi ma trận $T_E:\C^2\to\C^2$ có hai giá trị riêng là $i$ và $-i$ với các vector riêng tương ứng là $(i,1)$ và $(-i,1)$. 
+
+Do đó phép biến đổi xạ ảnh tương ứng $\widehat{T_E}$ có hai điểm bất động trên $P^1(\C)$ là $[i:1]$ và $[-i:1]$. Điều này tương ứng với việc $T$ có một điểm bất động duy nhất trên $\hh$ là $i$ và không có điểm bất động trên $\R \cup \{\infty\}$. 
+\end{exam*}
+
+\begin{exam*}[Đẳng cự parabolic]
+     Phép biến đổi $T(z) = z+b,~b\in \R$ của $\hh$ có ma trận tương ứng là $P = \begin{bmatrix}
+    1 & b\\
+    0 & 1
+\end{bmatrix} \in \SL(2,\R)$. Kết hợp với $\Tr(T)=2$, suy ra $T$ là một đẳng cự parabolic.
+
+Nếu $b = 0$ thì $T = \Id$. Khi đó mọi điểm trên $\hh \cup \R \cup \{\infty\}$ đều là điểm bất động của $T$.
+
+Nếu $b\neq 0$, lập luận hoàn toàn tương tự ví dụ $4$ để tìm các điểm bất động của đẳng cự $T$. 
+
+Ta có phép biến đổi $T_P$ duy nhất một giá trị riêng là $1$, với vector riêng tương ứng là $(1,0)$. Do đó phép biến đổi xạ ảnh tương ứng $\widehat{T_P}$ có một điểm bất động trên $P^1(\C)$ là $[1:0]$ . Điều này tương ứng với việc $T$ không có  điểm bất động $\hh$ và có một điểm bất động là $\infty$ trên $\R \cup \{\infty\}$. 
+\end{exam*}
+
+\begin{lem}\label{lem fixed-point}
+    Với mỗi ma trận $A = \matt \in \SL(2,\R) \subset \GL(2,\C)$, xét phép biến đổi ma trận $T_A: \C^2 \to \C^2$ và phép biến đổi xạ ảnh cảm sinh tương ứng $\widehat{T_A}: P^1(\C) \to P^1(\C)$. 
+    
+    Khi đó điểm xạ ảnh $[z_1:z_2] \in P^1(\C)$ được gọi là một \textit{ điểm bất động} của phép biến đổi xạ ảnh $\widehat{T_A}$ khi và chỉ khi vector $(z_1,z_2)$ là một vector riêng của phép biến đổi ma trận $T_A$.
+\end{lem}
+
+\begin{proof}
+    Giả sử $[z_1:z_2] \in P^1(\C)$ là một điểm bất động của $\widehat{T_A}$. Khi đó 
+    \begin{align*}
+        [z_1:z_2] = [az_1+bz_2:cz_1+dz_2]
+    \end{align*}
+    Điều này xảy ra khi và chỉ khi tồn tại $\lambda \neq 0$ sao cho
+    \[az_1+bz_2 = \lambda z_1,~cz_1+dz_2 = \lambda z_2.\]
+    Tức là $\matt \begin{bmatrix}
+        z_1\\z_2
+    \end{bmatrix} = \lambda \begin{bmatrix}
+        z_1\\z_2
+    \end{bmatrix}$. Kết hợp với $\begin{bmatrix}
+        z_1\\z_2
+    \end{bmatrix} \neq 0$ suy ra $\begin{bmatrix}
+        z_1\\z_2
+    \end{bmatrix}$ là một vector riêng của $T_A$.
+\end{proof}
+    Bổ đề trên cho phép ta chuyển bài toán tìm điểm bất động của phép biến đổi xạ ảnh sang bài toán tìm vector riêng của phép biến đổi ma trận tương ứng. Từ đó ta thu được các điểm bất động của đẳng cự tương ứng.
+\subsubsection{Dạng chính tắc của ma trận hệ số thực cỡ $2\times 2$}
+
+Cho $A = \matt \in \Mat(2,\R)$. Khi đó đa thức đặc trưng của $A$ là 
+là một đa thức bậc hai hệ số thực. Do đó, có ba khả năng xảy ra đối với các giá trị riêng của ma trận $A$ là
+\begin{enumerate}
+    \item $A$ có hai giá trị riêng thực phân biệt.
+    \item $A$ có một giá trị riêng thực duy nhất với bội đại số là 2.
+    \item $A$ có hai giá trị riêng phức, không thực, liên hợp với nhau.
+\end{enumerate}
+\begin{prop}\label{prop 3.1.6}
+Cho $A \in \Mat(2,\R)$.
+\begin{enumerate}
+    \item Giả sử $A$ có hai giá trị riêng thực phân biệt là $\lambda$ và $\mu$.
+    Khi đó, $A$ đồng dạng với ma trận chéo $\begin{bmatrix}
+        \lambda & 0\\
+        0 & \mu
+    \end{bmatrix}$.
+    \item Giả sử $A$ có giá trị riêng thực duy nhất $\lambda$ với bội đại số là 2.
+    Khi đó $A$ đồng dạng với ma trận tam giác trên $\begin{bmatrix}
+        \lambda & *\\
+        0 & \lambda
+    \end{bmatrix}$.
+    \item Giả sử $A$ có hai giá trị riêng phức, không thực, liên hợp là $\lambda$ và $\overline{\lambda}$.
+    Khi đó $A$ đồng dạng với ma trận $r\mathe$ với $\lambda = r(\cos{\theta} + i \sin{\theta})$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Đầu tiên ta xét trường hợp ma trận $A$ có hai giá trị riêng thực là $\lambda, \mu$. Giả sử $u \in \R^2$ là một vector riêng của $A$ ứng với trị riêng $\lambda$. Lấy $v \in \R^2$ là một vector không cùng phương với $u$. Khi đó hệ vector $(u,v)$ tạo thành một cơ sở của $\R^2$. 
+    
+    Vì vậy tồn tại $a,b \in \R$ sao cho $Av = au+bv$. Kết hợp với $Au = \lambda u$ ta được
+    \begin{align*}
+       A[u\quad v] &= [Au\quad Av]
+       = [\lambda u \quad au+bv]
+       = [u\quad v]\begin{bmatrix}
+        \lambda &  a\\
+        0 & b
+    \end{bmatrix}\\
+    A &= [u\quad v]\begin{bmatrix}
+        \lambda &  a\\
+        0 & b
+    \end{bmatrix}[u \quad v]^{-1}
+    \end{align*}
+    Dẫn đến $A$ đồng dạng với ma trận $\begin{bmatrix}
+        \lambda &  a\\
+        0 & b
+    \end{bmatrix}$. 
+    
+    Mặt khác $b = \mu$ vì
+    \[\lambda + \mu = \Tr(A) = \Tr\left(\begin{bmatrix}
+        \lambda &  a\\
+        0 & b
+    \end{bmatrix}\right) = \lambda + b.\]
+    
+    \begin{enumerate}
+        \item Nếu $\lambda \neq \mu$, gọi $v'$ là vector riêng của $A$ ứng với trị riêng $\mu$. Khi đó hệ vector $(u,v')$ là độc lập tuyến tính, và do đó nó là một cơ sở của $\R^2$. Vì vây ma trận của phép biến đổi $T_A$ đối với cơ sở này là 
+        $\begin{bmatrix}
+        \lambda & 0\\
+        0 & \mu
+        \end{bmatrix}$.
+        
+        \item Nếu $\lambda = \mu$ thì $A$ đồng dạng với ma trận có dạng        $\begin{bmatrix}
+                \lambda & *\\
+                0 & \lambda
+            \end{bmatrix}.$
+        \item Tiếp theo ta xét trường hợp $A$ có hai nghiệm phức, không thực, liên hợp là $\lambda$ và $\overline{\lambda}$. 
+        
+        Giả sử $u = v + iw \in \C^2$ là vector riêng của $A$ ứng với trị riêng $\lambda = a+ib$, trong đó $v,w\in\R^2,~a,b\in \R, b\neq 0$. Ta có $Av + iAw = Au = \lambda u = (av -bw)+i(bv + aw)$.
+        
+    Suy ra $Av = av -bw$ và $Aw = bv + aw$. 
+    
+    Tức là \[
+        A[v \quad w] = [Av \quad Aw] = [v \quad w]
+    \begin{bmatrix}
+        a & b\\
+        -b & a
+    \end{bmatrix}.\]
+    Ta chứng minh hệ vector $(v,w)$ là một cơ sở của $\R^2$. Thật vậy, giả sử phản chứng $v,w$ phụ thuộc tuyến tính. 
+    Nếu $w = 0$ thì $\R^2 \ni Av = Au = \lambda v \notin \R^2$, vô lý. Nên  $w \neq 0$, và do đó $v \neq 0$. Vì vậy tồn tại $k\in \R\setminus\{0\}$ sao cho $w = kv$. Khi đó ta được $Av = av-bw = (a-kb)v$. Kết hợp $v \neq 0$ suy ra $a-kb \in \R$ là một giá trị riêng của $A$. Điều này mâu thuẫn với giả thiết.  
+    
+    Khi đó ta thu được $A = [v \quad w]
+    \begin{bmatrix}
+        a & b\\
+        -b & a
+    \end{bmatrix}[v \quad w]^{-1}$. 
+    
+    Vì vậy $A$ đồng dạng với  ma trận
+    $\begin{bmatrix}
+        a & b\\
+        -b & a
+    \end{bmatrix} = r\begin{bmatrix}
+        \cos{\theta} & \sin{\theta}\\
+        -\sin{\theta} & \cos{\theta}
+    \end{bmatrix},~\lambda = r(\cos{\theta} + i \sin{\theta})$.
+    \end{enumerate}
+\end{proof}
+
+\begin{prop}\label{prop 3.1.7}
+    Cho $A \in \SL(2,\R)$ là một ma trận có hai giá trị riêng thực phân biệt $\lambda, \mu$.  Khi đó
+    \begin{enumerate}
+        \item $\lambda \mu = 1$ và $A$ liên hợp trong $\SL(2,\R)$ với ma trận chéo $\begin{bmatrix}
+            \lambda & 0\\
+            0 & 1/\lambda
+        \end{bmatrix}$.
+        \item Phép biến đổi $T_A: \hh \to \hh$ là một đẳng cự hyperbolic.
+        \item $T_A$ không có điểm bất động trong $\hh$ và có hai điểm bất động trên $\R \cup \{\infty\}$.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}
+        \item Ta có $\lambda, \mu$ là hai giá trị riêng $A$ nên $\lambda \mu = \det(A) = 1$. 
+        
+        Giả sử $u, v$ lần lượt là các vector riêng ứng với các trị riêng $\lambda$ và $\mu$. Hệ vector $(u,v)$ là một cơ sở của $\R^2$. Đặt $k = \det([u\quad v]) \neq 0$. Khi đó hệ vector $(u,~(1/k)v)$ cũng là một cơ sở của $\R^2$. 
+        Ta có
+        \[A[u\quad (1/k) v] = [Au \quad A((1/k)v)] = [\lambda u \quad \mu (1/k)v] = [u\quad (1/k) v]\begin{bmatrix}
+            \lambda & 0\\
+            0 & \mu
+        \end{bmatrix}.\]
+        hay \[A = [u\quad (1/k) v]\begin{bmatrix}
+            \lambda & 0\\
+            0 & \mu
+        \end{bmatrix}[u\quad (1/k) v]^{-1}. \]
+        Mà $\det[u\quad (1/k) v] = 1$. Nên $[u\quad (1/k) v] \in \SL(2,\R)$. 
+        
+        Chứng tỏ $A$ liên hợp với $\begin{bmatrix}
+            \lambda & 0\\
+            0 & 1/\lambda
+        \end{bmatrix}$ trong $\SL(2,\R)$.
+        
+        \item Đẳng cự $T_A$ có vết $\Tr(T_A) = |\lambda +1/\lambda| = |\lambda| + 1/|\lambda| \geq 2$. Đẳng thức xảy ra khi $|\lambda| = 1$. Mà $\lambda \mu = 1, \lambda\neq \mu$ nên $\lambda \neq \pm 1$. Do đó $\Tr(T_A) >2$, tức là $T_A$ là một đẳng cự hyperbolic.
+        
+        \item Dựa vào bổ đề \ref{lem fixed-point}, việc tìm điểm bất động của $T_A$ quy về việc tìm vector riêng của phép biến đổi bởi ma trận $A$ là $\C^2\to \C^2$.
+
+        Vì $u,v$ là các vector riêng ứng với các giá trị riêng phân biệt là $\lambda$ và $\mu$. Nên mọi vector riêng khác của $T_A$ phải cùng phương với $u$ hoặc $v$. Do đó phép biến đổi xạ ảnh tương ứng $\widehat{T_A}$ có $[u],[v]$ là các điểm bất động trên $P^1(\C)$. Hơn nữa $[u],[v] \in P^1(\R)= \R \cup \{\infty\}$ vì $u,v \in \R^2$. 
+        % Thật vây, giả sử $u=(u_1,u_2)\in \R^2$. Khi đó $[u_1:u_2] = [u_1/u_2:1]$ nếu $u_2\neq 0$, hoặc $[u_1:u_2] = [1:0]$ nếu $u_2 =0$. Cả hai trường hợp đều thuộc $\R \cup \{\infty\}$. Tương tự cho $[v]$. 
+        
+        Chứng tỏ $T_A$ có hai điểm bất động trên $\R \cup \{\infty\}$ và không điểm bất động trên $\hh$.
+    \end{enumerate}
+\end{proof}
+\begin{prop}\label{prop 3.1.8}
+    Cho $A \in \SL(2,\R)$ là một ma trận có một giá trị riêng thực duy nhất là $\lambda$ với bội đại số 2.  Khi đó
+    \begin{enumerate}
+        \item $\lambda  = \pm 1$ và $A$ liên hợp trong $\SL(2,\R)$ với ma trận chéo $\begin{bmatrix}
+            \lambda & *\\
+            0 & \lambda
+        \end{bmatrix}$.
+        \item Phép biến đổi $T_A: \hh \to \hh$ là một đẳng cự parabolic.
+        \item Nếu $T_A \neq \Id_{\hh}$ thì $T_A$ không có điểm bất động trong $\hh$ và có 1 điểm bất động trên $\R \cup \{\infty\}$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \begin{enumerate}
+        \item Ta có $\lambda ^2 = \det(A) = 1$ nên $\lambda = \pm 1$. Theo mệnh đề \ref{prop 3.1.3} thì $A$ đồng dạng với ma trận chéo $\begin{bmatrix}
+            \lambda & *\\
+            0 & \lambda
+        \end{bmatrix}$.
+        Tức là tồn tại ma trận khả nghịch $C =[u\quad v]$ sao cho $A = C\begin{bmatrix}
+            \lambda & *\\
+            0 & \lambda
+        \end{bmatrix}C^{-1}$. 
+        Trong đó hệ vector $(u,v)$ là một cơ sở của $\R^2$. Đặt $k = \det(C) \neq 0$ thì hệ vector $(u,(1/k)v)$ cũng là một cơ sở của $\R^2$. Ta có $[u \quad v] = [u \quad (1/k)v] \begin{bmatrix}
+        1 & 0\\
+        0 & k
+        \end{bmatrix}$, nên
+        \begin{align*}
+            A &= [u \quad (1/k)v] \begin{bmatrix}
+        1 & 0\\
+        0 & k
+        \end{bmatrix}
+        \begin{bmatrix}
+            \lambda & *\\
+            0 & \lambda
+        \end{bmatrix}\begin{bmatrix}
+        1 & 0\\
+        0 & 1/k
+        \end{bmatrix}[u \quad (1/k)v]^{-1}\\
+        &= [u \quad (1/k)v]\begin{bmatrix}
+            \lambda & */k\\
+            0 & \lambda
+        \end{bmatrix}[u \quad (1/k)v]^{-1}.
+    \end{align*}
+        Mà $[u\quad (1/k)v],~
+        \begin{bmatrix}
+            \lambda & */k\\
+            0 & \lambda
+            \end{bmatrix} \in \SL(2,\R)$, nên $A$ liên hợp với ma trận có dạng $\begin{bmatrix}
+            \lambda & *\\
+            0 & \lambda
+            \end{bmatrix}$ trong $\SL(2,\R)$. 
+        
+        \item Ta có $\Tr(T_A)= |\lambda + \lambda| = 2$ (do $\lambda = \pm 1$). Nên $T_A$ là một đẳng cự hyperbolic.
+
+        
+        \item Dựa vào bổ đề \ref{lem fixed-point}, việc tìm điểm bất động của $T_A$ quy về việc tìm vector riêng của phép biến đổi bởi ma trận $A$ là $\C^2\to \C^2$.
+        
+        Gọi $w = (w_1,w_2) \in \R^2$ là một vector riêng ứng với giá trị riêng $\lambda$ của $T_A$. Vì $\lambda$ là giá trị riêng duy nhất của $T_A$ nên mọi vector riêng khác đều cùng phương với $w$.
+        Do đó phép biến đổi xạ ảnh tương ứng $\widehat{T_A}$ chỉ có duy nhất một điểm bất động là $[w]$ trên $P^1(\C)$. Ta có $[w_1:w_2] = [w_1/w_2:1]$ nếu $w_2\neq 0$, hoặc $[w_1:w_2] = [1:0]$ nếu $w_2 =0$. Cả hai trường hợp đều thuộc $\R \cup \{\infty\}$. Chứng tỏ $T_A$ chỉ có một điểm bất động trên $\R \cup \{\infty\}$ và không điểm bất động trên $\hh$.
+     \end{enumerate}
+\end{proof}
+\begin{prop}\label{prop 3.1.9}
+    Cho $A \in \SL(2,\R)$ là một ma trận có hai giá trị riêng phức, không thực, liên hợp là $\lambda$ và $\overline{\lambda}$. Khi đó
+    \begin{enumerate}
+        \item $|\lambda|  = 1$ và $A$ liên hợp trong $\SL(2,\R)$ với ma trận chéo $\mathe$.
+        \item Phép biến đổi $T_A: \hh \to \hh$ là một đẳng cự elliptic.
+        \item $T_A$ có 1 điểm bất động trong $\hh$ và không có điểm bất động trên $\R \cup \{\infty\}$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+        \item Ta có $\lambda, \overline{\lambda}$ là hai giá trị riêng $A$ nên $|\lambda|^2 = \lambda \overline{\lambda} = \det(A) = 1$, tức $|\lambda| = 1$.
+        Theo mệnh đề \ref{prop 3.1.6} thì ta có thể biểu diễn $A$ dưới dạng
+        \[A = [v \quad w]\mathe[v \quad w]^{-1}\]
+    với $u = v + iw $ là vector riêng ứng với trị riêng $\lambda = \cos\theta +i\sin\theta$ và hệ vector $(v,w)$ là một cơ sở của $\R^2$.
+    Đặt $k = \det([v\quad w]) \neq 0$. 
+    \begin{enumerate}
+        \item Nếu $k>0$, đặt $h =1/\sqrt{k}$. Khi đó hệ $(hv,hw)$ cũng là một cơ sở của $\R^2$. Ta có
+        \begin{align*}
+            A &= [hv \quad hw] \begin{bmatrix}
+        1/h & 0\\
+        0 & 1/h
+        \end{bmatrix}
+        \mathe\begin{bmatrix}
+        h & 0\\
+        0 & h
+        \end{bmatrix}[hv \quad hw]^{-1}\\
+        &= [hv \quad hw]\mathe[hv \quad hw]^{-1}.
+    \end{align*}
+    Trong đó $\det[hv \quad hw] = h^2\det[v\quad w]= h^2k = 1$, nên $[hv\quad hw]\in \SL(2,\R)$. 
+
+    \item Nếu $k<0$, đặt $h =1/\sqrt{-k}$. Khi đó hệ $(hv,-hw)$ cũng là một cơ sở của $\R^2$. Ta có
+        \begin{align*}
+            A &= [hv \quad -hw] \begin{bmatrix}
+        1/h & 0\\
+        0 & -1/h
+        \end{bmatrix}
+        \mathe\begin{bmatrix}
+        h & 0\\
+        0 & -h
+        \end{bmatrix}[hv \quad -hw]^{-1}\\
+        &= [hv \quad -hw]\begin{bmatrix}
+            \cos\theta & -\sin\theta\\
+            \sin\theta & \cos\theta
+        \end{bmatrix}[hv \quad -hw]^{-1}\\
+        &= [hv \quad -hw]\begin{bmatrix}
+            \cos(-\theta) & \sin(-\theta)\\
+            -\sin(-\theta) & \cos(-\theta)
+        \end{bmatrix}[hv \quad -hw]^{-1}\\
+    \end{align*}
+    Trong đó $\det[hv \quad -hw] = -h^2\det[v\quad w]= -h^2k = 1$, nên $[hv\quad -hw]\in \SL(2,\R)$. 
+    \end{enumerate}
+    Cả hai trường hợp đều chỉ ra $A$ liên hợp trong $\SL(2,\R)$ với ma trận có dạng $\mathe$.
+        \item Đẳng cự $T_A$ có vết $\Tr(T_A) = |2\cos\theta|\leq 2$. Đẳng thức xảy ra khi $|\cos\theta| = 1$, tức $\sin\theta = 0$. Dẫn đến $\lambda  \in \R$, vô lý. Do đó $\Tr(T_A) < 2$, tức là $T_A$ là một đẳng cự elliptic.
+        
+        \item Dựa vào bổ đề \ref{lem fixed-point}, việc tìm điểm bất động của $T_A$ quy về việc tìm vector riêng của phép biến đổi bởi ma trận $A$ là $\C^2\to \C^2$.
+
+        Vì $u$ là các vector riêng ứng với các giá trị riêng $\lambda$ nên $\overline{u}$ là vector riêng ứng với các giá trị riêng $\overline{\lambda}$. Nên mọi vector riêng của $T_A$ phải cùng phương với $u$ hoặc $\overline{u}$. Do đó phép biến đổi xạ ảnh tương ứng $\widehat{T_A}$ có $[u],[\overline{u}]$ là các điểm bất động trên $P^1(\C)$.
+        
+        Giả sử $u = v + iw = (v_1,v_2) + i(w_1,w_2) = (v_1+iw_1,v_2+iw_2)$ với hệ vector $(v,w)$ là một cơ sở của $\R^2$. Nên $\det[v \quad w] = v_1w_2 - v_2w_1 \neq 0$. Suy ra $v_2, w_2$ không đồng thời bằng 0. Dẫn đến $v_2+iw_2, v_2-iw_2 \neq 0$.
+        
+        Khi đó $[u] = [v_1+iw_1:v_2+iw_2] = \left[\dfrac{v_1+iw_1}{v_2+iw_2}:1\right]$ và $[\overline{u}] = [v_1-iw_1:v_2-iw_2] = \left[\dfrac{v_1-iw_1}{v_2-iw_2}:1\right]$ đều không thuộc $\R \cup \{\infty\}$
+        vì trong hai điểm liên hợp $\dfrac{v_1+iw_1}{v_2+iw_2}$ và $ \dfrac{v_1-iw_1}{v_2-iw_2}$ phải có một điểm có phần ảo dương, tức điểm đó thuộc $\hh$, và điểm còn lại có phần ảo là âm. Suy ra $T_A$ chỉ có duy nhất một điểm bất động trong $\hh$ và không có điểm bất động trong $\R \cup \{\infty\}$.
+        
+    \end{enumerate}
+\end{proof}
+\begin{prop}\label{prop 3.1.10}
+    Cho phép đẳng cự $T(z) = \dfrac{az+b}{cz+d}$ của $\hh$ tương ứng với ma trận $\matt \in \SL(2,\R)$. Giả sử $T(i) = i$, khi đó
+    \begin{enumerate}
+        \item Tồn tại duy nhất góc $\theta \in \R$ sai khác một bội nguyên $2\pi$ sao cho \[\matt = \mathe.\]
+        \item Với mọi $\xi \in T_i\hh,~\xi \neq 0,$ ta có $DT_i(\xi)$  là vector nhận được sau khi quay $\xi$ góc $2\theta$ theo chiều dương. 
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \begin{enumerate}
+        \item 
+    Ta có $i = T(i) = \dfrac{ai+b}{ci+d}$ nên $ai+b = di -c$. 
+    
+    Kết hợp $a,b,c,d \in \R,~ad-bc = 1$ ta được $a = d,~ b = -c,~a^ 2 + b^2 = 1$. 
+    
+    Suy ra tồn tại duy nhất góc $\theta \in \R$, sai khác một bội nguyên $2\pi$, sao cho 
+    \[a = \cos{\theta},~b = \sin{\theta}.\]
+    Vì vậy \[\matt = \mathe.\]
+    \item Với mọi $\xi \in T_i\hh,~\xi \neq 0,$ ta có 
+    \[DT_i(\xi) = \dfrac{ad-bc}{(ci+d)^2}\xi = \dfrac{1}{(-\sin{\theta}i+ \cos{\theta})^2}\xi = e^{i 2\theta}\xi.\]
+    Do đó $DT_i(\xi)$  là vector nhận được sau khi quay $\xi$ góc $2\theta$ theo chiều dương. 
+    \end{enumerate}
+\end{proof}
+
+\subsubsection{Bó không gian tiếp xúc đơn vị}
+\begin{defn}
+    Bó không gian tiếp xúc đơn vị của $\hh$ là
+    \[S\hh = \{(z,\xi): z\in \hh, \xi \in T_z\hh \text{ thoả mãn } \norm{\xi} =1\}\] 
+\end{defn}
+Bằng cách đồng nhất một cách chính tắc các không gian tiếp xúc $T_z\hh$ với $\C$ thì $S\hh$ trở thành tập con của $\hh \times \C$. Trang bị trên $S\hh$ một topo hạn chế từ topo trên $\hh \times \C$. 
+
+Do nhóm $\PSL(2,\R)$ tác động lên $\hh$ bởi phép đẳng cự nên tác động này cảm sinh một tác động của $\PSL(2,\R)$ lên bó vector tiếp xúc đơn vị $S\hh$
+\[T(z,\xi) = (T(z),DT_z(\xi))\]
+trong đó $T(z) = \dfrac{az+b}{cz+d}$ là phép biến đổi trên $\hh$ tương ứng với ma trận $\matt \in \SL(2,\R),~(z,\xi) \in S\hh$ và 
+\[DT_z(\xi) = \dfrac{1}{(cz+d)^2}\xi.\]
+
+Mặt khác $\PSL(2,\R)$ cũng tác động lên chính nó, kết quả sau chỉ ra hai tác động này là đẳng cấu với nhau. 
+\begin{lem}
+    Cho $(i, \xi_1)$ và $(i,\xi_2)$ thuộc $S\hh$. Tồn tại duy nhất phép đẳng cự bảo toàn hướng $T$ sao cho $T(i,\xi_1) = (i, \xi_2)$.
+\end{lem}
+\begin{proof}
+    Giả sử $T(z) = \dfrac{az+b}{cz+d}$ là một đẳng cự bảo toàn hướng trong $\hh$. 
+    % Với $(i, \xi_1)$ và $(i,\xi_2)$ thuộc $S\hh$ ta có $\xi_1,\xi_2 \in T_i\hh$ và $\norm{\xi_1} = \norm{\xi_2} = 1$. 
+
+    Để $T(i,\xi_1) = (i,\xi_2)$ thì $ i = T(i) = \dfrac{ai+b}{ci+d}$ và $  \xi_2 = DT_i(\xi_1) = \dfrac{\xi_1}{(ci+d)^2}$.
+
+    Điều này tương đương với $a = d,~ b =-c,~ ad-bc = a^2+b^2 = 1$. 
+    
+    Đặt $a = \cos\theta, b = \sin\theta$. 
+    Khi đó $\xi_2 = \dfrac{\xi_1}{(\cos\theta + i\sin\theta)^2} = e^{2i\theta}\xi_1$. 
+    
+    Suy ra $e^{2i\theta} = \dfrac{\xi_2}{\xi_1}$. Mà $\norm{\xi_1}= \norm{\xi_2} = 1$, nên $\norm{\dfrac{\xi_2}{\xi_1}} = 1$.
+    
+    Vì vậy tồn tại duy nhất $\theta = \arg\dfrac{\xi_2}{2\xi_1}$ sai khác một bội nguyên của $\pi$ để thoả mãn phương trình $T(i,\xi_1) = (i,\xi_2)$. Tức là tồn tại duy nhất đẳng cự bảo toàn hướng $T$.
+\end{proof}
+\begin{prop}\label{prop 3.1.20}
+    
+    Với mọi $(z,\xi) \in S\hh$, tồn tại duy nhất phép đẳng cự bảo toàn hướng $T$ của $\hh$ sao cho $T(i,i) = (z,\xi)$. 
+    
+\end{prop}
+
+\begin{proof}
+    Với mọi $(z,\xi) \in S\hh$, ta cần tìm đẳng cự $T(z) = \dfrac{az+b}{cz+d}$ trong $\PSL(2,\R)$ sao cho $T(i,i) = (z,\xi)$. 
+
+    Điều này xảy ra khi
+    $z = T(i) = \dfrac{ai+b}{ci+d}$ và $\xi = DT_i(i) = \dfrac{1}{(ci+d)^2}i.$
+
+    Khi đó $1 = \norm{\xi} = \left|\dfrac{i}{(ci+d)^2}\right|=\dfrac{1}{|ci+d|^2}$. 
+    
+    Tức là $|ci+d| = 1$, hay $c^2+d^2 = 1$. Tồn tại $\theta \in \R$ sao cho $d = \cos\theta, c=\sin\theta$. 
+    
+    Từ đó thu được $\xi = \dfrac{i}{\cos\theta + i\sin\theta} = ie^{-i\theta} = e^{-i(\theta -\pi/2)}$. 
+    
+    Vì vậy, ta xác định được $\theta =  \pi/2 - \arg(\xi)$, sai khác một bội nguyên của $2\pi$.
+
+    Lại có $ai+b = z(ci+d) = ze^{-i\theta}$, do đó $a = \re(ze^{-i\theta}), b = \im(ze^{-i\theta})$ là xác định duy nhất vì tính duy nhất của $\theta$ 
+
+    Vậy $T$ tồn tại và duy nhất. 
+    
+\end{proof}
+
+\subsubsection{Topo trên $\PSL(2,\R)$}
+Ta có $\Mat(2,\R)$ là không gian vector định chuẩn, với chuẩn của mỗi ma trận $A = \matt $ là 
+\[\norm{A} = \sqrt{a^2+b^2+c^2+d^2}.\]
+Khi đó metric cảm sinh từ chuẩn nói trên sẽ sinh ra một topo trên $\Mat(2,\R)$. 
+
+% \begin{prop}
+%     Trang bị topo hạn chế từ $\Mat(2,\R)$, các nhóm con $\GL(2,\R)$ và $\SL(2,\R)$ trở thành các nhóm topo.
+% \end{prop}
+% \begin{proof}
+%     Ta có ánh xạ $\det: \Mat(2,\R) \to \R$ là liên tục. 
+
+%     Suy ra $\GL(2,\R) = \det^{-1}(\R\setminus\{0\})$.
+    
+%     Mà $\R \setminus \{0\}$ là mở trong $\R$, nên $\GL(2,\R)$ là một tập con mở trong $\Mat(2,\R)$. Nên topo cảm sinh trong $\GL(2,\R)$ cũng chính là topo trong $\Mat(2,\R)$. 
+
+%     Ta có phép lấy nghịch đảo ma trận 
+%     \[\imath: \GL(2,\R) \to \GL(2,\R), ~ \matt \mapsto \dfrac{1}{ad-bc}\begin{bmatrix}
+%        d & -b\\
+%        -c & a
+%     \end{bmatrix}\] 
+%     là liên tục vì các hàm thành phần biến các yếu tố ở hàng $i$, cột $j$ của  $A$ thành yếu tố ở hàng $i$, cột $j$ của  $A^{-1}$ là các hàm đa thức, nên nó là liên tục.
+    
+%     Tương tự phép nhân hai ma trận trên $\GL(2,\R)$, các hàm thành phần gửi các các yếu tố của $A,B$ thành các yếu tố của tích $AB$ là các hàm đa thức, nên chúng là liên tục.
+%     \[\GL(2,\R) \times \GL(2,\R) \to \GL(2,\R),~(A,B) \mapsto AB\]
+
+%     Do đó $\GL(2,\R)$ là một nhóm topo.
+% \end{proof}
+
+Nhắc lại rằng nếu $H$ là một nhóm con chuẩn tắc của nhóm topo $G$ thì nhóm thương $G/H$ cũng là một nhóm topo.
+
+\begin{prop}
+    Trang bị topo thương từ $\SL(2,\R)$, nhóm $\PSL(2,\R)$ trở thành một nhóm topo.
+\end{prop}
+\begin{proof}
+    Ta có $\SL(2,\R)$ là một nhóm topo và $\PSL(2,\R)$ là một nhóm con chuẩn tắc của nó. Khi đó $\PSL(2,\R)$
+    là một nhóm topo.
+\end{proof}
+
+Cho $A \in \SL(2,\R)$. \textbf{Chuẩn của đẳng cự $T_A$} của $\hh$ được định nghĩa là chuẩn của ma trận $A$.
+\begin{prop}
+    Cho $T$ là một phép đẳng cự bảo toàn hướng của $\hh$. Khi đó 
+    \[ \norm{T}^2 = 2\cosh{\rho(i,T(i))}.\]
+\end{prop}
+\begin{proof}
+    Giả sử $T(z) = \dfrac{az+b}{cz+d}, (ad-bc = 1)$. Khi đó
+    \begin{align*}
+        2\cosh{\rho(i,T(i))} &= 2\left(1+\dfrac{|T(i)-i|^2}{2\im(i)\im T(i)}\right)
+        = 2\left(1+\dfrac{\left|\dfrac{ai+b}{ci+d}-i\right|^2}{2\cdot 1\cdot \dfrac{\im(i)}{|ci+d|^2}}\right)\\
+        &= 2+|(a-d)i + (b+c)|^2 \\
+        &= 2 + (a-d)^2+(b+c)^2\\
+        &= a^2+b^2+c^2+d^2  = \norm{T}^2.
+    \end{align*}
+\end{proof}
+
+\begin{lem}\label{lem 3.1.16}
+    Cho $(G,\tau)$ là một nhóm topo. Khi đó tập con $\Gamma$ của $G$ là rời rạc nếu với mọi dãy $g_n \in \Gamma$ hội tụ đến $\Id \in \Gamma$ thì $g_n = \Id$ với mọi $n$ đủ lớn.
+\end{lem}
+\begin{proof}
+    Giả sử $\Gamma$ là một nhóm con rời rạc của nhóm topo $(G,\tau)$.
+    
+    Xét $\Id\in \Gamma$. Lấy $\{g_n\}_{n\geq 1}\subset \Gamma$ là một lân cân của $\Id$ hội tụ đến nó.
+    
+    Khi đó với mọi lân cận $U \in \tau$ của $\Id \in \Gamma$, tồn tại $n_0$ sao cho với mọi $n \geq n_0$ thì $g_n \in U$ với mọi $n \geq n_0$. 
+    
+    Mặt khác $\Gamma$ là một nhóm rời rạc, nên tập $\{\Id\}\subset \Gamma$ là mở trong $\Gamma$, và do đó nó cũng là một lân cận  của $\Id \in \Gamma$. 
+    Chứng tỏ tồn tại $n_0$ sao cho với mọi $n\geq n_0$ thì $g_n \in \{\Id\}$, tức $g_n = \Id$. 
+\end{proof}
+\begin{prop}\label{prop 3.1.17}
+    Cho $\Gamma$ là một nhóm con của $\PSL(2,\R)$. Khi đó, $\Gamma$ là rời rạc khi và chỉ khi nếu dãy phép đẳng cự $T_n \in \PSL(2,\R)$ thoả mãn $T_n \to \Id$ thì $T_n = \Id$ với mọi $n$ đủ lớn.
+\end{prop}
+\begin{proof}
+    Nếu $\Gamma$ là rời rạc, áp dụng bổ đề \ref{lem 3.1.16} ta được, nếu dãy phép đẳng cự $T_n \in \PSL(2,\R)$ thoả mãn $T_n \to \Id$ thì $T_n = \Id$ với mọi $n$ đủ lớn.
+
+    Ngược lại, giả sử dãy phép đẳng cự $T_n \in \PSL(2,\R)$ thoả mãn $T_n \to \Id$ thì $T_n = \Id$ với mọi $n$ đủ lớn. Ta sẽ chứng minh $\Gamma$ là rời rạc. Thật vậy, giả sử phản chứng $\Gamma$ không rời rạc. Khi đó, tồn tại $T \in \Gamma$ sao cho không có tập mở $U \subset \PSL(2,\R)$ nào mà $U \cap \Gamma = \{T\}$. 
+
+    
+    Nhận thấy, nếu đồng phôi $\varphi: \Gamma \to \Gamma,~f\mapsto  T^{-1}f$ được định nghĩa, nói riêng thì $\varphi(T) = \Id$, thì mọi tập mở $U$ đều phải chứa phần tử khác đơn vị $\Id$ của $\Gamma$. Vì vậy, ta có thể xây dựng được 
+\end{proof}
+

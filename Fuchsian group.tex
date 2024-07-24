@@ -1,0 +1,514 @@
+\section{Nhóm Fuchs}
+Chúng ta sẽ tìm hiểu về các nhóm con rời rạc của $\PSL(2,\R)$ và tác động của chúng lên mặt phẳng hyperbolic $\hh$.
+\begin{defn}
+    Một nhóm $\Gamma$ được gọi là  \textit{Fuchs} nếu nó là một \textit{nhóm con rời rạc} của $\PSL(2,\R)$.
+\end{defn}
+\begin{exam*}
+    \begin{enumerate}
+        \item Bất kì nhóm con hữu hạn nào của $\PSL(2,\R)$ đều là một nhóm Fuchs.
+        \item Nhóm Fuchs tầm thường là $\{\Id_{\hh}\}$.
+        \item Nhóm con các đẳng cự $\Gamma = \left\{f_n(z) = a^{2n}z ~|~a > 0, n \in \Z\right\} $ của $ \PSL(2,\R)$ là Fuchs.
+        \item Nhóm con các đẳng cự $\Gamma = \{f_n(z) = z+n~|~n\in \Z\}$ của $ \PSL(2,\R)$ là Fuchs.
+        \item Rõ ràng nhóm con của một nhóm Fuchs cũng là Fuchs.
+    \end{enumerate}
+\end{exam*}
+\subsubsection{Nhóm con rời rạc của $\R$ và $\mathbb{S}^1$}
+    Ta xét nhóm cộng $\R$. Các nhóm con cyclic của $\R$ đều là các nhóm con rời rạc. 
+
+    Mệnh đề sau khẳng định điều ngược lại.
+\begin{prop}\label{prop 3.2.3}
+    Cho $\Gamma$ là một nhóm con rời rạc của $\R$. Khi đó $\Gamma$ là một nhóm con cyclic vô hạn phần tử.
+\end{prop}
+\begin{proof}
+    Trường hợp $\Gamma = \{0\}$, nhóm con tầm thường này hiển nhiên cyclic.
+
+    Ta xét trường hợp $\Gamma \neq \{0\}$. 
+    Khi đó với $x \in \Gamma$ thì $-x \in \Gamma$, nên $\Gamma$ luôn chứa phần tử lớn hơn $0$. Do đó $\Gamma \cap \R_{>0}$ là một tập con khác rỗng của $\R$ và bị chặn dưới bởi $0$. Nên theo tiên đề \textit{infimum}, tồn tại $a = \inf (\Gamma \cap \R_{>0}) \geq 0$. 
+
+    \begin{enumerate}
+        \item Nếu $a = 0$, khi đó ta sẽ chỉ ra $\Gamma$ là trù mật trong $\R$, tức chỉ ra với mọi $x \in \R$, tồn tại dãy $\{x_n\} \subset \Gamma$ mà $x_n \to x$. Thật vậy, vì $0 = \inf (\Gamma \cap \R_{>0})$ nên với mọi $\varepsilon >0$ tồn tại $b_n \in \Gamma \cap \R_{>0}$ thoả mãn $0 < b_n <\varepsilon/n$.
+        
+        Khi đó $x_n := b_n \left[\dfrac{x}{b_n}\right] \in \Gamma$ (với $\left[\dfrac{x}{b_n}\right] \in \Z$ là số nguyên lớn nhất không vượt quá  $\dfrac{x}{b_n}$) thoả mãn
+        \[|x_n - x| = \left|b_n \left[\dfrac{x}{b_n}\right] - x\right| = b_n\left|\dfrac{x}{b_n} - \left[\dfrac{x}{b_n}\right]\right|\leq b_n < \dfrac{\varepsilon}{n} \to 0.\]
+        Chứng tỏ $x_n \to x$, tức $\Gamma$ là trù mật trong $\R$, khi đó  mọi điểm thuộc $\Gamma$ đều là điểm giới hạn của một dãy trong $\Gamma$, mâu thuẫn với sự kiện $\Gamma$ là rời rạc.
+
+        \item Nếu $a>0$, giả sử phản chứng $a \notin \Gamma$. Khi đó với mọi $\varepsilon  = a > 0$, do $a = \inf (\Gamma \cap \R_{>0})$ nên tồn tại $x \in G$ sao cho $0 < a < x < a+ \varepsilon = 2a $. Lập luận tương tự, với $\varepsilon = x > 0$, lại tồn tại $y \in \Gamma$ sao cho $a<y<x$. Kết hợp ta được $0<a<y<x<2a$. Dẫn đến $a>x-y \in \Gamma \cap \R_{>0}$, mâu thuẫn với định nghĩa của $a$. Do đó $a \in \Gamma$. 
+        
+        Tiếp theo ta chỉ ra $\Gamma$ là nhóm cyclic sinh bởi $a$. Thật vậy, lấy $x \in \Gamma$ bất kỳ. Nếu $x = na$ với $n \in \Z$ thì $x \in \Gamma$. Ngược lại nếu $x/a \neq \Z$ thì tồn tại $n  = [x/a]\in \Z$ sao cho $n < x/a <(n+1)$, hay $0<x-na<a$. Điều này nghĩa là $x-na$ là một phần tử dương nhỏ hơn $a$ nằm trong $\Gamma$, mâu thuẫn với định nghĩa của $a$. 
+
+        Tóm lại, với mọi $x \in \Gamma$, tồn tại $n \in \Z$ sao cho $x = na$, tức là 
+        \[\Gamma = \{na~|~n \in \Z\} = \left<a\right>\cong \Z\] là nhóm cyclic vô hạn phần tử sinh bởi $a$.
+    \end{enumerate}
+\end{proof}
+\begin{comment*}
+    Hai nhóm topo $(\R,+)$ và $(\R_{>0},\cdot)$ đẳng cấu với nhau với một đẳng cấu là ánh xạ $f: \R_{>0} \to \R$, trong đó $f(x) = \ln{x}$ và $f^{-1}(y) = e^y$. Do đó, áp dụng mệnh đề trên ta có thể xác định tất cả các nhóm con rời rạc của nhóm topo $\R_{>0}$.
+\end{comment*}
+\begin{cor}\label{cor 3.2.4}
+    Các nhóm con rời rạc của nhóm topo $\R_{>0}$ là các nhóm cyclic
+    \[\left<a\right> = \{a^n~|~n \in \Z\},\]
+    với $a \in \R_{>0}$.
+\end{cor}
+
+Tiếp theo ta xét nhóm nhân $\mathbb{S}^1 = \{ e^{it} ~|~t\in \R\}$.
+
+Với mỗi số nguyên dương $n$, nhóm con \[\left<e^{\dfrac{2i\pi}{n}}\right> = \left\{e^{k\dfrac{2i\pi}{n}}~|~k = 0,1,\ldots,n-1\right\} \cong \Z_n\]
+của $\mathbb{S}^1$ là một nhóm con cyclic cấp $n$. Do đó các nhóm con này của $\mathbb{S}^1$ đều là các nhóm con rời rạc.
+
+% Khác với $\R$, các nhóm con rời rạc của $\mathbb{S}^1$ là các nhóm con cyclic hữu hạn.
+% \begin{prop}
+%     Mọi nhóm con rời rạc của $\mathbb{S}^1$ là các nhóm cyclic hữu hạn phần tử.
+% \end{prop}
+% \begin{proof}
+%     Giả sử $\Gamma$ là một nhóm con rời rạc của $\mathbb{S}^1 = \{ e^{2i\pi t} ~|~t\in \R\}$. 
+% \end{proof}
+\begin{prop}\label{prop 3.2.5}
+    Cho $\Gamma$ là một nhóm con rời rạc của $\mathbb{S}^1$. Khi đó tồn tại duy nhất số nguyên dương $n$ sao cho $\Gamma$ là nhóm con cyclic sinh bởi $e^{\dfrac{2i\pi}{n}}$.
+\end{prop}
+\begin{proof}
+    Ta có $\mathbb{S}^1 = \{e^{it}~|~t\in \R\}$ là một nhóm với phép nhân với topo cảm sinh từ topo Euclid trên $\C$.
+
+    Hơn nữa $\mathbb{S}^1$ còn là một tập con compact và Hausdorff trong $\C$ với topo Euclid thông thường. 
+    
+    Thật vậy, $\mathbb{S}^1$ là compact. Vì $\mathbb{S}^1$ là biên của hình cầu mở tâm $z=0$ bán kính $r=1$ trong $\C$, nên nó là đóng. Kết hợp tính bị chặn chứng tỏ $\mathbb{S}^1$ là compact. Tính Hausdorff là hiển nhiên, kế thừa từ topo Hausdorff trên $\C$. 
+
+    Ta đã chứng minh mọi nhóm con rời rạc của một nhóm topo compact, Hausdorff thì là hữu hạn.
+    
+    Vì vậy, với $\Gamma$ là một nhóm con rời rạc của $\mathbb{S}^1$, thì $\Gamma$ là một nhóm hữu hạn.
+
+
+    
+    Xét đồng cấu nhóm giữa hai nhóm $(\R,+)$ và $(\mathbb{S}^1,\cdot)$ là
+    \[\varphi: \R \to \mathbb{S}^1,~t \mapsto e^{2i\pi t}.\]
+    Ta có $\varphi$ là một toàn cấu nhóm và 
+    \[\ker(\varphi) = \{t \in \R~|~e^{2i\pi t} = 1\} = \{t \in \R~|~2i\pi t = 2n\pi,~n\in \Z\} = \Z.\]
+    Do đó $\mathbb{S}^1 = \im(\varphi) \cong \R/\ker(\varphi) = \R / \Z$.
+      
+    Vì $\Gamma \leq \mathbb{S}^1$ nên $\Gamma \cong G/\Z \leq \R/\Z$, trong đó $\Z \trianglelefteq G \leq \R$.
+
+    Vì $G$ là một nhóm con của $\R$ nên theo chứng minh của \ref{prop 3.2.2} ta có hai trường hợp sau:
+    
+    Hoặc $G$ là một nhóm con rời rạc đẳng cấu với $\Z$, khi đó $\Gamma \cong G/\Z \cong \Z/\Z \cong \{1\}$, hiển nhiên là một nhóm con rời rạc của $\mathbb{S}^1$.
+    
+    Hoặc $G$ là một nhóm con trù mật trong $\R$, tất nhiên không rời rạc. Khi đó \[\Gamma \cong G/\Z = \{[r] = r+\Z~|~r\in G\}\] không hữu hạn, vô lý.
+\end{proof}
+\subsubsection{Nhóm Fuchs cyclic}
+Bây giờ, ta đi xác định các nhóm Fuchs cyclic
+\begin{lem}\label{lem 3.2.6}
+    Cho $G$ là một nhóm topo. Cho $\Gamma_1, \Gamma_2$ là hai nhóm con của $G$ liên hợp với nhau. Khi đó $\Gamma_1$ là một nhóm rời rạc khi và chỉ khi $\Gamma_2$ là một nhóm rời rạc.
+\end{lem}
+\begin{proof}
+    Vì $\Gamma_1$ liên hợp với $\Gamma_2$ nên tồn tại $g\in G$ sao cho $\Gamma_2 = g\Gamma_1 g^{-1}$. 
+    
+    Nếu $\Gamma_1$ là một nhóm rời rạc, ta sẽ chỉ ra $\Gamma_2$ là rời rạc bằng cách chỉ ra mỗi tập $\{x\}$ là mở trong $\Gamma_2$ với mọi $x\in \Gamma_2$. Thật vây, với mỗi $x\in \Gamma_2$, tồn tại $a \in \Gamma_1$ sao cho $x=gag^{-1}$. Vì tập $\{a\}$ là mở trong $\{\Gamma_1\}$ rời rạc. Nên tồn tại lân cận $U$ mở trong $G$ của $a$ sao cho $U \cap \Gamma_1 = \{a\}$. Suy ra 
+    \[\{x\} = g\{a\}g^{-1} = g(U \cap \Gamma_1)g^{-1} = gUg^{-1} \cap g\Gamma_1 g^{-1} = gUg^{-1} \cap \Gamma_2.\]
+    Mặt khác các ánh xạ $G \to G, x\mapsto gx$ và $G \to G, x\mapsto xg^{-1}$ là các đồng phôi trên $G$, nên với $U$ mở trong $G$ thì $gUg^{-1}$ cũng là mở trong $G$, từ đó chứng tỏ $\{x\}$ là mở trong $\Gamma_2$. 
+    Vì vai trò của $\Gamma_1, \Gamma_2$ là như nhau, nên ta có điều phải chứng minh.
+\end{proof}
+\begin{cor}
+    Nếu $\Gamma$ là một nhóm Fuchs thì tất cả các nhóm con của $\PSL(2,\R)$ mà liên hợp với $\Gamma$ cũng là nhóm Fuchs.
+\end{cor}
+\begin{cor}
+    Cho $G$ là một nhóm topo và $g_1,g_2 \in G$ là hai phần tử liên hợp với nhau. Khi đó nhóm con cyclic $\left<g_1\right>$ là một nhóm rời rạc khi và chỉ khi nhóm con $\left<g_2\right>$ là một nhóm rời rạc.
+\end{cor}
+Nếu $G$ và $G'$ là hai nhóm topo và $f: G \to G'$ là một đơn cấu. Khi đó ta gọi $f$ là một \textit{đồng cấu nhúng} nếu ánh xạ
+\[G \mapsto f(G),~x\mapsto f(x)\]
+là một đồng phôi. Khi đó ánh xạ trên là một đẳng cấu của các nhóm topo.
+\begin{prop}\label{prop 3.2.9}
+    Cho $T \in \PSL(2,\R)$ là một đẳng cự hyperbolic. Khi đó nhóm con cyclic sinh bởi $T$ là một nhóm Fuchs.
+\end{prop}
+\begin{proof}
+    Ta có $T$ là một đẳng cự hyperbolic nên ma trận tương ứng của nó liên hợp trong $\SL(2,\R)$ với ma trận $\begin{bmatrix}
+        \lambda & 0\\
+        0 & 1/\lambda
+    \end{bmatrix}$, trong đó $\lambda >0$.
+    Nên ta có thể giả sử ma trận tương ứng với $T$ là $A$.
+    
+    Kí hiệu $\Gamma$ là nhóm con của $\PSL(2,\R)$ bao gồm các đẳng cự tương ứng với ma trận $\begin{bmatrix}
+        a & 0\\
+        0 & 1/a
+    \end{bmatrix}$ trong đó $ a > \R_{>0}$. Phép nhân các ma trận có dạng trên tương ứng với phép nhân trong nhóm nhân $\R_{>0}$. Do đó nhóm topo $\Gamma$ này đẳng cấu với nhóm nhân $\R_{>0}$.
+
+    Từ đó suy ra nhóm cyclic sinh bởi $T$ là $\left<T\right>$ đẳng cấu với nhóm cyclic sinh bởi ma trận tương ứng của $T$ là $\begin{bmatrix}
+        \lambda & 0\\
+        0 & 1/\lambda
+    \end{bmatrix}$, và do đó đẳng cấu với nhóm cyclic sinh bởi $\lambda >0$ của nhóm nhân $\R_{>0}$, hơn nữa nhóm này là một nhóm rời rạc trong $\R_{>0}$. Do đó $\left<T\right>$ là một nhóm Fuchs.
+\end{proof}
+\begin{prop}\label{prop 3.2.10}
+    Cho $T \in \PSL(2,\R)$ là một phần tử parabolic. Khi đó nhóm con cyclic sinh bởi $T$ là một nhóm Fuchs.
+\end{prop}
+\begin{proof}
+    Lập luận tương tự như chứng minh ở mệnh đề trên, ta cũng ký hiệu $\Gamma$ là nhóm con của $\PSL(2,\R)$ bao gồm các phép đẳng cự tương ứng với các ma trận $\begin{bmatrix}
+        1 & a\\
+        0 & 1
+    \end{bmatrix},$ trong đó $a \in \R$. Khi đó ta sẽ chỉ ra nhóm topo $\Gamma$ đẳng cấu với nhóm cộng $\R$.
+    Thật vậy, xét tương ứng
+    \[\varphi: \Gamma \to \R,~T \mapsto a\]
+    trong đó $a \in \R$ ứng với ma trận $\begin{bmatrix}
+        1 & a\\
+        0 & 1
+    \end{bmatrix}$ tương ứng của đẳng cự $T$. 
+    
+    Với mỗi $T,S \in \Gamma$, gọi $\begin{bmatrix}
+        1 & a\\
+        0 & 1
+    \end{bmatrix}, \begin{bmatrix}
+        1 & b\\
+        0 & 1
+    \end{bmatrix}$ lần lượt là các ma trận tương ứng với $T, S$. Khi đó $\begin{bmatrix}
+        1 & a+b\\
+        0 & 1
+    \end{bmatrix}$ là ma trận ứng với $TS$. Nghĩa là $\varphi(TS) = \varphi(S)+\varphi(T)$. Vì vậy, $\varphi$ là một đồng cấu nhóm topo, hơn nữa còn là một đẳng cấu nhóm. Vì vậy, nhóm con cyclic $\left<T\right>$ sinh bởi $T \in \Gamma$ đẳng cấu với một nhóm con cyclic của $\R$, mà một nhóm con cyclic của $\R$ là rời rạc, do đó $\left<T\right>$ là rời rạc, nghĩa là một nhóm Fuchs.
+\end{proof}
+\begin{prop}\label{prop 3.2.11}
+    Cho $T \in \PSL(2,\R)$ là một phần tử elliptic. Khi đó nhóm con cyclic sinh bởi $T$ là một nhóm Fuchs khi và chỉ khi $T$ có cấp hữu hạn.
+\end{prop}
+\begin{proof}
+    Lập luận tương tự như chứng minh mệnh đề trước đó, mỗi đẳng cự elliptic $T$ có ma trận tương ứng đồng dạng với ma trận có dạng $\mathe$, nên ta cũng kí hiệu $\Gamma$ là tập các đẳng cự có ma trận ứng là các ma trận dạng $\mathe$. 
+
+    Nhận thấy, mỗi ma trận $\mathe$ tương ứng với $e^{i\theta} \in \mathbb{S}^1$, và ta có
+    \[\begin{bmatrix}
+        \cos \theta_1 & \sin \theta_1\\
+        -\sin \theta_1 & \cos \theta_1
+    \end{bmatrix}\begin{bmatrix}
+        \cos \theta_2 & \sin \theta_2\\
+        -\sin \theta_2 & \cos \theta_2
+    \end{bmatrix} = \begin{bmatrix}
+        \cos (\theta_1+\theta_2) & \sin (\theta_1+\theta_2)\\
+        -\sin (\theta_1+\theta_2) & \cos (\theta_1+\theta_2)
+    \end{bmatrix}\]
+    tương ứng với phép nhân trong $\mathbb{S}^1$
+    \[e^{i\theta_1}e^{i\theta_2} = e^{i(\theta_1 + \theta_2)}.\]
+    Vì vậy, ta xây dựng được đồng cấu nhóm giữa $\Gamma$ và $\mathbb{S}^1$, hơn nữa còn là một đẳng cấu nhóm. Do đó mỗi nhóm con cyclic $\left<T\right>$ sinh bởi $T$ đẳng cấu với một nhóm con cyclic trong $\mathbb{S}^1$. Mà một nhóm cyclic trong $\mathbb{S}^1$ là rời rạc nếu nó là cyclic hữu hạn, và do đó để $\left<T\right>$ là một nhóm Fuchs khi và chỉ khi nó có cấp hữu hạn.
+\end{proof}
+
+\subsubsection{Tác động gián đoạn thực sự}
+\begin{defn}
+    Cho $X$ là một không gian metric và $G$ là một nhóm con của nhóm các phép đẳng cự trên $X$. Ta nói nhóm $G$ \textit{tác động gián đoạn thực sự} trên $X$ khi và chỉ khi với mọi $x\in X$ thì
+    \begin{enumerate}
+        \item Quĩ đạo $Gx$ là một tập con rời rạc của $X$,
+        \item Nhóm ổn định hoá $G_x$ có cấp hữu hạn.
+    \end{enumerate}
+\end{defn}
+% \begin{prop}
+%     Cho $X$ là một không gian metric và $G$ là một một nhóm con của các phép đẳng cự trên $X$. Giả sử $G$ tác động gián đoạn thực sự trên $X$, khi đó $G$ là một nhóm topo rời rạc.
+% \end{prop}
+% \begin{proof}
+%     Vì $G$ tác động gián đoạn thực sự trên $X$ nên với mọi $x$ thuộc $X$ thì quỹ đạo $Gx$ là một tập con rời rạc của $X$. Nên tồn tại $\varepsilon >0$ sao cho \[Gx \cap B(x,\varepsilon) = \emptyset.\]
+%     Gọi $V$ là một lân cận của $x$ trong $X$, khi đó $T(V) \cap V $
+% \end{proof}
+\begin{prop}\label{prop 3.2.13}
+    Cho $X$ là một không gian metric và $G$ là một nhóm con của nhóm $\Isom(X)$ các phép đẳng cự trên $X$. Khi đó $G$ tác động gián đoạn thực sự trên $X$ khi và chỉ khi với mỗi điểm $x\in X$ có một lân cận $V$ sao cho tập hợp $\{T \in G~|~T(V) \cap V \neq \emptyset\}$ là hữu hạn.
+\end{prop}
+\begin{proof}
+    Nếu $G$ tác động thực sự trên $X$, khi đó với mỗi $x\in X$ thì quỹ đạo $Gx$ là một tập con rời rạc của $X$. Dẫn đến tồn tại $\varepsilon >0$ sao cho hình cấu mở $B(x,\varepsilon) \cap Gx = \{x\}$. Chọn $V \subset B(x,\varepsilon/2)$ là một lân cận mở của $x$. Khi đó với mỗi $T\in G$, để $T(V) \cap V \neq \emptyset$ thì $T(x) = x$, tức $T \in G_x$. Mà nhóm ổn định hoá $G_x$ là hữu hạn, nên tập hợp $\{T \in G~|~T(V) \cap V \neq \emptyset\}$ là hữu hạn.
+
+    Ngược lại, giả sử mỗi điểm $x\in X$ có một lân cận $V$ sao cho tập hợp $\{T \in G~|~T(V) \cap V \neq \emptyset\}$ là hữu hạn, ta sẽ chỉ ra $G$ tác động gián đoạn thực sự trên $X$. Thật vậy, lấy $x \in X$ bất kì và $V$ là một lân cận bất kỳ của $x$ trong $X$. Khi đó 
+    \[G_x \subset \{T \in G~|~T(V) \cap V \neq \emptyset\}.\]
+    Từ đó suy ra $G_x$ hữu hạn. Tiếp theo ta chỉ ra $Gx$ là một tập con rời rạc của $X$. Giả sử phản chứng $Gx$ không rời rạc, khi đó gọi $x_0 $ là một điểm giới hạn trong $Gx$ thì tồn tại dãy $\{x_n\} \subset Gx\setminus\{x_0\}$ hội tụ về $x_0$. Với mỗi $n$, lấy $T_n \in G$ sao cho $T_n(x_0) = x_n$. Suy ra với mọi lân cận $V$ của $x_0$ thì tập $\{T \in G~|~T(V) \cap V \neq \emptyset\}$ vô hạn phần tử, mâu thuẫn.
+\end{proof}
+% Cho $(X,d)$ là một không gian metric và $G$ là một nhóm các đồng phôi của $X$.
+\begin{defn}
+    Với mỗi $x\in X$, quĩ đạo $Gx:= \{gx~|~g\in G\}$ được gọi là \textit{hữu hạn địa phương} nếu với mọi tập compact $K \subset X$ thì tập $Gx \cap K $ hữu hạn.
+\end{defn}
+\begin{defn}
+    Tác động của $G$ lên không gian metric $(X,d)$ được gọi là \textit{gián đoạn thực sự} nếu với mọi $x \in X$  thì quĩ đạo $Gx$ là hữu hạn địa phương.
+    % , tức tập $\{g \in G~|~gK \cap K \neq \emptyset\}$ là hữu hạn.
+\end{defn}
+% \begin{thm}
+%     $G$ tác động không thực sự liên tục trên $X$ nếu và chỉ nếu mỗi $x\in X$ đều có một lân cận $V$ thoả mãn chỉ có hữu hạn $g\in G$ sao cho $g(V) \cap V \neq \emptyset$.
+% \end{thm}
+% \begin{proof}
+%     Giả sử $G$ tác động gián đoạn thực sự trên $X$
+% \end{proof}
+% \begin{thm}
+%     Nhóm $G$ tác động gián đoạn thực sự trên không gian metric $(X,d)$ khi và chỉ khi với mọi $x \in X$ thì quĩ đạo $Gx$ là rời rạc và nhóm ổn định của $x$ là $G_x$ hữu hạn.
+% \end{thm}
+% \begin{proof}
+    
+% \end{proof}
+\begin{prop}\label{prop 3.2.16}
+    Cho $K \subset \hh$ là một tập compact và một điểm bất động $z_0 \in \hh$. Khi đó tập $E:= \{T \in \PSL(2,\R)~|~Tz_0 \in K\} \subset \PSL(2,\R)$ là compact.
+\end{prop}
+\begin{proof}
+    % Để chứng minh $E$ là compact, ta sẽ chỉ ra nó là ảnh của một tập compact qua một ánh xạ liên tục.
+
+    Ta có $\PSL(2,\R) = \SL(2,\R)/\{\pm I_2\}$ là một không gian topo thương cảm sinh bởi ánh xạ chiếu \[\pi: \SL(2,\R) \to \PSL(2,\R),~A = \matt \mapsto \pi(A) :\left[ z\mapsto \dfrac{az+b}{cz+d}\right].\] Khi đó $E = \pi(F)$, trong đó $F = \left\{\matt \in \SL(2,\R)~|~\dfrac{az_0+b}{cz_0+d} \in K\right\}$. Do $\pi$ là liên tục, nên để chứng minh $E$ compact, ta cần chỉ ra $F$ là compact trong $\SL(2,\R)$. 
+    
+    Mà $\SL(2,\R)$ là một không gian topo con của $\Mat(2,\R)$ với metric hạn chế từ metric trên $\Mat(2,\R) \cong \R^4$. Vì vậy, $F$ là compact trong $\SL(2,\R)$ nếu nó đóng và bị chặn.
+
+    Thật vây, $F$ là đóng vì $F = \varphi^{-1}(K)$, trong đó 
+    \[\varphi: \SL(2,\R) \to \hh,~A = \matt \mapsto \pi(A)z_0 = \dfrac{az_0+b}{cz_0+d}\]
+    là một ánh xạ liên tục và $K$ là compact, nên hiển nhiên $K$ đóng.
+
+    Tiếp theo ta sẽ chỉ ra $F$ bị chặn. Thật vậy, vì $K$ compact trong $\hh$ 
+    và $Tz_0 \in K$ với mọi $T \in F$, do đó tồn tại $M_1>0$ sao cho
+    \[|Tz_0|= \left|\dfrac{az_0+b}{cz_0+d}\right|< M_1.\]
+    % nên nó bị chặn, nên tồn tại $M>0$ sao cho \[\left|\dfrac{az_0+b}{cz_0+d}\right| < M_1\]  
+    và tồn tại $M_2>0$ sao cho 
+    \[\im\left(\dfrac{az_0+b}{cz_0+d}\right) = \dfrac{\im(z_0)}{|cz_0+d|^2}\geq M_2\]
+    với mọi $\matt \in F$.
+    
+    Từ đó $|cz_0+d| \leq \sqrt{\dfrac{\im(z_0)}{M_2}}$, dẫn đến $|az_0+b|<M_1\sqrt{\dfrac{\im(z_0)}{M_2}}$. 
+    
+    Suy ra $a,b,c,d$ bị chặn, dẫn đến $\norm{\matt} = \sqrt{a^2+b^2+c^2+d^2}$ cũng   bị chặn.
+\end{proof}
+\begin{lem}\label{lem 3.2.17}
+    Cho $\Gamma$ là một nhóm con của $\PSL(2,\R)$ tác động gián đoạn thực sự trên $\hh$ và $p$ là một điểm bất động của phần tử nào đó của $\Gamma$. Khi đó tồn tại một lân cận $W$ của $p$ trong $\hh$ sao cho không có điểm nào khác của $W$ được giữ cố định bởi bất cứ phần tử khác đơn vị $\Id$ nào của $\Gamma$.
+\end{lem}
+\begin{proof}
+    % Giả sử $T \in \Gamma\setminus\{\Id\}$ thoả mãn $T(p) = p$ và giả sử phản chứng với mọi lân cận $W \subset \hh$ của $p$ đều chứa một điểm khác $p$ được giữ bất động bởi một phần tử khác đơn vị nào đó của $\Gamma$. 
+
+    % Khi đó, vì với mọi $T \in \Gamma\setminus\{\Id\}$ đều chỉ có tối đa hai điểm bất động và 
+    Giả sử tồn tại $T \in \Gamma\setminus\{\Id\}$ thoả mãn $T(p) = p$ và giả sử phản chứng với mọi lân cận $W \subset \hh$ của $p$ đều có điểm bất động của các phép biến đổi trong $\Gamma$. Điều này có nghĩa là tồn tại dãy $\{p_n\} \subset \hh \setminus\{p\}$ và $\{T_n\} \subset \Gamma\setminus\{\Id\}$ sao cho $p_n \to p$ và $T_n(p_n) = p_n$.
+
+    Ta lại có topo trên $\hh$ được cảm sinh bởi hyperbolic metric trên $\hh$ và trùng với topo Euclid được cảm sinh bởi metric Euclid. Nên với bất kỳ $\varepsilon >0$, tập $\overline{B(p, \varepsilon)} = \{z \in \hh~|~\rho(z,p) \leq \varepsilon\}$ là compact. Vì $\Gamma$ tác động gián đoạn thực sự trên $\hh$ nên tập $\Gamma p \cap \overline{B(p, \varepsilon)}$ là hữu hạn. Điều này có nghĩa là 
+    \begin{align*}
+        \rho(p, T_n(p)) > \varepsilon \text{ và }\quad \rho(p_n, p) < \varepsilon/3.
+    \end{align*}
+    với mọi $n$ đủ lớn.
+    Dẫn đến
+    \[\varepsilon < \rho(p, T_n(p)) \leq \rho(p, T_n(p_n)) + \rho(T_n(p_n), T_n(p)) = \rho(p, p_n) + \rho(p_n,p)< 2\varepsilon/3, \]
+    Mâu thuẫn này chứng tỏ giả thiết phản chứng là sai.
+\end{proof}
+\begin{thm}\label{thm 3.2.18}
+    Cho $\Gamma$ là một nhóm con của $\PSL(2,\R)$. Khi đó $\Gamma$ là nhóm Fuchs khi và chỉ khi nó tác động gián đoạn thực sự trên $\hh$.
+\end{thm}
+\begin{proof}
+    Lấy bất kỳ tập $K \subset \hh$ compact và $z_0 \in \hh$. 
+    
+    Giả sử $\Gamma \leq \PSL(2,\R)$ là một nhóm Fuchs. Khi đó ta sẽ chỉ ra $\Gamma$ tác động gián đoạn thực sự trên $\hh$, tức cần chứng minh tập
+    % $\Gamma z_0 \cap K = \{T(z_0)~|~T\in \Gamma\} \cap K$ 
+    $\{T \in \Gamma~|~T(z_0) \in K\}$
+    là hữu hạn.  
+    Thật vậy, theo mệnh đề \ref{prop 3.2.5} thì tập 
+    $E = \{T \in \PSL(2,\R)~|~T(z_0) \in K\}$ 
+    là compact và do đó $E \cap \Gamma = \{T \in \Gamma~|~T(z_0) \in K\}$. 
+
+    Mặt khác, do $\Gamma$ là rời rạc nên $\bigcup_{T \in \Gamma}\{T\}$ là một phủ mở của $\Gamma$ và do đó cũng là một phủ mở của $E \cap \Gamma$. Lại có $E$ compact nên tồn tại một phủ con hữu hạn chứa $E$. Do đó $E \cap \Gamma$ là hữu hạn.
+    % Mà tập $\{\Id\}$ là mở trong $\Gamma$ rời rạc, nên tập $\bigcup_{T \in \Gamma}\{T\cdot\Id\}$ là một phủ mở của $\Gamma$, và do đó cũng là một phủ mở của $\Gamma \cap E$. Mà $E$ compact nên tồn tại một phủ con hữu hạn trong họ phủ mở nói trên, điều đó có nghĩa tập $E \cap \Gamma$ là hữu hạn.
+
+    Ngược lại, giả sử $\Gamma \leq \PSL(2,\R)$ tác động gián đoạn thực sự trên $\hh$. Ta sẽ chứng minh $\Gamma$ là một nhóm con rời rạc. Thật vậy, giả sử phản chứng $\Gamma$ không rời rạc. Khi đó tồn tại dãy các phần tử phân biệt $\{T_n\} \subset \Gamma$ mà $T_n \to \Id$.
+
+    Mặt khác, theo bổ đề \ref{lem 3.2.6} tồn tại $z_0 \in \hh$ không phải điểm bất động của bất cứ phép biến đổi nào trong $\Gamma \setminus\{\Id\}$. 
+
+    Ta có $T_n \to \Id$ nên $T_n(z_0) \to z_0$ và do đó $\{T_n(z_0)\} \subset \Gamma z_0 \subset \hh$ là một dãy các điểm phân biệt. Từ đó, với mọi $\varepsilon>0$ thì hình cầu đóng $\overline{B(z_0,\varepsilon)}$ là một lân cận của $z_0$ sẽ giao với dãy $\{T_n(z_0)\}$ tại vô số điểm. Điều đó có nghĩa tồn tại tập $\overline{B(z_0,\varepsilon)}$ compact trong $\hh$ mà $\overline{B(z_0,\varepsilon)} \cap \Gamma z_0$ không hữu han, mâu thuẫn với tính gián đoạn thực sự của $\Gamma$.
+\end{proof}
+% \begin{cor}
+%     Cho $\Gamma$ là một tập con của $\PSL(2,\R)$. Khi đó $\Gamma$ tác động gián đoạn thực sự trên $\hh$ nếu và chỉ nếu với mọi $z \in \hh$ thì quĩ đạo $\Gamma z$ là một tập con rời rạc của $\hh$.
+% \end{cor}
+% \begin{proof}
+%     Giả sử $\Gamma$ tác động gián đoạn thực sự trên $\hh$, khi đó với mỗi $z\in \hh$, quĩ đạo $\Gamma z$ là hữu hạn địa phương và do đó là rời rạc trong $\hh$.
+
+%     Ngược lại, giả sử với mọi $z \in \hh$ thì quĩ đạo $\Gamma z$ là một tập con rời rạc của $\hh$, ta sẽ chỉ ra $\Gamma$ tác động gián đoạn thực sự trên $\hh$. Thật vậy, giả sử phản chứng $\Gamma$ không tác động gián đoạn thực sự trên $\hh$, khi đó $\Gamma$ không phải nhóm Fuchs, do đó không rời rạc. Ta xây dựng được 
+% % \end{proof}
+% \section{Các tính chất đại số của nhóm Fuchs}
+% \begin{defn}
+%     Cho $G$ là một nhóm. Khi đó tập $C_G(g) = \{h \in G~|~hg = hg\}$ được gọi là nhóm tâm hoá của $g$ trong $G$.
+% \end{defn}
+% % Chúng ta sẽ đi tìm nhóm tâm hoá của các đẳng cự trong $\PSL(2,\R)$. 
+% \begin{lem}
+%     Nếu $ST = TS$ thì $S$ gửi tập các điểm bất động của $T$ thành chính nó.
+% \end{lem}
+% \begin{proof}
+%     Giả sử $p$ là một điểm bất động của $T$. Khi đó $T(p) = p$ và do đó 
+%     \[TS(p) = ST(p)=S(p),\]
+%     tức $S(p)$ cũng là một điểm bất động của $T$.
+% \end{proof}
+
+% \begin{exam*}
+%     Xét đẳng cự parabolic $T(z) = z+1$ trong $\PSL(2,\R)$. 
+    
+%     Ta có $T$ có một điểm bất động là $\infty$ trên $\R \cup \{\infty\}$ và không có điểm bất động trên $\hh$. 
+%     Do đó nếu $S \in C_{\PSL(2,\R)}(T)$ thì $S$ gửi $\infty$ thành $\infty$. Điều này có nghĩa phép biến đổi xạ ảnh cảm sinh bởi $S$ là \[P^1(\C) \to P^1(\C), [z:1]\mapsto [az+b:cz+d], [1:0]\mapsto [a:c]\] trong đó $\matt \in \SL(2,\R)$ là ma trận tương ứng của $S$. Vì vây để $[1:0] \mapsto [1:0]$ thì $c = 0, ad = 1$.
+
+%     Để $ST = TS$ thì 
+%     $\begin{bmatrix}
+%         a & b\\
+%         0 & 1/a
+%     \end{bmatrix}
+%     \begin{bmatrix}
+%         1 & 1\\
+%         0 & 1
+%     \end{bmatrix} =
+%     \begin{bmatrix}
+%         1 & 1\\
+%         0 & 1
+%     \end{bmatrix}
+%     \begin{bmatrix}
+%         a & b\\
+%         0 & 1/a
+%         \end{bmatrix}$ hay $\begin{bmatrix}
+%         a & a+b\\
+%         0 & 1/a
+%     \end{bmatrix} = \begin{bmatrix}
+%     a & 1/a+b\\
+%     0 & 1/a
+%     \end{bmatrix}$. Từ đó ta được $a = 1/a$, tức $a^2 = 1$, hay $S(z) = z\pm b$.
+    
+%     Vì vậy $C_{\PSL(2,\R)}(T) = \{z\mapsto z+b~|~b\in \R\}$. 
+% \end{exam*}
+% \begin{exam*}
+% 	Xét phép đẳng cự hyperbolic $T(z) = k^2z$ với $k>0, k\neq 1$ của $\hh$.
+		
+% 	Ta có $T$ có hai điểm bất động là $\infty$ trên $\R \cup \{\infty\}$ và không có điểm bất động trên $\hh$. 
+% 	Do đó nếu $S \in C_{\PSL(2,\R)}(T)$ thì $S$ gửi $\{0, \infty\}$ thành $\{0,\infty\}$. Điều này có nghĩa phép biến đổi xạ ảnh cảm sinh bởi $S$ là \[P^1(\C) \to P^1(\C), [z:1]\mapsto [az+b:cz+d], [1:0]\mapsto [a:c]\] trong đó $\matt \in \SL(2,\R)$ là ma trận tương ứng của $S$.
+%     Ta có hai trường hợp sau
+%     \begin{enumerate}
+%         \item Trường hợp $[1:0] \mapsto [1:0]$ và $[0:1]\mapsto [0:1]$
+
+%         Ta được $[a:c] = [1:0]$ và $[b:d] = [0:1]$, dẫn đến $c = 0, b = 0, ad = 1$. Tức $S(z) = a^2z$ và $ST = TS$ với mọi $a>0, a\neq 1$.
+
+%         \item Trường hợp $[1:0] \mapsto [0:1]$ và $[0:1]\mapsto [1:0]$
+%         Ta được $[a:c] = [0:1]$ và $[b:d] = [1:0]$, dẫn đến $a = 0, d = 0, bc = -1$. 
+%         Để $ST = TS$ thì 
+%     $\begin{bmatrix}
+%         0 & b\\
+%         -1/b & 0
+%     \end{bmatrix}
+%     \begin{bmatrix}
+%         k & 0\\
+%         0 & 1/k
+%     \end{bmatrix} =
+%     \begin{bmatrix}
+%         k & 0\\
+%         0 & 1/k
+%     \end{bmatrix}
+%     \begin{bmatrix}
+%         0 & b\\
+%         -1/b & 0
+%         \end{bmatrix}$. 
+        
+%         Từ đó ta được $b/k = kb$, tức $k^2 = 1$, vô lý.
+%     \end{enumerate}
+%     Tổng kết ta được $C_{\PSL(2,\R)}(T) = \{z\mapsto a^2z~|~a > 0, a\neq 1\}$. 
+% \end{exam*}
+% \begin{exam*}
+%     Xét đẳng cự elliptic $T(z) = -\dfrac{1}{z}$ không có điểm bất động trên $\R \cup \{\infty\}$ và có một điểm bất động trên $\hh$ là $i$.
+    
+% 	Do đó nếu $S \in C_{\PSL(2,\R)}(T)$ thì $S$ gửi $i$ thành $i$. Điều này có nghĩa phép biến đổi xạ ảnh cảm sinh bởi $S$ là \[P^1(\C) \to P^1(\C), [z:1]\mapsto [az+b:cz+d], [1:0]\mapsto [a:c]\] trong đó $\matt \in \SL(2,\R)$ là ma trận tương ứng của $S$.
+
+%     Để $[i:1] \mapsto [i:1]$ ta phải có $[i:1] = [ai+b:ci+d] = \left[\dfrac{ai+b}{ci+d}:1\right]$, nghĩa là $\dfrac{ai+b}{ci+d} = i$, hay $a= d, b = -c, a^2 + b^2 = 1$. Khi đó tồn tại duy nhất $\theta \in \R$ sai khác một bội nguyên $2\pi$ để $a = \cos{\theta}, b = \sin{\theta}$.
+    
+%         Để $ST = TS$ thì 
+%     $\begin{bmatrix}
+%         0 & -1\\
+%         1 & 0
+%     \end{bmatrix}
+%     \mathe =
+%     \mathe
+%     \begin{bmatrix}
+%         0 & -1\\
+%         1 & 0
+%         \end{bmatrix}$,
+
+%         luôn đúng. Chứng tỏ $C_{\PSL(2,\R)}(T) = \left\{z\mapsto \dfrac{(\cos{\theta})z + \sin{\theta}}{(-\sin{\theta})z+\cos{\theta}}~|~\theta \in \R \right\}$. 
+% \end{exam*}
+% \begin{thm}
+%     Hai đẳng cự khác đơn vị của $\PSL(2,\R)$ có chung tập các điểm bất động khi và chỉ khi chúng giao hoán.
+% \end{thm}
+% \begin{proof}
+%     Giả sử $S, T \in \PSL(2,\R)$ mà $ST = TS$. Khi đó $\Tr(T^{-1}ST) = \Tr(S)$ nên $S,T$ thuộc cùng loại đẳng cự trong $\hh$. Do đó chúng có cùng số điểm bất động. 
+    
+%     Nếu $S, T$ cùng là parabolic (hoặc cùng là elliptic) thì chúng cùng có số điểm bất động là 1. Mà $S$ gửi tập điểm bất động của $T$ thành chính nó và ngược lại $T$ gửi tập điểm bất động của $S$ thành chính nó. Nên trong hai trường hơp này $S$ và $T$ có cùng điểm bất động.
+
+%     Nếu $S,T$ cùng là hyperbolic thì chúng cùng số điểm bất động là 2, và các điểm bất động đều nằm trên $\R \cup \{\infty\}$. Vì $T,S$ cũng là đồng dạng nên chúng có cùng tập các giá trị riêng, kết hợp $T$ là hyperbolic nên ma trận tương ứng của nó liên hợp trong $\SL(2,\R)$ với ma trận $\begin{bmatrix}
+%         \lambda & 0\\
+%         0 & 1/\lambda
+%     \end{bmatrix}$ trong đó $\lambda$ và $1/\lambda$ là các giá trị riêng khác 1 của các ma trận tương ứng của $S,T$. Vì vậy, ta chọn được $C \in \PSL(2,\R)$ sao cho $C^{-1}TC$ có ma trận tương ứng là  $\begin{bmatrix}
+%         \lambda & 0\\
+%         0 & 1/\lambda
+%     \end{bmatrix}$, và do đó nó có hai điểm bất động là $0, \infty$. Gọi ma trận tương ứng với $C^{-1}SC$ là $\matt$. Khi đó, vì $ST = TS$ nên
+%     \[\begin{bmatrix}
+%         \lambda & 0\\
+%         0 & 1/\lambda
+%     \end{bmatrix}\matt = \matt \begin{bmatrix}
+%         \lambda & 0\\
+%         0 & 1/\lambda
+%     \end{bmatrix}.\]
+%     Dẫn đến \[\begin{bmatrix}
+%         \lambda a& \lambda b\\
+%         c/\lambda  & d/\lambda
+%     \end{bmatrix} = \begin{bmatrix}
+%         \lambda a& b/\lambda\\
+%         c\lambda  & d/\lambda
+%     \end{bmatrix},\]
+%     vì vậy $\lambda b = b/\lambda,~c\lambda = c/\lambda$, kết hợp $\lambda^ 2 \neq 1$ ta được $b = c =0$. Do đó $C^{-1}SC$ có ma trận tương ứng là $\begin{bmatrix}
+%         a&  0\\
+%         0 & d
+%     \end{bmatrix}$, và vì vậy nó có 2 điểm bất động là $0, \infty$. Từ đây ta kết luận $S, T$ có chung tập điểm bất động.
+
+%     Ngược lại, nếu $S, T$ có cùng tập điểm bất động thì chúng cùng loại đẳng cự trong $\hh$. Và vì vậy ma trận tương ứng của chúng cùng liên hợp với một trong 3 loại ma trận sau
+%     \[\begin{bmatrix}
+%         \lambda & 0\\
+%         0  & 1/\lambda
+%     \end{bmatrix},\quad \begin{bmatrix}
+%         1 & *\\
+%         0  & 1
+%     \end{bmatrix}, \quad \mathe.\]
+%     Mặt khác các ma trận cùng loại trong 3 loại trên là giao hoán với nhau. 
+    
+%     Vì thế $S,T$ cũng vậy.
+%     \end{proof}
+% \begin{thm}
+%     Nhóm tâm hoá của một phép đẳng cự hyperbolic (tương ứng parabolic hay elliptic) trong $\PSL(2,\R)$ gồm tất cả các đẳng cự hyperbolic (tương ứng parabolic hay elliptic) có cùng tập điểm bất động với nó và thêm phần tử đơn vị $\Id$.
+% \end{thm}
+% \begin{proof}
+%     Lấy bất kỳ $T \in \PSL(2,\R)$, khi đó $S \in C_{\PSL(2,\R)}(T)$ thì $ST = TS$, điều này xảy ra khi và chỉ khi $S$ có cùng tập điểm bất động với $T$, hơn nữa $S$ cùng loại đẳng cự với $T$. Hiển nhiên đẳng cự đồng nhất $\Id$ luôn thuộc nhóm tâm hoá $C_{\PSL(2,\R)}(T)$.
+% \end{proof}
+% % Nhắc lại rằng 
+% \begin{defn}[Trục của đẳng cự hyperbolic]
+%     Mỗi mỗi phép đẳng cự hyperbolic $T$ trong $\hh$ đều có 2 điểm bất động trên $\R \cup \{\infty\}$. Khi đó đường trắc địa trong $\hh$ nối 2 điểm bất động nói trên được gọi là \textit{trục} của phép đẳng cự hyperbolic $T$ và kí hiệu là $Axis(T)$. 
+% \end{defn}
+% \begin{cor}
+% Hai đẳng cự hyperbolic trong $\PSL(2,\R)$ là giao hoán khi và chỉ khi chúng có cùng trục.     
+% \end{cor}
+
+% Ta đã biết mỗi nhóm cyclic sinh bởi một đẳng cự hyperbolic hoặc parabolic là một nhóm Fuchs và mỗi nhóm cyclic có cấp hữu hạn sinh bởi một đẳng cự elliptic cũng là một nhóm Fuchs. Vậy một nhóm Fuchs khi nào là một nhóm cyclic. Định lý sau chỉ ra điều đó. 
+% \begin{thm}\label{thm 3.3.7}
+%     Một nhóm Fuchs $\Gamma \leq \PSL(2,\R)$ thoả mãn tất cả các phần tử khác đơn vị đều có chung tập điểm bất động thì $\Gamma$ là một nhóm cyclic.
+% \end{thm}
+% Ta sẽ sử dụng các chứng minh ở mục nhóm Fuchs cyclic để chứng minh cho định lý trên.
+% \begin{proof}
+%     Mỗi đẳng cự trong $\PSL(2,\R)$ có tập điểm bất động thuộc một trong ba trường hợp đó là $2$ điểm bất động trên $\R \cup \{\infty\}$ hoặc 
+%     1 điểm bất động trên $\R \cup \{\infty\}$ hoặc 1 điểm bất động trên $\hh$. Do đó mỗi nhóm Fuchs phải bao gồm các phần tử cùng loại và vì vậy ta có 3 trường hợp sau
+%     \begin{enumerate}
+%         \item $\Gamma$ là một nhóm các đẳng cự hyperbolic.
+
+%         Lấy bất kỳ $T \in \Gamma$, khi đó $T$ có hai điểm bất động trên $\R \cup \{\infty\}$. Không mất tính tổng quát, ta có thể giả sử 2 điểm bất động đó của $T$ là $0$ và $\infty$. Từ đó suy ra ma trận của $T$ có dạng $\begin{bmatrix}
+%             \lambda & 0 \\
+%             0 & 1/\lambda
+%         \end{bmatrix}, \lambda >0$, điều này tương ứng với sự kiện $\Gamma \leq G = \{T \in \PSL(2,\R)~|~T(z) = \lambda^2 z, \lambda>0\}$. Mặt khác ta có ánh xạ
+%         \[f: G \mapsto \R,~f(T) = \ln{\lambda}\]
+%         là một đẳng cấu topo. Cho nên $\Gamma$ đẳng cấu với một nhóm con rời rạc của $\R$, mà trong $\R$,  một nhóm con rời rạc là một nhóm cylcic vô hạn, do đó $\Gamma$ là một nhóm cyclic.
+
+%         \item $\Gamma$ là một nhóm các đẳng cự parabolic.
+
+%         Tương tự như trường hợp 1, không mất tính tổng quát, ta giả sử các đẳng cự $T$ của $\Gamma$ đều giữ cố định điêm $\infty$.  Từ đó suy ra ma trận của $T$ có dạng $\begin{bmatrix}
+%             1 & a \\
+%             0 & 1/\lambda
+%         \end{bmatrix}, a >0$, điều này tương ứng với sự kiện $\Gamma \leq G = \{T \in \PSL(2,\R)~|~T(z) = z+ na, a>0\}$. Mặt khác ta có ánh xạ
+%         \[f: G \mapsto \R,~f(T) = a\]
+%         là một đẳng cấu topo. Cho nên $\Gamma$ đẳng cấu với một nhóm con rời rạc của $\R$, mà trong $\R$,  một nhóm con rời rạc là một nhóm cylcic vô hạn, do đó $\Gamma$ là một nhóm cyclic.
+%         \item $\Gamma$ là một nhóm các đẳng cự elliptic, tương tự như 2 trường hợp trên và dựa vào chứng minh của mệnh đề \ref{prop 3.2.10} ta cũng chỉ ra được $\Gamma$ là cyclic. 
+%     \end{enumerate}
+% \end{proof}
+% \begin{thm}
+%     Mọi nhóm Fuchs abel đều cyclic.
+% \end{thm}
+% \begin{proof}
+%     Ta có mọi phần tử khác đơn vị của một nhóm Fuchs abel thì đều có chung tập điểm bất động, mặt khác theo định lý \ref{thm 3.3.7} thì mọi nhóm Fuchs có chung tập điểm bất động thì cyclic. Do đó ta mọi nhóm Fuchs abel đều cyclic.
+% \end{proof}
+% \begin{cor}
+%     Một nhóm Fuchs thì không đẳng cấu với $\Z \times \Z$.
+% \end{cor}
+
+% \begin{thm}
+%     Cho $\Gamma$ là một nhóm Fuchs không abel. Khi đó nhóm con chuẩn hoá của $\Gamma$ trong $\PSL(2,\R)$ là một nhóm Fuchs.
+% \end{thm}
+% \begin{remark*}
+%     Cho $H$ là một nhóm con của nhóm $G$. Khi đó tập \[N_G(H) = \{g \in G~|~gHg^{-1} = H\}\] được gọi là nhóm con chuẩn hoá của $H$ trong $G$.
+% \end{remark*}
+% \begin{proof}
+%     Giả sử phản chứng nhóm con chuẩn hoá của $\Gamma$ trong $\PSL(2,\R)$ là không phải một nhóm Fuchs. Khi đó tồn tại dãy các đẳng cự phân biệt $\{T_n\} \subset N_{\PSL(2,\R)}(\Gamma)$ sao cho $T_n \to \Id$. Suy ra với mọi $S \in \Gamma\setminus\{\Id\}$ thì $T_nST_n^{-1}\to S$. Mặt khác $T_nST_n^{-1} \in N_{\PSL(2,\R)}(\Gamma)$ nên kết hợp với tính rời rạc của $\Gamma$ ta suy ra tồn tại $n_0$ sao cho $T_nST_n^{-1} = S$ với mọi $n>n_0$. Chứng tỏ với mọi $n > n_0$ thì $T_n$ giao hoán với $S$, và do đó chúng có cùng tập điểm bất động. Lại có vì $\Gamma$ không abel nên tồn tại $S' \in \Gamma\setminus\{\Id\}$ sao cho tập điểm bất động của $S'$ khác tập điểm bất động của $S$. Lập luận tương tự, lại tồn tại $n_1$ đủ lớn sao cho với mọi $n>n_1$ thì $T_n$ cùng tập điểm bất động với $S'$. Từ đó suy ra với mọi $n > \max\{n_0,n_1\}$ thì $T_n$ có cùng tập điểm bất động với cả $S$ và $S'$, điều này mâu thuẫn chứng tỏ giả thiết phản chứng là sai.
+% \end{proof}
+

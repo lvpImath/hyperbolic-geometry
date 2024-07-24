@@ -1,0 +1,290 @@
+\section{Các nhóm Fuchs sơ cấp}
+\begin{defn}
+    Một nhóm con $\Gamma$ của $\PSL(2,\R)$ được gọi là một \textit{nhóm sơ cấp} nếu nó tồn tại $z \in \overline{\hh} = \hh \cup \R \cup \{\infty\}$ sao cho quỹ đạo $\Gamma z$ là hữu hạn.
+\end{defn}
+\begin{exam*}
+    Bất kì nhóm con của $\PSL(2,\R)$ mà các phần tử đều có chung tập điểm bất động thì đều là một nhóm sơ cấp.
+\end{exam*}
+\begin{comment*}
+Với mỗi $T \in \PSL(2,\R)$ có $\matt$ là ma trận tương ứng cảm sinh một phép biến đổi xạ ảnh
+\[P^1(\C) \to P^1(\C), \quad [z_1:z_2] \mapsto [az_1+bz_2:cz_1+dz_2].\]
+      \begin{align*}
+      [z:1] &\mapsto [az+b:cz+d]=
+      \begin{cases}
+        \left[\dfrac{az+b}{cz+d}:1\right]   & \text{ nếu } z \neq -\dfrac{d}{c},\\
+        [1:0]   & \text{ nếu } z= -\dfrac{d}{c},
+      \end{cases}\\
+     [1:0] &\mapsto \left[a:c\right] = \begin{cases}
+          \left[\dfrac{a}{c}:1\right]   & \text{ nếu } c \neq 0,\\
+         [1:0]   & \text{ nếu }  c = 0.
+      \end{cases}
+      \end{align*}
+Do đó $\hh$ và $\R \cup \{\infty\}$ là bất biến thông qua tác động của nhóm $\PSL(2,\R)$. 
+
+Như vậy, với mọi $\Gamma \leq \PSL(2,\R)$ là nhóm sơ cấp thì $\Gamma z \in \hh$ nếu $z\in \hh$ và $\Gamma z \in \R\cup \{\infty\}$ nếu $z\in \R\cup \{\infty\}$. 
+\end{comment*}
+
+% \begin{remark*}
+%     \textit{Giao hoán tử} của hai phần tử $g,h$ trong một nhóm $G$  được định nghĩa là $[g,h] = ghg^{-1}h^{-1}$. Ta có $[g,h]=[h,g]^{-1}$, hơn nữa nếu $g,h$ giao hoán thì $[g,h] = \Id$.
+% \end{remark*}
+
+\subsection{Đặc trưng của nhóm sơ cấp}
+\begin{thm}\label{thm 3.4.3}
+    Cho $\Gamma$ là một nhóm con của $\PSL(2,\R)$, ngoài phần tử đơn vị, nó chỉ chứa các phần tử elliptic. Khi đó tất cả các phần tử của $\Gamma$ có chung một điểm cố định trong $\overline{\hh}$. Hơn nữa, $\Gamma$ là một nhóm \textit{abel, cyclic và sơ cấp}.
+\end{thm}
+
+\begin{proof}
+    Lấy $T$ là một phần tử elliptic khác đơn vị của $\Gamma$, không mất tính tổng quát, giả sử ma trận tương ứng với $T$ là $A = \mathe$.
+
+    Lấy $S \in \Gamma$ bất kỳ, giả sử ma trận tương ứng của nó là $B = \matt \in \SL(2,\R)$. 
+
+    Khi đó 
+    \begin{align*}
+        Tr[TST^{-1}S^{-1}]
+        &=\Tr(ABA^{-1}B^{-1})\\
+        &= \Tr\left(\mathe \matt\begin{bmatrix}
+            \cos \theta & -\sin \theta\\
+            \sin \theta & \cos\theta
+        \end{bmatrix}\begin{bmatrix}
+            d & -b\\
+            -c & a
+         \end{bmatrix}\right)\\
+        % &= 2ad\cos^2\theta + (a^2+b^2+c^2+d^2)\sin^2\theta - 2bc\cos^2\theta\\
+        &= 2 + [(a-d)^2+(b+c)^2]\sin^2\theta.
+         \end{align*}
+         Nhận thấy $\Tr[T,S] \geq 2$, nên giao hoán tử $[T,S] \in \Gamma$ là hyperbolic hoặc là elliptic. Mà theo định nghĩa của $\Gamma$ thì $[T,S]$ phải là elliptic. Khi đó $\Tr[T,S] = 2$, tức là $a = d, b = -c, ad-bc = a^2+b^2 = 1$. Do đó tồn tại duy nhất $\phi$ sai khác một bội nguyên $2\pi$, sao cho $a = \cos\phi, b = \sin\phi$. Như vậy $B = \begin{bmatrix}
+            \cos \phi & \sin \phi\\
+            -\sin \phi & \cos\phi
+        \end{bmatrix}$. 
+        Hiển nhiên $AB = BA$, tức $\Gamma$ là giao hoán, dẫn đến tất cả các phần tử khác đơn vị của $\Gamma$ có chung một điểm cố định trên $\overline{\hh}$. Từ đó ta được $\Gamma$ cũng là nhóm sơ cấp.
+\end{proof}
+\begin{cor}
+    Mọi nhóm Fuchs $\Gamma$ mà các phần tử khác đơn vị là elliptic thì là một nhóm cyclic hữu hạn.
+\end{cor}
+\begin{proof}
+    Theo định lý \ref{thm 3.4.3} thì $\Gamma$ là giao hoán. Do đó các phần tử khác đơn vị có chung tập điểm cố định. Vì vậy nó là một nhóm Fuchs các phần tử elliptic giao hoán, dẫn đến $\Gamma$ là cyclic hữu hạn.
+\end{proof}
+\begin{thm}\label{ thm 3.4.5}
+    Mọi nhóm Fuchs sơ cấp $\Gamma$ đều đẳng cấu với $\Z$ hoặc $\Z_n$ hoặc $D_{\infty}$(nhóm Dihedral vô hạn). Hơn nữa, ta có 
+    \begin{enumerate}
+        \item Nếu $\Gamma \cong \Z$ thì $\Gamma$ liên hợp với một nhóm cyclic sinh bởi phép đẳng cự hyperbolic $T(z) = \lambda z$ với $\lambda >0$ hoặc phép đẳng cự parabolic $S(z) = z+k$ với $k>0$.
+
+        \item Nếu $\Gamma \cong \Z_n$ thì $\Gamma$ liên hợp với một nhóm cyclic sinh bởi đẳng cự elliptic $T(z) = \dfrac{\cos\dfrac{2\pi}{n}z+\sin\dfrac{2\pi}{n}}{\sin\dfrac{2\pi}{n}z+\cos\dfrac{2\pi}{n}}$.
+
+        \item Nếu $\Gamma \cong D_{\infty}$ thì nó liên hơp với nhóm sinh bởi một đẳng cự hyperbolic $T(z) = \lambda z$ và $S(z) = -\dfrac{1}{z}$ với $k>0$.
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    Lấy $\Gamma x$ là một quỹ đạo của hữu hạn nào đó của nhóm Fuchs $\Gamma$ sơ cấp, với $z \in \overline{\hh}$.
+    Khi đó ta có các trường hợp sau
+    \begin{enumerate}
+        \item Nếu $|\Gamma x| = 1$, tức $\Gamma x = \{z_0\}$ với $z_0 \in \widehat{\Fix}(\Gamma)$ nào đó.
+
+        Nếu $z_0 \in \hh$ thì tất cả các phần tử khác đơn vị của $\Gamma$ là elliptic. Do đó $\Gamma$ là một nhóm cyclic vô hạn.
+
+        Nếu $z_0 \in \R \cup \{\infty\}$. Khi đó $\Gamma$ không có phần tử elliptic. Và do đó ta có 3 trường hợp sau
+        \begin{enumerate}
+            \item $\Gamma$ chứa cả phần tử hyperbolic, cả phần tử parabolic.
+
+            Bằng phép liên hợp ta luôn tìm được phần tử của $\Gamma$ có dạng $T(z) = \lambda z$ với $\lambda >0$. Khi đó $z_0 \in \widehat{\Fix}(\Gamma) \subset \widehat{\Fix}(T) = \{0, \infty\}$. 
+
+            Nếu $z_0 = 0$, ta xét  $\varphi\Gamma \varphi^{-1} $ với $\varphi: z\mapsto -\dfrac{1}{z}$ thoả mãn $T = \varphi T^{-1}\varphi^{-1}$. Khi đó $\widehat{\Fix}(\varphi\Gamma \varphi^{-1}) = \varphi(\widehat{\Fix}(\Gamma)) = \varphi(z_0) = \{\infty\}$. 
+            Dẫn đến, không mất tính tổng quát, ta có thể giả sử $z_0 = \infty$ và giả sử $k > 1$ vì nếu cần thiết ta thay $T$ bởi $T^{-1}$.  
+
+            Lấy $S$ là một phần tử parabolic trong $\Gamma$, khi đó ta cũng có $z_0 \in \widehat{\Fix}(\Gamma) \subset \widehat{\Fix}(S)$. 
+            Dẫn đến $\widehat{\Fix}(S) = \{\infty\}$ và do đó $S$ có dạng $S(z) = z+k$ với $k \in \R$. Ta xét dãy $\{T^{-n}ST^n\}_{n \geq 1} \subset \Gamma$ có 
+            \[T^{-n}ST^n(z) = T^{-n}S(\lambda^n z) = (T^{-1})^n(\lambda^n z +k )= z + k/\lambda^n \to z \]
+            khi  $n \to \infty, \lambda > 1$. Nghĩa là $T^{-n}ST^n \to \Id$. Điều này mâu thuẫn với tính rời rạc của $\Gamma$. 
+            
+            Tức trường hợp này không xảy ra.
+            
+            \item $\Gamma\setminus \{\Id\}$ chỉ chứa các phần tử parabolic.
+
+            Khi đó mỗi phần tử $T \in \Gamma \{\Id\}$ đều nhận $\alpha$ làm điểm bất động duy nhất. Dẫn đến $\Gamma$ là một nhóm Fuchs đẳng cấu với $\Z$. 
+
+            \item $\Gamma\setminus \{\Id\}$ chỉ chứa các phần tử hyperbolic.
+
+            Lập luận tương tự như trên, không mất tính tổng quát, giả sử $\Gamma$ chứa phần tử $T:z \mapsto \lambda z, \lambda >0, \lambda \neq 1$ là một phần tử hyperbolic và giả sử $z_0 = \infty$ . Ta có $\left<T\right> \leq \Gamma$, giả  sử $\left<T\right> \subsetneq \Gamma$. Khi đó tồn tại $S \in \Gamma \setminus \left<T\right>$, hơn nữa $S$ có dạng $S(z) = az+b$ với $a \neq 0, b\in \R$ (vì $\alpha = \infty \in \widehat{\Fix}(S)$). Ta có giao hoán tử $[S,T] = STS^{-1}T^{-1}: z\mapsto z+(\lambda-1)b$. Nếu $b\neq 0$ thì $[S,T]$ là một phần tử parabolic trong $\Gamma$, mâu thuẫn với giả thiết của trường hợp này. Do đó $b = 0$ và vì vậy $S(z) = az$, chứng tỏ mọi phần tử của $\Gamma$ đều có dạng $z\mapsto kz$ với $ k>0$. Từ đó suy ra $\Gamma$ đẳng cấu với một nhóm con rời rạc của $\R_{>0}$, tức $\Gamma \cong \Z$.
+        \end{enumerate}
+
+        \item Nếu $|\Gamma x| = 2$, giả sử $\Gamma x= \{\alpha, \beta\}$.
+
+        Nếu $\Gamma x\subset \hh$ thì mọi phần tử của $\Gamma\setminus\{\Id\}$ đều là elliptic và do đó $\Gamma$ là một nhóm cyclic hữu hạn.
+
+        Nếu $\Gamma x \subset \R \cup \{\infty\}$ thì $\Gamma$ không chứa các phần tử parabolic (do chúng không có điểm bất động trên $\R \cup \{\infty\}$). Khi đó ta có ba trường hợp sau
+        \begin{enumerate}
+            \item $\Gamma\setminus\{\Id\}$ chứa cả phần tử hyperbolic, cả phần tử elliptic. Không mất tính tổng quát, bằng phép liên hợp, ta có thể giả sử $\alpha = 0, \beta = \infty$. Khi đó mọi phần tử hyperbolic của $\Gamma$ đều có dạng $T_k: z\mapsto kz$ với $k>0, k \neq 1$ và mọi phần tử elliptic của $\Gamma$ đều có dạng $S_b: z \mapsto -\dfrac{b}{z}$ với $b>0$.
+
+            Đặt $\Gamma_h $ là nhóm con chứa tất cả phần tử hyperbolic cùng với phần tử đơn vị $\Id$ của $\Gamma$. Khi đó $\Gamma_0$ là một nhóm con chỉ số 2. Suy ra $\Gamma_0$ có hai lớp kề là chính nó và một lớp kề khác là $S_b\Gamma_0$ với $S_b$ là một phần tử elliptic trong $\Gamma$. Ta có, với phần tử hyperbolic $\varphi: z\mapsto \sqrt{b}z$ thì $\varphi \Gamma_0 \varphi^{-1} = \Gamma_0$ và $\varphi S_b \varphi^{-1} = S_1$, trong đó $S_1 = -\dfrac{1}{z}$. Từ đây ta được,
+            \[\varphi \Gamma \varphi^{-1} = \Gamma_0 \cup S_1\Gamma_0.\]
+            Vì $\Gamma_0$ là nhóm các phần tử hyperbolic, rời rạc, nên tồn tại phần tử $T_k$ ở trên sao cho $\Gamma_0 = \left<T_k\right>$ với $k>0, k\neq 1$. 
+            
+            Vậy $\Gamma$ liên hợp với nhóm $\left<z\mapsto kz,~z\mapsto -\dfrac{1}{z}\right>$ với $k >0, k\neq 1$.
+
+            \item $\Gamma\setminus\{\Id\}$ chỉ chứa các phần tử hyperbolic. Mỗi phần tử này có hai điểm bất động. Do đó $\alpha, \beta$ chính là các điểm bất động chung của tất cả các phần tử hyperbolic. Hơn nữa $\{\alpha\}, \{\beta\}$ sẽ là các quỹ đạo của $\Gamma$. Vì thế $\Gamma x$ không phải một quỹ đạo của $\Gamma$, mâu thuẫn.
+
+            \item $\Gamma\setminus\{\Id\}$ chỉ chứa các phần tử elliptic. Khi đó $\Gamma$ là một nhóm cyclic hữu hạn, tức $\Gamma \cong \Z_n$ với $n$ nguyên dương nào đó.
+        \end{enumerate}
+        
+        \item Nếu $|\Gamma x| \geq 3$. Khi đó $\Gamma_x \subset \R \cup \{\infty\}$ và $\Gamma\setminus\{\Id\}$ chỉ chứa các phần tử hyperbolic, và do đó nó là cyclic hữu hạn.
+    \end{enumerate}
+\end{proof}
+\subsection{Bất đẳng thức Jorgensen}
+\begin{lem}\label{lem 3.4.6}
+    Cho $S, T \in \PSL(2,\R)$. Khi đó xét dãy $S_0 = S, S_{n+1} = S_nTS_n^{-1}$ với $n\geq 0$. Khi đó, nếu tồn tại $m \geq 1$ thoả mãn $S_m = T$ thì  $\left<S,T\right>$ là một nhóm sơ cấp và $S_2 = T$.
+\end{lem}
+\begin{proof}
+    Nếu $T = \Id$ thì $S_{n+1} = \Id$ với mọi $n \geq 0$.
+
+    Nếu $T \neq \Id$, khi đó ta có hai trường hợp sau
+    \begin{enumerate}
+        \item $T$ có một điểm bất động trên $\overline{\hh}$.
+
+        Giả sử $\widehat{\Fix}(T) = \{z_0\}$. Khi đó vì $S_{n+1}$ liên hợp với $T$ nên $S_{n+1}$ cũng có một điểm bất động, với mọi $n \geq 0$.
+        Hơn nữa ta có
+        \[S_{n+1}S_n(z_0) = S_nTS_n^{-1}S_n(z_0) = S_nT(z_0) = S_n(z_0)\]
+        chứng tỏ $S_n(z_0) \in \widehat{\Fix}(S_{n+1})$. Vì vậy $\widehat{\Fix}(S_{n+1}) = \{S_n(z_0)\}$. Nếu tồn tại $m$ sao cho $S_m = T$. Khi đó $\widehat{\Fix}(S_m) = \widehat{\Fix}(T) = \{z_0\}$. Từ đây ta có
+        \begin{align*}
+            \widehat{\Fix}(S_{m-1}) &= \{z_0\}\\
+            &\ldots  \\
+            \widehat{\Fix}(S_{1}) &= \{z_0\}\\
+            \widehat{\Fix}(S) = \widehat{\Fix}(S_{0}) &\supset \{z_0\}
+        \end{align*}
+        Từ đó suy ra $z_0 \in \widehat{\Fix}\left<S, T\right>$, dẫn đến $\left<S, T\right>$ là một nhóm sơ cấp. Hơn nữa, $\widehat{\Fix}(S_{1}) = \{z_0\} = \widehat{\Fix}(T)$, dẫn đến $S_1T= T S_1$, tức là $T = S_1TS_1^{-1} = S_2$.
+        \item $T$ có một điểm bất động trên $\overline{\hh}$.
+
+        Giả sử hai điểm bất động của $T$ là $\alpha, \beta \in \overline{\hh}$. Vì $S_{n+1}$ liên hợp với $T$ nên $S_{n+1}$ cũng có hai điểm bất động trên $\overline{\hh}$, do đó $S_{n+1}$ là hyperbolic, với mọi $n \geq 0$.
+
+        Khi đó 
+        \[S_{n+1}S_n(\{\alpha, \beta\}) = S_nTS_n^{-1}S_n(\{\alpha, \beta\}) = S_nT(\{\alpha, \beta\}) = S_n(\{\alpha, \beta\})\]
+        Từ đó ta được $\widehat{\Fix}(S_{n+1}) = \{S_n(\{\alpha, \beta\})\}$. Lập luận tương tự như trường hợp trên ta được 
+        \begin{align*}
+            \widehat{\Fix}(S_{m-1}) &= \{\alpha, \beta\}\\
+            &\ldots  \\
+            \widehat{\Fix}(S_{1}) &= \{\alpha, \beta\}\\
+            \widehat{\Fix}(S) = \widehat{\Fix}(S_{0}) =  \{\alpha, \beta\}
+        \end{align*}
+        $\{\alpha, \beta\} \supset \widehat{\Fix}\left<S,T\right>$, và do đó $\left<S,T\right>$ là một nhóm sơ cấp. Hơn nữa, ta cũng được $\widehat{\Fix}(S_{1}) = \{\alpha, \beta\} = \widehat{\Fix}(S_{2})$. Dẫn đến $S_1S_2=S_2S_1$, tức $S_1T = TS_1$, do đó $S_2 = T$.
+    \end{enumerate}
+\end{proof}
+
+\begin{thm}[Bất đẳng thức Jorgensen]\label{thm 3.4.7}
+    Cho $T,S \in \PSL(2,\R)$ thoả mãn $\left<S,T\right>$ là một nhóm Fuchs không sơ cấp. Khi đó
+    \[|\Tr^2(T)-4|+|\Tr([T,S])-2| \geq 1\]
+\end{thm}
+\begin{proof}
+    Xét dãy $S_0 = S$ và $S_{n+1} = S_nTS_n^{-1}$ với mọi $n\geq 0$. 
+    
+    Giả sử phản chứng $|\Tr^2(T)-4|+|\Tr([T,S])-2| < 1$, khi đó ta có các trường hợp sau
+    \begin{enumerate}
+        \item $T$ là parabolic.
+
+        Vì $S_{n+1}$ liên hợp với $T$ nên chúng có cùng số điểm cố định và cùng vết, tức vết của đẳng cự bất biến qua phép liên hợp, do đó không mất tính tổng quát ta có thể chon $T$ là đẳng cự parabolic có ma trận tương ứng là $\begin{bmatrix}
+            1 & 1\\
+            0 & 1
+        \end{bmatrix}$ và ma trận tương ứng của $S$ là $\matt \in \SL(2,\R)$. 
+
+        Giả sử phản chứng, $|\Tr^2(T)-4|+|\Tr([T,S])-2| < 1$, điều này tương đương với $|2^2-4|+ |(c^2+2)-2| < 1$, tức $|c| < 1$.
+
+        Gọi ma trận tương ứng của $S_n$ là 
+        $\begin{bmatrix}
+            a_n & b_n\\
+            c_n & d_n
+        \end{bmatrix}$. 
+        Khi đó vì $S_{n+1} = S_nTS_n^{-1}$ nên ta thu được
+        \[\begin{bmatrix}
+            a_{n+1} & b_{n+1}\\
+            c_{n+1} & d_{n+1}
+        \end{bmatrix} = \begin{bmatrix}
+            a_n & b_n\\
+            c_n & d_n
+        \end{bmatrix}\begin{bmatrix}
+            1 & 1\\
+            0 & 1
+        \end{bmatrix}\begin{bmatrix}
+            d_n & -b_n\\
+            -c_n & a_n
+        \end{bmatrix} = \begin{bmatrix}
+            1-a_nc_n & a_n^2\\
+            -c_n^2 & 1+a_nc_n
+        \end{bmatrix}.\]
+        Từ đó ta được $c_{n+1} = -c_n^2$, dẫn đến $c_n = -c^{2^n}$, kết hợp $|c|<1$ ta được $|c_n| < 1$ và $c_n \to 0$ khi $n\to \infty$.
+
+        Và $a_{n+1}  = 1-a_nc_n$, dẫn đến $|a_{n+1}| \leq |a_n||c_n|+1\leq |a_n| + 1$. Từ đó suy ra $|a_{n+1}| \leq (n+1) + |a|$, vì thế $|a_nc_n| =  |a_n||c_n| \leq (n+|a|)|c|^{2^n} \to 0$ khi $n \to \infty$.
+
+        Dẫn đến $a_{n+1} = 1 - a_nc_n \to 1$. Từ đó suy ra $S_{n+1}\to T$. Mặt khác $\left<S,T\right>$ là rời rạc nên tồn tại $m$ sao cho $S_m = T$. Khi đó áp dụng bổ đề \ref{3.4.5} ta được $\left<S,T\right>$ là một nhóm sơ cấp, mâu thuẫn.
+
+        \item Nếu $T$ là hyperbolic. 
+
+        Lập luận tương tự trường hợp trên, không mất tổng quát, ta giả sử ma trận tương ứng của $T$ và $S$ lần lượt là $\begin{bmatrix}
+            \lambda & 0\\
+            0 & 1/\lambda
+        \end{bmatrix}$ và $\matt$.
+
+        Đặt $s =|\Tr^2(T)-4|+|\Tr([T,S])-2| = (1+|bc|)\left|\lambda - 1/\lambda\right|^2 $.
+
+        Giả sử phản chứng $s < 1$ khi đó $(1+|bc|)\left|\lambda - 1/\lambda\right|^2 < 1$, nói riêng thì \[\left|\lambda - 1/\lambda\right| < \dfrac{1}{1+|bc|}\leq 1.\]
+        Gọi ma trận tương ứng của $S_n$ là 
+        $\begin{bmatrix}
+            a_n & b_n\\
+            c_n & d_n
+        \end{bmatrix}$. 
+        Khi đó vì $S_{n+1} = S_nTS_n^{-1}$ nên ta thu được
+        \begin{align*}
+        \begin{bmatrix}
+            a_{n+1} & b_{n+1}\\
+            c_{n+1} & d_{n+1}
+        \end{bmatrix} &= \begin{bmatrix}
+            a_n & b_n\\
+            c_n & d_n
+        \end{bmatrix}\begin{bmatrix}
+            \lambda & 0\\
+            0 & 1/\lambda
+        \end{bmatrix}\begin{bmatrix}
+            d_n & -b_n\\
+            -c_n & a_n
+        \end{bmatrix} \\
+        &= \begin{bmatrix}
+            \lambda a_nd_n - b_nc_n/\lambda & a_nb_n(1/\lambda - \lambda)\\
+            c_nd_n(\lambda  - 1/\lambda) & a_nd_n/\lambda - b_nc_n\lambda
+        \end{bmatrix}.
+        \end{align*}
+
+        Ta được $b_{n+1}c_{n+1} = -b_nc_n(1+b_nc_n)\left(\lambda-1/\lambda\right)^2$.
+
+        Do đó 
+        \begin{align*}
+            |b_{n+1}c_{n+1}| \leq |b_nc_n|(1+|b_nc_n|)\left|\lambda-1/\lambda\right|^2 = s|b_nc_n|
+        \end{align*}
+        Dẫn đến $|b_{n+1}c_{n+1}| \leq s^{n+1}|bc|$. 
+        
+        Mặt khác $0<s<1$ nên khi $n\to \infty$ thì $|b_{n+1}c_{n+1}| \to 0$, từ đó ta thu được
+        \begin{itemize}
+            \item $b_{n+1}c_{n+1} \to 0$,
+            \item $a_nd_n = 1 + b_nc_n \to 1$,
+            \item $a_{n+1} = a_nd_n - b_nc_n/\lambda \to \lambda$ và $d_{n+1} = a_nd_n/\lambda - b_nc_n\lambda \to 1/\lambda$.
+        \end{itemize}
+        Vì $a_n \to \lambda$ nên với $s>0$, thì $\left|\dfrac{a_n}{\lambda}\right|<|s^{-1/3}|$ từ đó ta được
+        \[\dfrac{|b_{n+1}|}{|\lambda^{n+1}|} = \dfrac{|b_n|}{|\lambda^n|}\dfrac{|a_n|}{|\lambda|}|\lambda - 1/\lambda|\leq \dfrac{|b_n|}{|\lambda^n|}s^{-1/3}\sqrt{s} = \dfrac{|b_n|}{|\lambda^n|}s^{1/6} \]
+        Cứ như vậy, ta được $\dfrac{|b_{n+1}|}{|\lambda^{n+1}|} \leq (s^{1/6})^n \dfrac{|b|}{|\lambda|} \longrightarrow 0$ khi $n \to \infty$ vì $0<s<1$.
+
+        tương tự ta cũng có $|c_n||\lambda^n| \to 0$. Khi đó ta được $T^{-n}S_{2n}T^n \longrightarrow T$, do 
+        \[ \begin{bmatrix}
+            a_{2n} & b_{2n}/\lambda^{2n}\\
+            c^n\lambda^{2n} & d_{2n}
+        \end{bmatrix} \longrightarrow \begin{bmatrix}
+            \lambda & 0\\
+            0 & 1/\lambda
+        \end{bmatrix}\]
+        Vì $\left<S,T\right>$ là rời rạc nên với mọi $n$ lớn thì $T^{-n}S_{2n}T^{n} = T$, tức $S_{2n} = T$ với mọi $n$ đủ lớn. Dẫn đến $\left<S,T\right>$ là nhóm sơ cấp, mâu thuẫn giả thiết phản chứng.
+
+        \item Nếu $T$ là elliptic.
+
+        Khi đó $T$ có hai trị riêng phức, không thực, liên hợp là $\lambda$ và $\overline{\lambda}$ thoả mãn $|\lambda|^2 = \lambda\overline{\Lambda} =1$, tức tồn tại $\phi (0,2\pi), \phi \neq \pi$ sao cho $\lambda = e^{i\phi}$. Khi đó, không mất tổng quát, qua các phép liên hợp, ta có thể giả sử ma trận ứng với $T$ trong $\SL(2,\C)$ là $\begin{bmatrix}
+            e^{i\phi} & 0\\
+            0 & e^{-i\phi}
+        \end{bmatrix}$. Lập luận tương tự trường hợp thứ 2 ta được điều phải chứng minh.
+        \end{enumerate}
+        Cả 3 trường hợp đều dẫn đến mâu thuẫn với giả thiết phản chứng.
+\end{proof}
+

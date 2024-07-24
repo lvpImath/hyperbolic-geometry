@@ -1,0 +1,59 @@
+\subsection{Phép biến đổi bảo giác}
+% Trên $\hh$ ta trang bị tích vô hướng được cảm sinh bởi tích vô hướng trên không gian tiếp xúc của $\hh$ tại $z$ là $T_z\hh \cong \C$,
+% \[ \left<z_1,z_2\right> = \left<x_1+iy_1,x_2+iy_2\right>= \dfrac{1}{(\im z)^2} (x_1x_2+y_1y_2).\]
+% Từ đó ta thu được chuẩn tương ứng 
+% \[\norm{z_1} = \sqrt{\left<z_1,z_1\right>} = \dfrac{1}{\im z}\sqrt{x_1^2+y_1^2}\]
+% và góc giữa hai vector tiếp xúc $z_1,z_2$ là góc thuộc $ [0,\pi]$ thoả mãn
+%     \[ \cos\widehat{(z_1,z_2)}= \dfrac{\left<z_1,z_2\right>}{\norm{z_1}\cdot \norm{z_2}} = \dfrac{x_1x_2+y_1y_2}{\sqrt{x_1^2+y_1^2}\sqrt{x_2^2+y_2^2}}.\]
+\begin{defn}[Góc giữa hai đường trắc địa] 
+    Góc giữa hai đường trắc địa trong $\hh$ tại giao điểm $z$ là góc giữa hai vector tiếp xúc của chúng tại $z$ trong $T_z\hh$.
+\end{defn}
+\begin{defn}[Phép biến đổi bảo giác]
+    Một phép biến đổi $f$ trên $\hh$ được gọi là \textit{bảo giác} nếu 
+    \[\cos\widehat{(f(z_1),f(z_2))} = \cos\widehat{(z_1,z_2)},\]
+    ngược lại $f$ được gọi là \textit{phản bảo giác nếu}
+    \[\cos\widehat{(f(z_1),f(z_2))} = -\cos\widehat{(z_1,z_2)},\]
+\end{defn}
+\begin{thm}\label{thm 2.3.10}
+    Mọi phép biến đổi trên $\PSL(2,\R)$ là bảo giác 
+    % và phép biến đổi $z \mapsto -\overline{z}$ là phản bảo giác.
+\end{thm}
+\begin{proof}
+    Giả sử $f \in \PSL(2,\R)$, khi đó với $z \in \hh$, gọi $\gamma_1, \gamma_2: [0,1] \to \hh$ lần lượt là hai đường cong giao nhau tại $z=\gamma_1(0)= \gamma_2(0)$ và có các vector tiếp tuyến tại $z$ lần lượt là $z-= \gamma_1'(0), z_2 =\gamma_2'(0)$. Suy ra $f\circ \gamma_1, f\circ \gamma_2$ lần lượt là các đường cong giao nhau tại $f(z)$ và có các vector tiếp xúc tại $f(z)$ là $Df(z)z_1,Df(z)z_2$ với $Df(z)$ là ma trận Jacobi của $f$ tại $z=x+iy \in \hh$. 
+    
+    Với $f(z) := f(x+iy) = u(x,y) + iv(x,y)$, vì $\hh \subset \C$ nên ta có thể coi $f: \R^2 \to \R^2$. Ta có 
+    \[Df(z) = \begin{pmatrix}
+                \dfrac{\partial u}{\partial x} & \dfrac{\partial u}{\partial y} \\
+                 \dfrac{\partial v}{\partial x}& \dfrac{\partial v}{\partial y}
+            \end{pmatrix}.\]
+    Khi đó ta cần chỉ ra 
+    \begin{align*}
+         \cos\widehat{(Df(z)z_1,Df(z)z_2)} &= \cos\widehat{(z_1,z_2)}\\
+         \dfrac{\left<Df(z)z_1,Df(z)z_2\right>}{\norm{Df(z)z_1}\cdot \norm{Df(z)z_2}} &= \dfrac{\left<z_1,z_2\right>}{\norm{z_1}\cdot \norm{z_2}}.
+    \end{align*}
+    Trong đó \[\left<Df(z)z_1,Df(z)z_2\right> = \dfrac{1}{\im f(z)} \left<z_1,(Df(z))^tDf(z)(z_2)\right>.\]
+    Với 
+    \[(Df(z))^tDf(z) = \begin{pmatrix}
+                \dfrac{\partial u}{\partial x} & \dfrac{\partial v}{\partial x} \\
+                 \dfrac{\partial u}{\partial y}& \dfrac{\partial v}{\partial y}
+            \end{pmatrix} \begin{pmatrix}
+                \dfrac{\partial u}{\partial x} & \dfrac{\partial u}{\partial y} \\
+                 \dfrac{\partial v}{\partial x}& \dfrac{\partial v}{\partial y}
+            \end{pmatrix}\]        
+    Mà $f$ là ánh xạ khả vi phức (theo biến $z$) nên ta có $\dfrac{\partial u}{\partial x} = \dfrac{\partial v}{\partial y} \text{ và } \dfrac{\partial u}{\partial y} = -\dfrac{\partial v}{\partial x}$. Nên 
+    \[(Df(z))^tDf(z) = \begin{pmatrix}
+                \left(\dfrac{\partial u}{\partial x}\right)^2  + \left(\dfrac{\partial u}{\partial y}\right)^2 & 0 \\
+                 0& \left(\dfrac{\partial u}{\partial x}\right)^2  + \left(\dfrac{\partial u}{\partial y}\right)^2
+            \end{pmatrix}
+            = \left[\left(\dfrac{\partial u}{\partial x}\right)^2  + \left(\dfrac{\partial u}{\partial y}\right)^2\right]\cdot I_2.
+    \]
+    Nên \[\left<Df(z)z_1,Df(z)z_2\right> =  \left[\left(\dfrac{\partial u}{\partial x}\right)^2  + \left(\dfrac{\partial u}{\partial y}\right)^2\right]\dfrac{1}{\im f(z)} \left<z_1,z_2\right> \]
+    Tương tự thì 
+    \[\norm{Df(z)z_i}^2 = \left<Df(z)z_i,Df(z)z_i\right> =  \left[\left(\dfrac{\partial u}{\partial x}\right)^2  + \left(\dfrac{\partial u}{\partial y}\right)^2\right]\dfrac{1}{\im f(z)} \left<z_i,z_i\right>, i =1,2. \]
+    Từ đó ta có $f$ là một ánh xạ bảo giác.
+    
+    % Tiếp theo xét ánh xạ $g: z = x+iy \mapsto -\overline{z} = -x+iy$, khi đó vì $\partial g /\partial \overline{z} = -1 \neq 0$ nên $g$ không phải là hàm khả vi phức nên ta không thể làm như cách trên.
+\end{proof}
+% \begin{thm}
+%     Topo trên $\hh$ cảm sinh bởi metric hyperbolic  giống với metric cảm sinh bởi metric Euclid.
+% \end{thm}

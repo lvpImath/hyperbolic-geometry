@@ -1,0 +1,156 @@
+\ProvidesPackage{macros}
+\newif\if@myfiledraft
+\DeclareOption{draft}{\@myfiledrafttrue}
+\ProcessOptions\relax
+\if@myfiledraft
+  \newcommand{\myterm}[1]{\emph{#1}\marginpar{TERM: #1}}
+\else
+  \newcommand{\myterm}[1]{\emph{#1}}
+\fi
+%---------------------------------------------------------------
+\usepackage[utf8]{vietnam}
+\usepackage[a4paper]{geometry}
+\usepackage{babel}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2.5cm,rmargin=1.5cm}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+%---------------------------------------------------------------
+\usepackage{quiver}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{commath}
+\usetikzlibrary{arrows}
+\usepackage{setspace}
+\usepackage{bbm}
+\usepackage[all]{xy}
+\usepackage{pgfplots}
+\usepackage{pdfpages}
+\usepackage{graphicx} %package to manage images
+\graphicspath{ {./images/} }
+
+\usepackage[rightcaption]{sidecap}
+\pgfplotsset{compat=1.18} 
+\usepackage{wrapfig}
+%-------------------------------------------------------------------------
+\onehalfspacing
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\hh}{\mathbb{H}^2}
+
+\newcommand{\LL}{\mathbb{L}}
+\newcommand{\U}{\mathbb{U}^2}
+\newcommand{\SH}{\mathbb{S}\hh}
+\DeclareMathOperator\Mat{Mat}
+\DeclareMathOperator\GL{GL}
+\DeclareMathOperator\SL{SL}
+\DeclareMathOperator\PSL{PSL}
+\DeclareMathOperator\PGL{PGL}
+\DeclareMathOperator\im{Im}
+\DeclareMathOperator\re{Re}
+% \DeclareMathOperator\im{Im}
+% \newcommand{\im}{\textrm{Im}}
+% \newcommand{\re}{\textrm{Re}}
+\DeclareMathOperator\Tr{Tr}
+\DeclareMathOperator\Fix{Fix}
+\DeclareMathOperator\Id{Id}
+\DeclareMathOperator\Isom{Isom}
+% \newcommand{\tr}{\textrm{tr}}
+% \newcommand{\Tr}{\textrm{Tr}}
+% \newcommand{\Fix}{\textrm{Fix}}
+% \newcommand{\Id}{\textrm{Id}}
+% \newcommand{\PGL}{\textrm{PGL}}
+% \newcommand{\Mat}{\textrm{Mat}}
+% \newcommand{\GL}{\textrm{GL}}
+% \newcommand{\SL}{\textrm{SL}}
+% \newcommand{\PSL}{\textrm{PSL}}
+% \newcommand{\Axis}{\textrm{Axis}}
+% \newcommand{\Cir}{\textrm{Cir}}
+\newcommand{\Span}{\textrm{Span}}
+% \newcommand{\Isom}{\textrm{Isom}}
+\newcommand{\Stab}{\textrm{Stab}}
+\newcommand{\const}{\textrm{const}}
+\newcommand{\defeq}{\overset{\underset{\mathrm{def}}{}}{=}}
+\newcommand{\matt}{\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}}
+\newcommand{\mathe}{\begin{bmatrix}
+            \cos{\theta} & \sin{\theta}\\
+            -\sin{\theta} & \cos{\theta}
+        \end{bmatrix}}
+\makeatletter
+%---------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{section}{chapter}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\theoremstyle{plain}
+
+\newtheorem{thm}{\protect\theoremname}[section]
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{\protect\definitionname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\theoremstyle{plain}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+\theoremstyle{plain}
+\newtheorem{cor}[thm]{\protect\corollaryname}
+\theoremstyle{definition}
+% \newtheorem{ex}[thm]{\protect\exercisename}
+% \theoremstyle{definition}
+% \newtheorem*{sol*}{\protect\solutionname}
+\theoremstyle{definition}
+\newtheorem{exam*}[thm]{\protect\examplename}
+\theoremstyle{definition}
+\newtheorem*{remark*}{\protect\remarkname}
+\theoremstyle{definition}
+\newtheorem*{comment*}{\protect\comment}
+\theoremstyle{definition}
+% \newtheorem*{question*}{\protect\questionname}
+%---------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\providecommand{\definitionname}{Đ\d{i}nh nghĩa}
+\providecommand{\examplename}{\textbf{Ví d\d{u}}}
+% \providecommand{\exercisename}{\textbf{Bài tập}}
+\providecommand{\remarkname}{\textbf{Lưu ý}}
+\providecommand{\comment}{\textbf{Nhận xét}}
+\providecommand{\theoremname}{\textbf{Đ\d{i}nh lí}}
+\providecommand{\propositionname}{\textbf{Mệnh đề}}
+\providecommand{\lemmaname}{\textbf{Bổ đề}}
+% \providecommand{\questionname}{\textbf{Câu hỏi}}
+\providecommand{\corollaryname}{Hệ quả}
+\providecommand{\proofname}{\textbf{Chứng minh}}
+% \providecommand{\solutionname}{\textbf{Lời giải}}
+% \providecommand{\problemname}{\textbf{Bài tập}}
+%---------------------------------------------------------------
+\makeatother
+%---------------------------------------------------------------
+\providecommand{\corollaryname}{Corollary}
+\providecommand{\definitionname}{Definition}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\lemmaname}{Lemma}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\solutionname}{Solution}
+\providecommand{\theoremname}{Theorem}
+
+\newcommand{\definitionautorefname}{Definition}
+\newcommand{\lemmaautorefname}{Lemma}
+\newcommand{\remarkautorefname}{Remark}
+\newcommand{\propositionautorefname}{Proposition}
+\newcommand{\exampleautorefname}{Example}
+%---------------------------------------------------------------
+\endinput

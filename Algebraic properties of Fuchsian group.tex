@@ -1,0 +1,210 @@
+\section{Các tính chất đại số của nhóm Fuchs}
+\begin{defn}
+    Cho $G$ là một nhóm. Khi đó tập $C_G(g) = \{h \in G~|~hg = hg\}$ được gọi là nhóm tâm hoá của $g$ trong $G$.
+\end{defn}
+% Chúng ta sẽ đi tìm nhóm tâm hoá của các đẳng cự trong $\PSL(2,\R)$. 
+\begin{lem}\label{lem 3.3.2}
+    Nếu $ST = TS$ thì $S$ gửi tập các điểm bất động của $T$ thành chính nó.
+\end{lem}
+\begin{proof}
+    Giả sử $p$ là một điểm bất động của $T$. Khi đó $T(p) = p$ và do đó 
+    \[TS(p) = ST(p)=S(p),\]
+    tức $S(p)$ cũng là một điểm bất động của $T$.
+\end{proof}
+
+\begin{exam*}
+    Xét đẳng cự parabolic $T(z) = z+1$ trong $\PSL(2,\R)$. 
+    
+    Ta có $T$ có một điểm bất động là $\infty$ trên $\R \cup \{\infty\}$ và không có điểm bất động trên $\hh$. 
+    Do đó nếu $S \in C_{\PSL(2,\R)}(T)$ thì $S$ gửi $\infty$ thành $\infty$. Điều này có nghĩa phép biến đổi xạ ảnh cảm sinh bởi $S$ là \[P^1(\C) \to P^1(\C), [z:1]\mapsto [az+b:cz+d], [1:0]\mapsto [a:c]\] trong đó $\matt \in \SL(2,\R)$ là ma trận tương ứng của $S$. Vì vây để $[1:0] \mapsto [1:0]$ thì $c = 0, ad = 1$.
+
+    Để $ST = TS$ thì 
+    $\begin{bmatrix}
+        a & b\\
+        0 & 1/a
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 1\\
+        0 & 1
+    \end{bmatrix} =
+    \begin{bmatrix}
+        1 & 1\\
+        0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        a & b\\
+        0 & 1/a
+        \end{bmatrix}$ hay $\begin{bmatrix}
+        a & a+b\\
+        0 & 1/a
+    \end{bmatrix} = \begin{bmatrix}
+    a & 1/a+b\\
+    0 & 1/a
+    \end{bmatrix}$. Từ đó ta được $a = 1/a$, tức $a^2 = 1$, hay $S(z) = z\pm b$.
+    
+    Vì vậy $C_{\PSL(2,\R)}(T) = \{z\mapsto z+b~|~b\in \R\}$. 
+\end{exam*}
+\begin{exam*}
+	Xét phép đẳng cự hyperbolic $T(z) = k^2z$ với $k>0, k\neq 1$ của $\hh$.
+		
+	Ta có $T$ có hai điểm bất động là $\infty$ trên $\R \cup \{\infty\}$ và không có điểm bất động trên $\hh$. 
+	Do đó nếu $S \in C_{\PSL(2,\R)}(T)$ thì $S$ gửi $\{0, \infty\}$ thành $\{0,\infty\}$. Điều này có nghĩa phép biến đổi xạ ảnh cảm sinh bởi $S$ là \[P^1(\C) \to P^1(\C), [z:1]\mapsto [az+b:cz+d], [1:0]\mapsto [a:c]\] trong đó $\matt \in \SL(2,\R)$ là ma trận tương ứng của $S$.
+    Ta có hai trường hợp sau
+    \begin{enumerate}
+        \item Trường hợp $[1:0] \mapsto [1:0]$ và $[0:1]\mapsto [0:1]$
+
+        Ta được $[a:c] = [1:0]$ và $[b:d] = [0:1]$, dẫn đến $c = 0, b = 0, ad = 1$. Tức $S(z) = a^2z$ và $ST = TS$ với mọi $a>0, a\neq 1$.
+
+        \item Trường hợp $[1:0] \mapsto [0:1]$ và $[0:1]\mapsto [1:0]$
+        Ta được $[a:c] = [0:1]$ và $[b:d] = [1:0]$, dẫn đến $a = 0, d = 0, bc = -1$. 
+        Để $ST = TS$ thì 
+    $\begin{bmatrix}
+        0 & b\\
+        -1/b & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+        k & 0\\
+        0 & 1/k
+    \end{bmatrix} =
+    \begin{bmatrix}
+        k & 0\\
+        0 & 1/k
+    \end{bmatrix}
+    \begin{bmatrix}
+        0 & b\\
+        -1/b & 0
+        \end{bmatrix}$. 
+        
+        Từ đó ta được $b/k = kb$, tức $k^2 = 1$, vô lý.
+    \end{enumerate}
+    Tổng kết ta được $C_{\PSL(2,\R)}(T) = \{z\mapsto a^2z~|~a > 0, a\neq 1\}$. 
+\end{exam*}
+\begin{exam*}
+    Xét đẳng cự elliptic $T(z) = -\dfrac{1}{z}$ không có điểm bất động trên $\R \cup \{\infty\}$ và có một điểm bất động trên $\hh$ là $i$.
+    
+	Do đó nếu $S \in C_{\PSL(2,\R)}(T)$ thì $S$ gửi $i$ thành $i$. Điều này có nghĩa phép biến đổi xạ ảnh cảm sinh bởi $S$ là \[P^1(\C) \to P^1(\C), [z:1]\mapsto [az+b:cz+d], [1:0]\mapsto [a:c]\] trong đó $\matt \in \SL(2,\R)$ là ma trận tương ứng của $S$.
+
+    Để $[i:1] \mapsto [i:1]$ ta phải có $[i:1] = [ai+b:ci+d] = \left[\dfrac{ai+b}{ci+d}:1\right]$, nghĩa là $\dfrac{ai+b}{ci+d} = i$, hay $a= d, b = -c, a^2 + b^2 = 1$. Khi đó tồn tại duy nhất $\theta \in \R$ sai khác một bội nguyên $2\pi$ để $a = \cos{\theta}, b = \sin{\theta}$.
+    
+        Để $ST = TS$ thì 
+    $\begin{bmatrix}
+        0 & -1\\
+        1 & 0
+    \end{bmatrix}
+    \mathe =
+    \mathe
+    \begin{bmatrix}
+        0 & -1\\
+        1 & 0
+        \end{bmatrix}$,
+
+        luôn đúng. Chứng tỏ $C_{\PSL(2,\R)}(T) = \left\{z\mapsto \dfrac{(\cos{\theta})z + \sin{\theta}}{(-\sin{\theta})z+\cos{\theta}}~|~\theta \in \R \right\}$. 
+\end{exam*}
+\begin{thm}\label{thm 3.3.6}
+    Hai đẳng cự khác đơn vị của $\PSL(2,\R)$ có chung tập các điểm bất động khi và chỉ khi chúng giao hoán.
+\end{thm}
+\begin{proof}
+    Giả sử $S, T \in \PSL(2,\R)$ mà $ST = TS$. Khi đó $\Tr(T^{-1}ST) = \Tr(S)$ nên $S,T$ thuộc cùng loại đẳng cự trong $\hh$. Do đó chúng có cùng số điểm bất động. 
+    
+    Nếu $S, T$ cùng là parabolic (hoặc cùng là elliptic) thì chúng cùng có số điểm bất động là 1. Mà $S$ gửi tập điểm bất động của $T$ thành chính nó và ngược lại $T$ gửi tập điểm bất động của $S$ thành chính nó. Nên trong hai trường hơp này $S$ và $T$ có cùng điểm bất động.
+
+    Nếu $S,T$ cùng là hyperbolic thì chúng cùng số điểm bất động là 2, và các điểm bất động đều nằm trên $\R \cup \{\infty\}$. Vì $T,S$ cũng là đồng dạng nên chúng có cùng tập các giá trị riêng, kết hợp $T$ là hyperbolic nên ma trận tương ứng của nó liên hợp trong $\SL(2,\R)$ với ma trận $\begin{bmatrix}
+        \lambda & 0\\
+        0 & 1/\lambda
+    \end{bmatrix}$ trong đó $\lambda$ và $1/\lambda$ là các giá trị riêng khác 1 của các ma trận tương ứng của $S,T$. Vì vậy, ta chọn được $C \in \PSL(2,\R)$ sao cho $C^{-1}TC$ có ma trận tương ứng là  $\begin{bmatrix}
+        \lambda & 0\\
+        0 & 1/\lambda
+    \end{bmatrix}$, và do đó nó có hai điểm bất động là $0, \infty$. Gọi ma trận tương ứng với $C^{-1}SC$ là $\matt$. Khi đó, vì $ST = TS$ nên
+    \[\begin{bmatrix}
+        \lambda & 0\\
+        0 & 1/\lambda
+    \end{bmatrix}\matt = \matt \begin{bmatrix}
+        \lambda & 0\\
+        0 & 1/\lambda
+    \end{bmatrix}.\]
+    Dẫn đến \[\begin{bmatrix}
+        \lambda a& \lambda b\\
+        c/\lambda  & d/\lambda
+    \end{bmatrix} = \begin{bmatrix}
+        \lambda a& b/\lambda\\
+        c\lambda  & d/\lambda
+    \end{bmatrix},\]
+    vì vậy $\lambda b = b/\lambda,~c\lambda = c/\lambda$, kết hợp $\lambda^ 2 \neq 1$ ta được $b = c =0$. Do đó $C^{-1}SC$ có ma trận tương ứng là $\begin{bmatrix}
+        a&  0\\
+        0 & d
+    \end{bmatrix}$, và vì vậy nó có 2 điểm bất động là $0, \infty$. Từ đây ta kết luận $S, T$ có chung tập điểm bất động.
+
+    Ngược lại, nếu $S, T$ có cùng tập điểm bất động thì chúng cùng loại đẳng cự trong $\hh$. Và vì vậy ma trận tương ứng của chúng cùng liên hợp với một trong 3 loại ma trận sau
+    \[\begin{bmatrix}
+        \lambda & 0\\
+        0  & 1/\lambda
+    \end{bmatrix},\quad \begin{bmatrix}
+        1 & *\\
+        0  & 1
+    \end{bmatrix}, \quad \mathe.\]
+    Mặt khác các ma trận cùng loại trong 3 loại trên là giao hoán với nhau. 
+    
+    Vì thế $S,T$ cũng vậy.
+    \end{proof}
+\begin{thm}\label{thm 3.3.7}
+    Nhóm tâm hoá của một phép đẳng cự hyperbolic (tương ứng parabolic hay elliptic) trong $\PSL(2,\R)$ gồm tất cả các đẳng cự hyperbolic (tương ứng parabolic hay elliptic) có cùng tập điểm bất động với nó và thêm phần tử đơn vị $\Id$.
+\end{thm}
+\begin{proof}
+    Lấy bất kỳ $T \in \PSL(2,\R)$, khi đó $S \in C_{\PSL(2,\R)}(T)$ thì $ST = TS$, điều này xảy ra khi và chỉ khi $S$ có cùng tập điểm bất động với $T$, hơn nữa $S$ cùng loại đẳng cự với $T$. Hiển nhiên đẳng cự đồng nhất $\Id$ luôn thuộc nhóm tâm hoá $C_{\PSL(2,\R)}(T)$.
+\end{proof}
+% Nhắc lại rằng 
+\begin{defn}[Trục của đẳng cự hyperbolic]
+    Mỗi mỗi phép đẳng cự hyperbolic $T$ trong $\hh$ đều có 2 điểm bất động trên $\R \cup \{\infty\}$. Khi đó đường trắc địa trong $\hh$ nối 2 điểm bất động nói trên được gọi là \textit{trục} của phép đẳng cự hyperbolic $T$ và kí hiệu là $Axis(T)$. 
+\end{defn}
+\begin{cor}
+Hai đẳng cự hyperbolic trong $\PSL(2,\R)$ là giao hoán khi và chỉ khi chúng có cùng trục.     
+\end{cor}
+
+Ta đã biết mỗi nhóm cyclic sinh bởi một đẳng cự hyperbolic hoặc parabolic là một nhóm Fuchs và mỗi nhóm cyclic có cấp hữu hạn sinh bởi một đẳng cự elliptic cũng là một nhóm Fuchs. Vậy một nhóm Fuchs khi nào là một nhóm cyclic. Định lý sau chỉ ra điều đó. 
+\begin{thm}\label{thm 3.3.10}
+    Một nhóm Fuchs $\Gamma \leq \PSL(2,\R)$ thoả mãn tất cả các phần tử khác đơn vị đều có chung tập điểm bất động thì $\Gamma$ là một nhóm cyclic.
+\end{thm}
+Ta sẽ sử dụng các chứng minh ở mục nhóm Fuchs cyclic để chứng minh cho định lý trên.
+\begin{proof}
+    Mỗi đẳng cự trong $\PSL(2,\R)$ có tập điểm bất động thuộc một trong ba trường hợp đó là $2$ điểm bất động trên $\R \cup \{\infty\}$ hoặc 
+    1 điểm bất động trên $\R \cup \{\infty\}$ hoặc 1 điểm bất động trên $\hh$. Do đó mỗi nhóm Fuchs phải bao gồm các phần tử cùng loại và vì vậy ta có 3 trường hợp sau
+    \begin{enumerate}
+        \item $\Gamma$ là một nhóm các đẳng cự hyperbolic.
+
+        Lấy bất kỳ $T \in \Gamma$, khi đó $T$ có hai điểm bất động trên $\R \cup \{\infty\}$. Không mất tính tổng quát, ta có thể giả sử 2 điểm bất động đó của $T$ là $0$ và $\infty$. Từ đó suy ra ma trận của $T$ có dạng $\begin{bmatrix}
+            \lambda & 0 \\
+            0 & 1/\lambda
+        \end{bmatrix}, \lambda >0$, điều này tương ứng với sự kiện $\Gamma \leq G = \{T \in \PSL(2,\R)~|~T(z) = \lambda^2 z, \lambda>0\}$. Mặt khác ta có ánh xạ
+        \[f: G \mapsto \R,~f(T) = \ln{\lambda}\]
+        là một đẳng cấu topo. Cho nên $\Gamma$ đẳng cấu với một nhóm con rời rạc của $\R$, mà trong $\R$,  một nhóm con rời rạc là một nhóm cylcic vô hạn, do đó $\Gamma$ là một nhóm cyclic.
+
+        \item $\Gamma$ là một nhóm các đẳng cự parabolic.
+
+        Tương tự như trường hợp 1, không mất tính tổng quát, ta giả sử các đẳng cự $T$ của $\Gamma$ đều giữ cố định điêm $\infty$.  Từ đó suy ra ma trận của $T$ có dạng $\begin{bmatrix}
+            1 & a \\
+            0 & 1/\lambda
+        \end{bmatrix}, a >0$, điều này tương ứng với sự kiện $\Gamma \leq G = \{T \in \PSL(2,\R)~|~T(z) = z+ na, a>0\}$. Mặt khác ta có ánh xạ
+        \[f: G \mapsto \R,~f(T) = a\]
+        là một đẳng cấu topo. Cho nên $\Gamma$ đẳng cấu với một nhóm con rời rạc của $\R$, mà trong $\R$,  một nhóm con rời rạc là một nhóm cylcic vô hạn, do đó $\Gamma$ là một nhóm cyclic.
+        \item $\Gamma$ là một nhóm các đẳng cự elliptic, tương tự như 2 trường hợp trên và dựa vào chứng minh của mệnh đề \ref{prop 3.2.10} ta cũng chỉ ra được $\Gamma$ là cyclic. 
+    \end{enumerate}
+\end{proof}
+\begin{thm}\label{thm 3.3.11}
+    Mọi nhóm Fuchs abel đều cyclic.
+\end{thm}
+\begin{proof}
+    Ta có mọi phần tử khác đơn vị của một nhóm Fuchs abel thì đều có chung tập điểm bất động, mặt khác theo định lý \ref{thm 3.3.7} thì mọi nhóm Fuchs có chung tập điểm bất động thì cyclic. Do đó ta mọi nhóm Fuchs abel đều cyclic.
+\end{proof}
+\begin{cor}
+    Một nhóm Fuchs thì không đẳng cấu với $\Z \times \Z$.
+\end{cor}
+
+\begin{thm}\label{thm 3.3.13}
+    Cho $\Gamma$ là một nhóm Fuchs không abel. Khi đó nhóm con chuẩn hoá của $\Gamma$ trong $\PSL(2,\R)$ là một nhóm Fuchs.
+\end{thm}
+\begin{remark*}
+    Cho $H$ là một nhóm con của nhóm $G$. Khi đó $N_G(H) = \{g \in G~|~gHg^{-1} = H\} \leq G$ là nhóm con chuẩn hoá của $H$ trong $G$.
+\end{remark*}
+\begin{proof}
+    Giả sử phản chứng $N_{\PSL(2,\R)}(\Gamma)$ không phải một nhóm Fuchs. Khi đó tồn tại dãy các đẳng cự phân biệt $\{T_n\} \subset N_{\PSL(2,\R)}(\Gamma)$ sao cho $T_n \to \Id$. Suy ra với mọi $S \in \Gamma\setminus\{\Id\}$ thì $T_nST_n^{-1}\to S$. Mặt khác $T_nST_n^{-1} \in N_{\PSL(2,\R)}(\Gamma)$ nên kết hợp với tính rời rạc của $\Gamma$ ta suy ra tồn tại $n_0$ sao cho $T_nST_n^{-1} = S$ với mọi $n>n_0$. Chứng tỏ với mọi $n > n_0$ thì $T_n$ giao hoán với $S$, và do đó chúng có cùng tập điểm bất động. Lại có vì $\Gamma$ không abel nên tồn tại $S' \in \Gamma\setminus\{\Id\}$ sao cho tập điểm bất động của $S'$ khác tập điểm bất động của $S$. Lập luận tương tự, lại tồn tại $n_1$ đủ lớn sao cho với mọi $n>n_1$ thì $T_n$ cùng tập điểm bất động với $S'$. Từ đó suy ra với mọi $n > \max\{n_0,n_1\}$ thì $T_n$ có cùng tập điểm bất động với cả $S$ và $S'$, điều này mâu thuẫn chứng tỏ giả thiết phản chứng là sai.
+\end{proof}

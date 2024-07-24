@@ -1,0 +1,337 @@
+\section{Không gian xạ ảnh}
+% \begin{defn}[Không gian xạ ảnh]
+%     Cho $V$ là một không gian vector trên trường $\F$. Khi đó không gian xạ ảnh của $V$ là 
+%     \[P(V):= (V\setminus \{0\})/\sim\] 
+%     với $\sim$ là một quan hệ tương đương trên $V$, cụ thể $u \sim v $ khi và chỉ khi tồn tại $\lambda \in \F^* = \F\setminus \{0\}$ sao cho $u = \lambda v$.
+
+%     Khi đó, với mỗi vector $v \neq 0$ trong $V$, kí hiệu 
+%     \[[v]:=\{\lambda v~|~\lambda \in \F^*\}\]
+%     được gọi là \textit{điểm (xạ ảnh)} của $P(V)$.
+% \end{defn}
+% \begin{comment*}
+%     Với mọi $\lambda \neq 0$ và với mọi $v\neq 0$ thì $[\lambda v] = [v]$.
+% \end{comment*}
+\begin{defn}[Không gian xạ ảnh]
+    Cho $\F$ là một trường và $V$ là một không gian vector trên trường $\F$. Không gian xạ ảnh $P(V)$ là tập hợp các lớp tương đương của $V\setminus \{0\}$ đối với quan hệ tương đương định nghĩa bởi $u \sim v$ nếu tồn tại vô hướng $\lambda \in \F\setminus\{0\}$ sao cho $u = \lambda v$.
+
+    Khi $V$ hữu hạn chiều, ta định nghĩa số chiều của $P(V)$ là $\dim P(V) = \dim(V) -1$.
+\end{defn}
+Xét không gian xạ ảnh $P(V)$. Ta có ánh xạ chiếu chính tắc
+\[\pi: V\setminus\{0\} \to P(V),\quad v \mapsto [v]=\{\lambda v~|~\lambda \in \F\setminus\{0\}\}.\]
+Trong trường hợp $V = \F^{n+1}$, ta kí hiệu lại không gian xạ ảnh $P(\F^{n+1})$ là $P^{n}(\F)$. Khi đó, với vector $v=(a_0,a_1,\ldots,a_n) \in \F^{n+1}\setminus\{0\}$, lớp tương đương $[v]$ được kí hiệu lại là $[a_0:a_1:\cdots:a_n]$.
+
+Nếu $\F = \R$ hoặc $\F =\C$ thì $\F^{n+1}$ là một không gian vector topo. Ta trang bị cho không gian xạ ảnh $P^n(\F)$ topo thương của $\F^{n+1}\setminus\{0\}$.
+\begin{exam*}
+    Không gian xạ ảnh $0-$chiều $P^0(\F)$ chỉ có đúng một điểm, $P^0(\F) =\{[1]\}$.
+
+    Xét đường thẳng xạ ảnh $P^1(\F)$. Mỗi điểm của $P^1(\F)$ có dạng $[a_0:a_1]$, ta có hai trường hợp sau
+    \begin{itemize}
+        \item Nếu $a_1 = 0$ thì $[a_0:a_1] = [a_0:0]=[1:0]$.
+        \item Nếu $a_1\neq 0$ thì $[a_0:a_1] = \left[\dfrac{a_0}{a_1}:1\right]$. Hơn nữa, hai điểm $[a:1]$ và $[b:1]$ của $P^1(\F)$ trùng nhau khi và chỉ khi $a=b$.
+    \end{itemize}
+    Như vậy \[P^1(\F) = \{[a:1]~|~a\in \F\} \sqcup \{[1:0]\}.\]
+\end{exam*}
+Xét đơn cấu 
+\[\imath: \F^n \to \F^{n+1},\quad (a_0,a_1,\ldots,a_{n-1}) \mapsto (a_0,a_1,\ldots,a_{n-1},0).\]
+Ta thấy rằng hai vector $u,v \in \F^{n}\setminus\{0\},~u\sim v$ khi và chỉ khi $\imath(u) \sim \imath(v)$. Do đó, đơn cấu $\imath: \F^n \to \F^{n+1}$ cảm sinh đơn ánh 
+\[P^{n-1}(\F) \to P^{n}(\F),\quad [a_0:a_1:\cdots:a_{n-1}] \mapsto [a_0:a_1:\cdots:a_{n-1}:0].\]
+Sử dụng đơn ánh này, ta thường coi $P^{n-1}(\F)$ là một tập con của $P^n(\F)$. Ta nhận được một dãy lồng nhau các không gian xạ ảnh
+\[P^0(\F) \hookrightarrow P^1(\F) \hookrightarrow P^2(\F) \hookrightarrow P^3(\F)\hookrightarrow \cdots\]
+Tiếp theo ta mô tả $P^{n}(\F) \setminus P^{n-1}(\F)$. Xét đơn ánh
+\[j: \F^n \to \F^{n+1},\quad (a_0,a_1,\ldots,a_{n-1})\mapsto (a_0,a_1,\ldots,a_{n-1},1).\]
+Ta thấy rằng hai vector $u,v\in \F^n,~u=v$ khi và chỉ khi $j(u) \sim j(v)$. Do đó, đơn ánh $j:\F^n \to \F^{n+1}$ cảm sinh đơn ánh
+\[\F^{n}\to P^n(\F),\quad (a_0,a_1,\ldots,a_{n-1})\mapsto [a_0:a_1:\cdots:a_{n-1}:1].\]
+Sử dụng đơn ánh này, ta thường coi $\F^n$ là một tập con của $P^n(\F)$. Khi đó $P^n(\F)\setminus P^{n-1}(\F) = \F^n$, tức là
+\[P^n(\F) = \F^n \sqcup P^{n-1}(\F).\]
+Ta nhận được dãy các đơn ánh chính tắc
+\[\begin{tikzcd}
+	{P^0(\F)} & {P^1(\F)} & {P^2(\F)} & {P^3(\F)} & \cdots \\
+	& \F & {\F^2} & {\F^3} & \cdots
+	\arrow[hook, from=1-1, to=1-2]
+	\arrow[hook, from=1-2, to=1-3]
+	\arrow[hook, from=1-3, to=1-4]
+	\arrow[hook, from=1-4, to=1-5]
+	\arrow[hook, from=2-2, to=1-2]
+	\arrow[hook, from=2-3, to=1-3]
+	\arrow[hook, from=2-4, to=1-4]
+\end{tikzcd}\]
+\begin{prop}
+    Giả sử $\F = \R$ hoặc $\F = \C$. Khi đó, các đơn ánh
+        \[\begin{tikzcd}
+        	P^{n-1}(\F) & P^n(\F) \\
+        	& \F^n
+        	\arrow[hook, from=1-1, to=1-2]
+        	\arrow[hook, from=2-2, to=1-2]
+        \end{tikzcd}\]
+        là các phép nhúng các không gian topo.
+\end{prop}
+\begin{remark*}
+    Topo trên $P^n(\F)$ được định nghĩa dựa trên phép chiếu
+    \[\pi: \F^{n+1}\setminus\{0\} \to P^n(\F),~x\mapsto [x]\]
+    nói rõ hơn, tập $U \subset P^{n}(\F)$ được gọi là mở nếu $\pi^{-1}(U) = \{u \in \F^{n+1}\setminus\{0\}: [u] \in U\}$ là mở trong $\F^{n+1}\setminus\{0\}$, với topo trên $\F^{n+1}\setminus\{0\}$ được cảm sinh bởi bởi topo trên $\F^{n+1}$. Mặt khác, $\F^{n+1}\setminus\{0\}$ là mở trong $\F^{n+1}$ nên tập mở trong $\F^{n+1}\setminus\{0\}$ cũng chính là tập mở trong $\F^{n+1}$.
+    Suy ra $U$ là mở trong $P^n(\F)$ khi và chỉ khi $\pi^{-1}(U)$ là mở trong $\F^{n+1}$.
+    
+    Nhắc lại rằng, một đơn ánh liên tục $f:X\to Y$ giữa hai không gian topo $X$ và $Y$ được gọi là một phép nhúng các không gian topo nếu $f$ là một đồng phôi giữa $X$ và $f(X)$, trong đó topo trên $f(X)$ được cảm sinh từ topo trên $Y$. Vì $f: X \to f(X)$ là một song ánh liên tục. Nên để chỉ ra $f$ là đồng phôi giữa $X$ và $f(X)$ ta cần chỉ ra $f$ là ánh xạ mở, tức chỉ ra $f(U)$ mở trong $f(X)$ với mọi $U$ mở trong $X$.
+\end{remark*}
+% \begin{proof}    
+%     Với $\F = \R$ hoặc $\F = \C$ và với mỗi $n \geq 0$.
+
+%     Xét đơn ánh
+%     $\imath: P^{n-1}(\F) \to P^n(\F), [a_0:a_1:\cdots:a_{n-1}]\mapsto [a_0:a_1:\cdots:a_{n-1}:0]$ 
+%     có \[\imath(P^{n-1}(\F)) = \{[a_0:a_1:\cdots:a_{n-1}:0]~|~[a_0:a_1:\cdots:a_{n-1}] \in P^{n-1}(\F)\}\]
+%     % Giả sử $U$ là một tập mở trong $P^{n-1}(\F)$, ta sẽ chứng minh $\imath(U)$ là mở trong $P^n(\F)$. Như lưu ý trên $\imath(U)$ là mở trong $P^n(\F)$ nếu $\pi^{-1}(\imath(U))$ là mở trong $\F^{n+1}$. Thật vậy, lấy $x =(x_0,x_1,\ldots,x_n) \in \pi^{-1}(\imath(U))$ khi đó $\pi(x) =[x_0:x_1:\cdots:x_n]\in \imath(U)$. Khi đó tồn tại $[a_0:a_1:\cdots:a_{n-1}:0] \in \imath(U)$ sao cho $[x_0:x_1:\cdots:x_{n-1}:x_n] = [a_0:a_1:\cdots:a_{n-1}:0]$. Điều này xảy ra khi $x_n = 0$ và tồn tại $\lambda \neq 0$ sao cho $x_i = \lambda a_i$ với mọi $i=0,\ldots,n-1$. Như vậy, mỗi $x\in \pi^{-1}(\imath(U))$ đều có dạng $(a_0,a_1,\cdots,a_{n-1},0)$.
+% \end{proof}
+\begin{prop}
+
+    Đường thẳng xạ ảnh phức $P^1(\C)$ đồng phôi với mặt cầu đơn vị $\mathbb{S}^2 \subset \R^3$. Đặc biệt, $P^1(\C)$ là một không gian compact.
+    
+\end{prop}
+% \begin{proof}
+    
+% \end{proof}
+Ánh xạ nhúng chính tắc số thực vào số phức $\R \to \C$ cảm sinh đơn ánh
+\[P^n(\R) \hookrightarrow P^n(\C)\]
+với mọi số tự nhiên $n$.
+\begin{prop}
+
+    Đường thẳng xạ ảnh thực $P^1(\R)$ đồng phôi với đường tròn đơn vị $\mathbb{S}^1\subset \R^2$. Đặc biệt, $P^1(\R)$ là một không gian compact. Hơn nữa, đơn ánh $P^1(\R) \hookrightarrow P^1(\C)$ là một phép nhúng các không gian topo.
+\end{prop}
+% \begin{proof}
+    
+% \end{proof}
+
+
+
+
+
+
+
+% \begin{defn}
+%     Cho $V$ là một $\F-$không gian vector $n+1-$chiều, thì $P(V)$ được gọi là không gian xạ ảnh $n$ chiều. Khi đó, với mọi $v = (x_0,x_1,\ldots,x_n) \in V\setminus\{0\}$ ta kí hiệu điểm xạ ảnh 
+%     \[[v] = [x_0:x_1:\cdots:x_n] = \{(\lambda x_0,\lambda x_1,\ldots,\lambda x_n)~|~\lambda \in \F^*\}.\]
+%     Đặc biệt, khi $V$ có số chiều lần lượt là 1, 2 và 3 thì không gian xạ ảnh $P(V)$ có số chiều là $0, 1 \text{ và } 2$ và lần lượt được gọi là \textit{điểm xạ ảnh, đường thẳng xạ ảnh và mặt phẳng xạ ảnh}.
+% \end{defn}
+% \begin{remark*}
+%     Khi $V = \F^{n}$ thì ta còn kí hiệu $P^{n-1}(\F) = P(\F^n)$.
+% \end{remark*}
+% \begin{exam*}
+%     \begin{enumerate}
+%         \item Khi $V$ là không gian $1$ chiều thì $P(V) = \{[v]\}$, với $v$ là một vector khác 0 bất kì trong $V$.
+%         \item $P^1(\F) = \{[x:y]~|x,y \in \F\} = \{[z:1]~|~z\in \F\} \cup \{[1:0]\}$. 
+
+%         Nhận thấy tồn tại một song ánh giữa $\{[z:1]~|~z\in \F\} $ và $\F$, gửi $[z:1] \mapsto z$. Nên ta có thể đồng nhất các điểm xạ ảnh $[z:1]$ với $z$ tương ứng thuộc $\F$, và \textit{kí hiệu điểm xạ ảnh $[1:0]$ bởi $\infty$}, khi đó ta có thể viết 
+%             \[P^1(\F) = \F \cup \{\infty\}\] 
+%         \item Lập luận hoàn toàn tương tự thì 
+%         \begin{align*}
+%         P^2(\F) &= \{[x:y:1]~|~x,y\in \F\} \cup \{[x:1:0]~|~x\in \F\} \cup \{[1:0:0]\} \\
+%         &= \F^2 \cup \F \cup \{\infty\}.
+%         \end{align*}
+%         Một cách tổng quát, bằng phương pháp quy nạp ta được
+%         \[P^n(F) = \F^n \cup \F^{n-1} \cup \cdots \cup \F \cup \{\infty\}.\]
+%         \item Trong $P^1(\F)$, hai điểm xạ ảnh $[z_1:1] = [z_2:1]$ thì $z_1 = z_2$.
+%     \end{enumerate}
+% \end{exam*}
+\begin{defn}[Không gian xạ ảnh con]
+    Nếu $U $ là một không gian con không tầm thường của $V$ thì $P(U):=\{[u]~|~u\in U, u\neq 0\}$ được gọi là một \textit{không gian xạ ảnh con} của $P(V)$.
+\end{defn}
+\subsubsection{Phép biến đổi xạ ảnh}
+\begin{defn}[Đồng cấu xạ ảnh]
+    Cho $f: V \to V'$ là một \textit{đơn cấu tuyến tính} giữa hai $\F-$không gian vector $V$ và $V'$. Khi đó ánh xạ
+    \[\widehat{f}: P(V) \to P(V'),~\widehat{f}([v]) = [f(v)]\]
+    được gọi là \textit{đồng cấu xạ ảnh} được \textit{cảm sinh} bởi $f$.
+
+    Đặc biệt, nếu $V = V'$ thì $f$ là một tự đẳng cấu trên $V$, khi đó  $\widehat{f}: P(V) \to P(V)$ được gọi là một \textit{tự đẳng cấu xạ ảnh} hay một \textit{phép biến đổi xạ ảnh}.
+\end{defn}
+\begin{comment*}
+    Ở định nghĩa trên, nếu $f$ không đơn cấu thì $\ker(f) \neq \{0\}$, tức tồn tại $v \in V\setminus \{0\}$ sao cho $f(v) = 0$, dẫn đến không tồn tại $[f(v)]$. 
+    
+    Trên hết, định nghĩa trên là một định nghĩa tốt. Thật vậy, nếu $[u] = [v]$ thì tồn tại $\lambda \in \F^*$ sao cho $u =\lambda v$. Từ đó $f(u) = f(\lambda v)= \lambda f(v)$, kết hợp $f$ đơn cấu nên $f(u), f(v) \neq 0$ ta được $[f(u)] =[f(v)]$, tức $\widehat{f}([u]) = \widehat{f}([v])$.
+
+    Từ đó ta có một tác động của nhóm $\GL(V)$ lên không gian xạ ảnh $P(V)$ được cho bởi
+    \[\cdot:\GL(V) \times P(V) \to P(V),~(f,[v]) \mapsto f\cdot [v] \defeq [f(v)].\]
+    Thật vậy, đây là một định nghĩa tốt, vì với mọi $f,g \in \GL(V),[v]\in P(V)$ ta có
+    \begin{itemize}
+        \item $\Id_V \cdot [v] = [\Id_V(v)] = [v]$,
+        \item $f\cdot (g \cdot [v]) = f\cdot[g(v)] = [f(g(v))] = [(fg)(v)] = (fg)\cdot [v]$.
+    \end{itemize}
+    % Khi đó với mỗi $[v] \in P(V)$, \textit{nhóm ổn định của} nó 
+    % \begin{align*}
+    % \GL(V)_{[v]} 
+    %     &= \{f\in \GL(V)~|~f\cdot [v] = [v]\} \\
+    %     &= \{f\in \GL(V)~|~[f(v)] = [v]\}\\
+    %     &= \{f\in \GL(V)~|~\exists \lambda \in \F^*, f(v) = \lambda v\}
+    % \end{align*}
+    % là một nhóm con của $\GL(V)$ chứa tất cả các phép biến đổi trên $V$ nhận $v$ làm vector riêng.
+    
+\end{comment*}
+\begin{prop}[Mối liên hệ giữa đồng cấu tuyến tính và đồng cấu xạ ảnh]
+    Cho $f: V \to W$ và $f': V \to W$ là hai đơn cấu giữa các $\F-$không gian vector $V$ và $W$. Khi đó $f$ và $f'$ cảm sinh cùng một đồng cấu xạ ảnh khi và chỉ khi $f = \lambda f'$ với $\lambda \in \F^*$ nào đó.
+\end{prop}
+\begin{proof}
+    Giả sử $f = \lambda f'$ với $\lambda \in \F^*$ nào đó, khi đó với $[v] \in P(V)$ thì \[[f(v)]=[(\lambda f')(v)] = [\lambda f'(v)] = [f'(v)],\]
+    tức là $f$ và $f'$ cảm sinh cùng một đồng cấu xạ ảnh.
+
+    Ngược lại, giả sử $[f(v)] = [f'(v)]$ với mọi $[v]\in P(V)$, khi đó với mỗi cơ sở $(v_0,\ldots,v_n)$ của $V$, tồn tại các $\lambda_0,\ldots,\lambda_n \in \F^*$ sao cho $f(v_i) = \lambda_i f'(v_i)$. Mặt khác ta cũng có $[f(v_0+\ldots+v_n)] = [f'(v_0+\ldots+v_n)]$, tức tồn tại $\lambda \neq 0$ sao cho 
+    \[f(v_0+\ldots+v_n)=\lambda f'(v_0+\ldots+v_n).\]
+    Kết hợp ta được
+    \[\sum_{i=0}^n\lambda f'(v_i) = \lambda f'\left(\sum_{i=0}^n v_i\right) = f\left(\sum_{i=0}^n v_i\right) = \sum_{i=0}^n f(v_i) = \sum_{i=0}^n \lambda_i f'(v_i).\]
+    Tức $\displaystyle \sum_{i=0}^{n}(\lambda - \lambda_i)f'(v_i) = 0$. Mà $f'$ là đơn cấu nên $\{f'(v_i)\}_{i=0}^{n}$ là độc lập tuyến tính. Dẫn đến, $\lambda = \lambda_i$ với mọi $i =0,\ldots,n$. Chứng tỏ $f(v_i) = \lambda f'(v_i)$, vì vậy $f(v) = \lambda f'(v)$ với mọi $v \in V$, hay $f =\lambda f'$.
+\end{proof}
+% \begin{exam*}
+%       Mỗi ma trận $A = \matt$ khả nghịch thì tương ứng với một tự đẳng cấu \[\F^2 \to \F^2,\quad
+%       \begin{pmatrix}
+%         x \\ y    
+%       \end{pmatrix} \mapsto \matt \begin{pmatrix}
+%           x \\ y
+%       \end{pmatrix} = \begin{pmatrix}
+%         ax + by \\ cx+dy    
+%       \end{pmatrix}.\]
+%       và tự đẳng cấu này cảm sinh tự đồng cấu xạ ảnh 
+%       \[\widehat{f}_A: P^1(\F)\to P^1(\F),\quad [x:y]\mapsto [ax+by:cx+dy].\]
+%       Một cách chi tiết, ta có
+%       \begin{align*}
+%       [z:1] &\mapsto [az+b:cz+d]=
+%       \begin{cases}
+%         \left[\dfrac{az+b}{cz+d}:1\right]   & \text{ nếu } z \neq -\dfrac{d}{c}.\\
+%         [1:0]  & \text{ nếu } z= -\dfrac{d}{c}
+%       \end{cases}\\
+%       [1:0] &\mapsto \left[a:c\right] = \begin{cases}
+%           \left[\dfrac{a}{c}:1\right]   & \text{ nếu } c \neq 0,\\
+%         [1:0]  & \text{ nếu }  c = 0.
+%       \end{cases}
+%       \end{align*}
+% \end{exam*}
+\begin{comment*}
+Như vậy, mỗi tự đẳng cấu tuyến tính $f: V \to V$ sẽ cảm sinh một tự đẳng cấu xạ ảnh $\widehat{f}: P(V) \to P(V)$ mà $\widehat{f}$ là một song ánh trên $P(V)$. 
+Thật vậy, 
+\begin{itemize}
+    \item $\widehat{f}$ đơn ánh.
+    
+        Nếu $\widehat{f}([u]) = \widehat{f}([v])$, tức $[f(u)] = [f(v)]$, tồn tại $\lambda \in \F^*$ sao cho \[f(u) = \lambda f(v) = f(\lambda v).\] Do $f$ là đẳng cấu, nên nó cũng là song ánh, dẫn đến $u = \lambda v$. Vì vậy $[u] = [v]$.    
+    \item $\widehat{f}$ toàn ánh.
+    
+    Với mỗi $[v] \in P(V)$ thì tồn tại $[f^{-1}(v)] \in P(V)$ sao cho \[\widehat{f}([f^{-1}(v)]) = [f(f^{-1}(v))] = [v].\]
+\end{itemize}
+Vì vậy, tập tất các tự đẳng cấu xạ ảnh $\widehat{f}$, ta kí hiệu là $\mathcal{G}$, được xem như là \textit{nhóm đối xứng} của không gian xạ ảnh $P(V)$ .
+\end{comment*}
+
+Ta xây dựng đồng cấu nhóm sau
+\[\varphi: \GL(V) \to \mathcal{G}, \quad f \mapsto \varphi(f) = \widehat{f}.\]
+Rõ ràng, ánh xạ trên là một toàn ánh và hơn hết là một đồng cấu nhóm, vì với mọi $f, g \in \GL(V)$ và với mọi $[v] \in P(V)$ thì 
+\[\varphi(fg)([v])=[(fg)(v)] = [f(g(v)] = \widehat{f}([g(v)])=\widehat{f}~\widehat{g}([v]) = \varphi(f)\varphi(g)([v]).\]
+Do đó $\varphi(fg) = \varphi(f)\varphi(g)$.
+
+Hơn nữa, với mọi $f\in \ker(\varphi)$ thì $\widehat{f} = \varphi(f) = \Id_{\mathcal{G}}$, tức với mọi $[v] \in P(V)$ thì \[[f(v)] = \widehat{f}([v]) = \Id_{\mathcal{G}}([v]) = [\Id_V(v)].\]
+Dẫn đến $f = \lambda \Id_V$ với $\lambda \in \F^*$, nghĩa là $\ker(\varphi) = \{\lambda \Id_V~|~\lambda \in \F^*\}$.
+
+Vì vậy, theo định lý đồng cấu nhóm thì
+\[\mathcal{G} \cong \GL(V)/\{\lambda \Id_V~|~\lambda \in \F^*\}\]
+\begin{defn}
+    \begin{enumerate}
+        \item $Z(V) = \{\lambda \Id_V~|~\lambda \in \F^*\}$.
+        \item $SZ(V) = \{f = \lambda \Id_V~|~ \det(f) = (\lambda)^n = 1\}.$
+        \item $\SL(V) = \{f \in \GL(V)~|~\det(f) =1\}.$
+    \end{enumerate}
+\end{defn}
+\begin{comment*}
+    Rõ ràng ta có các mối quan hê sau 
+    \begin{enumerate}
+        \item $SZ(V) \triangleleft Z(V)$.
+        \item $SZ(V) \triangleleft \SL(V)$.
+        \item $Z(V) \triangleleft \SL(V) \triangleleft \GL(V)$.
+    \end{enumerate}
+\end{comment*}
+\begin{defn}[Nhóm tuyến tính xạ ảnh]
+    Cho $V$ là một $\F-$không gian vector, khi đó ta định nghĩa \textit{nhóm tuyến tính xạ ảnh tổng quát} bởi
+    \[\PGL(V) = \GL(V)/Z(V).\]
+    và nhóm tuyến tính xạ ảnh đặc biệt 
+    \[\PSL(V) = \SL(V)/ZS(V).\]
+\end{defn}
+ Từ đó ta có biểu đồ giao hoán sau
+\[\begin{tikzcd}
+	{SZ(V)} && {Z(V)} \\
+	{SL(V)} && {GL(V)} \\
+	{PSL(V)} && {PGL(V)}
+	\arrow[hook, from=1-1, to=1-3]
+	\arrow[hook, from=1-1, to=2-1]
+	\arrow[hook, from=1-3, to=2-3]
+	\arrow[hook, from=2-1, to=2-3]
+	\arrow[two heads, from=2-1, to=3-1]
+	\arrow[two heads, from=2-3, to=3-3]
+	\arrow[hook, from=3-1, to=3-3]
+\end{tikzcd}\]
+Xây dựng hoàn toàn tương tự như trên, với 
+\[\SL(n,\F) = \{M \in \Mat(n, \F)~|~\det(M) = 1\} \triangleleft \GL(n,\F).\]
+\begin{defn}
+    Nhóm tuyến tính tổng quát xạ ảnh và nhóm tuyến tính xạ ảnh đặc biệt được định nghĩa bởi
+    \begin{align*}
+    \PGL(n,\F) &\defeq \GL(n,\F)/\{\lambda I_n~|~\lambda \in \F^*\}\\
+    \PSL(n,\F) &\defeq \SL(n,\F)/\{M = \lambda I_n~|~\det(M) = (\lambda)^n =1\}.
+    \end{align*}
+\end{defn}
+\subsubsection{Nhóm tuyến tính xạ ảnh $\PSL(2,\C)$}
+\begin{defn}
+    Mỗi phần tử của nhóm tuyến tính xạ ảnh đặc biệt
+    \[\PSL(2,\C) \cong \SL(2,\C) /\{\pm I_2\}\]
+    được coi như là một lớp tương đương của một ma trận trong $\SL(2,\C)$, trong đó lớp tương đương của ma trận $\begin{pmatrix}
+        a & b\\
+        c & d
+    \end{pmatrix}$, ta kí hiệu bởi ma trận
+    \[\matt \defeq \begin{pmatrix}
+        a & b\\
+        c & d
+    \end{pmatrix}\{\pm I_2\} = \left\{\pm\begin{pmatrix}
+        a & b\\
+        c & d
+    \end{pmatrix}\right\}.\]
+    Cụ thể mỗi phần tử $T$ trong $\PSL(2,\C)$ là một tự đồng cấu xạ ảnh 
+    \begin{align*}
+        T: P^1(\C) &\to P^1(\C),\quad [z_1:z_2] \mapsto [az_1+bz_2:cz_1+dz_2].
+    \end{align*}
+    trong đó $\matt$ là \textit{ma trận tương ứng}(ma trận biểu diễn) của $T$.
+    
+    Một cách chi tiết, với $z \in \C$ ta có
+      \begin{align*}
+      [z:1] &\mapsto [az+b:cz+d]=
+      \begin{cases}
+        \left[\dfrac{az+b}{cz+d}:1\right]   & \text{ nếu } z \neq -\dfrac{d}{c}.\\
+        [1:0]  & \text{ nếu } z= -\dfrac{d}{c}
+      \end{cases}\\
+     [1:0] &\mapsto \left[a:c\right] = \begin{cases}
+          \left[\dfrac{a}{c}:1\right]   & \text{ nếu } c \neq 0,\\
+         [1:0]  & \text{ nếu }  c = 0.
+      \end{cases}
+      \end{align*}
+\end{defn}
+
+Đồng nhất một cách chính tắc điểm xạ ảnh $[z:1] \in P^1(\C)$ với điểm $z \in \C$ và kí hiệu điểm xạ ảnh $[1:0]$ bởi $\infty$. Vì vậy $\C$ được coi như một tập con của $P^1(\C)$, cụ thể ta viết được $P^1(\C) = \C \cup \{\infty\}$.
+
+Khi đó ta có thể viết phép biến đổi $T$ dưới dạng 
+\[T: \C \cup \{\infty\} \to \C \cup \{\infty\}, \quad z\mapsto T(z)= \dfrac{az+b}{cz+d}\]
+Một cách chi tiết thì 
+$T(z) = \begin{cases}
+\dfrac{az+b}{cz+d} & \text{ nếu } z \in \C, z\neq -\dfrac{d}{c}, \\
+ \infty & \text{ nếu } z= -\dfrac{d}{c},\\
+ \dfrac{a}{c}& \text{ nếu } z=\infty, c\neq 0, \\
+ \infty & \text{ nếu } z=\infty, c =0.
+\end{cases}$
+
+\begin{prop}
+    Nhóm tuyến tính xạ ảnh $\PSL(2,\C)$ tác động lên $\C$ bởi các phép đồng phôi.
+\end{prop}
+\begin{proof}
+    Ta có
+    \[\cdot: \PSL(2,\C) \times \C \to \C,~ (T,z)\mapsto T\cdot z \defeq T(z)\]
+    là một tác động của $\PSL(2,\C)$ trên $\C$, vì $\Id\cdot z = \Id(z) = z$ và $T\cdot (S\cdot z) = T(S(z)) = (TS)\cdot z$.
+    
+    Mỗi ánh xạ $T(z) = \dfrac{az+b}{cz+d}$ là một song ánh, cùng ánh xạ nghịch đảo \[T^{-1}(z) = \dfrac{dz-b}{-cz+a}\] 
+    là các ánh xạ liên tục trên $\C$.
+    
+    Hơn nữa, $T$ còn là ánh xạ khả vi trong $\C$, với 
+    \[T'(z) = \dfrac{ad-bc}{(cz+d)^2} = \dfrac{1}{(cz+d)^2}\cdot\]
+    Vì vậy, $\PSL(2,\C)$ tác động lên $\C$ bởi phép đồng phôi.
+\end{proof}
+% \begin{comment*}
+%     Với mọi $A,B\in \SL(2,\C)$ sẽ tương ứng với một phép biến đổi $T_A,T_B$. Khi đó ta có 
+%     \[T_{AB} = T_A \circ T_B, \quad T_{A^{-1}} = (T_A)^{-1} .\]
+% \end{comment*}
